@@ -9,9 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet" />
 
   <style>
-    /* ============================================================
-       CUSTOM PROPERTIES
-       ============================================================ */
     :root {
       --bg:          #0b0b0b;
       --bg-alt:      #101010;
@@ -27,10 +24,6 @@
       --radius:      14px;
       --ease:        0.36s cubic-bezier(0.4, 0, 0.2, 1);
     }
-
-    /* ============================================================
-       RESET & BASE
-       ============================================================ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; font-size: 16px; }
     body {
@@ -44,12 +37,7 @@
     a { color: inherit; text-decoration: none; }
     ul { list-style: none; }
     section { scroll-margin-top: var(--header-h); }
-
-    /* ============================================================
-       TYPOGRAPHY HELPERS
-       ============================================================ */
     .script { font-family: 'Great Vibes', cursive; }
-
     .section-heading {
       font-family: 'Great Vibes', cursive;
       font-size: clamp(2.6rem, 6vw, 4.2rem);
@@ -82,22 +70,13 @@
       background: var(--border);
     }
     .ornament-icon { color: var(--accent); font-size: 0.85rem; }
-
-    /* ============================================================
-       LAYOUT
-       ============================================================ */
     section { padding: 110px 0; position: relative; }
     .container { width: min(1120px, 92vw); margin: 0 auto; }
     .alt-bg { background: var(--bg-alt); }
-
-    /* ============================================================
-       SCROLL REVEAL ANIMATIONS
-       ============================================================ */
     .reveal {
       opacity: 0;
       transform: translateY(42px);
-      transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-                  transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .reveal.visible { opacity: 1; transform: translateY(0); }
     .reveal-d1 { transition-delay: 0.1s; }
@@ -105,10 +84,6 @@
     .reveal-d3 { transition-delay: 0.34s; }
     .reveal-d4 { transition-delay: 0.46s; }
     .reveal-d5 { transition-delay: 0.58s; }
-
-    /* ============================================================
-       STICKY HEADER
-       ============================================================ */
     .site-header {
       position: fixed;
       inset-block-start: 0;
@@ -138,8 +113,6 @@
       flex-shrink: 0;
       letter-spacing: 0.02em;
     }
-
-    /* Desktop nav */
     .site-nav { display: flex; align-items: center; gap: 2.4rem; }
     .site-nav a {
       font-size: 0.66rem;
@@ -161,8 +134,6 @@
     }
     .site-nav a:hover { color: var(--text); }
     .site-nav a:hover::after { width: 100%; }
-
-    /* Language toggle */
     .lang-toggle {
       display: flex;
       align-items: center;
@@ -185,12 +156,7 @@
       color: var(--text-muted);
       transition: background var(--ease), color var(--ease);
     }
-    .lang-btn.active {
-      background: var(--accent);
-      color: #0b0b0b;
-    }
-
-    /* Hamburger */
+    .lang-btn.active { background: var(--accent); color: #0b0b0b; }
     .hamburger {
       display: none;
       flex-direction: column;
@@ -211,8 +177,6 @@
     .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
     .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
     .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-
-    /* Mobile nav drawer */
     .mobile-nav {
       display: none;
       position: fixed;
@@ -226,17 +190,11 @@
       align-items: center;
       gap: 2rem;
       border-bottom: 1px solid var(--border);
-      transform: translateY(-8px);
       opacity: 0;
       transition: opacity 0.25s ease, transform 0.25s ease;
       pointer-events: none;
     }
-    .mobile-nav.open {
-      display: flex;
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: all;
-    }
+    .mobile-nav.open { display: flex; opacity: 1; pointer-events: all; }
     .mobile-nav a {
       font-size: 0.8rem;
       font-weight: 500;
@@ -246,10 +204,6 @@
       transition: color var(--ease);
     }
     .mobile-nav a:hover { color: var(--accent); }
-
-    /* ============================================================
-       HERO
-       ============================================================ */
     #hero {
       position: relative;
       height: 100svh;
@@ -262,12 +216,7 @@
       padding: 0;
       scroll-margin-top: 0;
     }
-    #star-canvas {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-    }
+    #star-canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
     .hero-vignette {
       position: absolute;
       inset: 0;
@@ -289,13 +238,7 @@
       from { opacity: 0; transform: translateY(24px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-    .hero-eyebrow {
-      text-transform: uppercase;
-      letter-spacing: 0.42em;
-      font-size: 0.6rem;
-      color: var(--accent);
-      font-weight: 500;
-    }
+    .hero-eyebrow { text-transform: uppercase; letter-spacing: 0.42em; font-size: 0.6rem; color: var(--accent); font-weight: 500; }
     .hero-names {
       font-family: 'Great Vibes', cursive;
       font-size: clamp(3.8rem, 12vw, 8.5rem);
@@ -304,490 +247,114 @@
       text-shadow: 0 2px 60px rgba(201, 168, 76, 0.2), 0 0 120px rgba(201, 168, 76, 0.08);
     }
     .hero-amp { color: var(--accent); }
-    .hero-subtitle {
-      font-size: 0.66rem;
-      text-transform: uppercase;
-      letter-spacing: 0.38em;
-      color: var(--text-muted);
-      font-weight: 400;
-    }
-    .hero-date-row {
-      display: flex;
-      align-items: center;
-      gap: 1.4rem;
-      margin-top: 0.3rem;
-    }
-    .hero-date-row::before, .hero-date-row::after {
-      content: '';
-      display: block;
-      width: 48px;
-      height: 1px;
-      background: rgba(201,168,76,0.3);
-    }
-    .hero-date {
-      font-size: 0.78rem;
-      letter-spacing: 0.3em;
-      color: var(--accent);
-      font-weight: 500;
-    }
-    .hero-location {
-      font-size: 0.64rem;
-      letter-spacing: 0.28em;
-      color: var(--text-muted);
-      text-transform: uppercase;
-    }
+    .hero-subtitle { font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.38em; color: var(--text-muted); font-weight: 400; }
+    .hero-date-row { display: flex; align-items: center; gap: 1.4rem; margin-top: 0.3rem; }
+    .hero-date-row::before, .hero-date-row::after { content: ''; display: block; width: 48px; height: 1px; background: rgba(201,168,76,0.3); }
+    .hero-date { font-size: 0.78rem; letter-spacing: 0.3em; color: var(--accent); font-weight: 500; }
+    .hero-location { font-size: 0.64rem; letter-spacing: 0.28em; color: var(--text-muted); text-transform: uppercase; }
     .scroll-cue {
-      position: absolute;
-      bottom: 2.8rem;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-      animation: scrollBounce 2.2s ease-in-out infinite;
-      opacity: 0.5;
+      position: absolute; bottom: 2.8rem; left: 50%; transform: translateX(-50%);
+      z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 6px;
+      animation: scrollBounce 2.2s ease-in-out infinite; opacity: 0.5;
     }
-    .scroll-cue-dot {
-      width: 4px; height: 4px;
-      border-radius: 50%;
-      background: var(--accent);
-    }
-    .scroll-cue-line {
-      width: 1px; height: 36px;
-      background: linear-gradient(to bottom, var(--accent), transparent);
-    }
+    .scroll-cue-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--accent); }
+    .scroll-cue-line { width: 1px; height: 36px; background: linear-gradient(to bottom, var(--accent), transparent); }
     @keyframes scrollBounce {
       0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.5; }
       50%       { transform: translateX(-50%) translateY(7px); opacity: 0.8; }
     }
-
-    /* ============================================================
-       COUNTDOWN
-       ============================================================ */
-    .countdown-wrap {
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 0.6rem 1.6rem;
-      margin: 0 0 4rem;
-    }
-    .cd-unit {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.35rem;
-      min-width: 88px;
-    }
-    .cd-number {
-      font-family: 'Great Vibes', cursive;
-      font-size: clamp(3.2rem, 9vw, 5.8rem);
-      color: var(--accent);
-      line-height: 1;
-      min-width: 1.2ch;
-      text-align: center;
-    }
-    .cd-label {
-      font-size: 0.57rem;
-      text-transform: uppercase;
-      letter-spacing: 0.28em;
-      color: var(--text-muted);
-      font-weight: 500;
-    }
-    .cd-sep {
-      font-family: 'Great Vibes', cursive;
-      font-size: 3.8rem;
-      color: var(--accent-dim);
-      line-height: 1;
-      padding-top: 0.5rem;
-      user-select: none;
-    }
-
-    /* Timeline */
-    .timeline-wrap {
-      max-width: 560px;
-      margin: 0 auto;
-      position: relative;
-      padding-left: 1.8rem;
-    }
-    .timeline-wrap::before {
-      content: '';
-      position: absolute;
-      left: 0; top: 10px; bottom: 10px;
-      width: 1px;
-      background: linear-gradient(to bottom, transparent, var(--border) 10%, var(--border) 90%, transparent);
-    }
-    .tl-item {
-      position: relative;
-      padding: 0 0 2.8rem 1.8rem;
-    }
+    .countdown-wrap { display: flex; align-items: flex-start; justify-content: center; flex-wrap: wrap; gap: 0.6rem 1.6rem; margin: 0 0 4rem; }
+    .cd-unit { display: flex; flex-direction: column; align-items: center; gap: 0.35rem; min-width: 88px; }
+    .cd-number { font-family: 'Great Vibes', cursive; font-size: clamp(3.2rem, 9vw, 5.8rem); color: var(--accent); line-height: 1; min-width: 1.2ch; text-align: center; }
+    .cd-label { font-size: 0.57rem; text-transform: uppercase; letter-spacing: 0.28em; color: var(--text-muted); font-weight: 500; }
+    .cd-sep { font-family: 'Great Vibes', cursive; font-size: 3.8rem; color: var(--accent-dim); line-height: 1; padding-top: 0.5rem; user-select: none; }
+    .timeline-wrap { max-width: 560px; margin: 0 auto; position: relative; padding-left: 1.8rem; }
+    .timeline-wrap::before { content: ''; position: absolute; left: 0; top: 10px; bottom: 10px; width: 1px; background: linear-gradient(to bottom, transparent, var(--border) 10%, var(--border) 90%, transparent); }
+    .tl-item { position: relative; padding: 0 0 2.8rem 1.8rem; }
     .tl-item:last-child { padding-bottom: 0; }
-    .tl-dot {
-      position: absolute;
-      left: -5px; top: 7px;
-      width: 11px; height: 11px;
-      border-radius: 50%;
-      border: 2px solid var(--accent);
-      background: var(--bg-alt);
-      transition: background var(--ease);
-    }
+    .tl-dot { position: absolute; left: -5px; top: 7px; width: 11px; height: 11px; border-radius: 50%; border: 2px solid var(--accent); background: var(--bg-alt); transition: background var(--ease); }
     .tl-item:hover .tl-dot { background: var(--accent); }
-    .tl-time {
-      font-size: 0.6rem;
-      text-transform: uppercase;
-      letter-spacing: 0.22em;
-      color: var(--accent);
-      font-weight: 600;
-      margin-bottom: 0.25rem;
-    }
-    .tl-title {
-      font-family: 'Great Vibes', cursive;
-      font-size: 1.8rem;
-      color: var(--text);
-      line-height: 1.2;
-      margin-bottom: 0.3rem;
-    }
+    .tl-time { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.22em; color: var(--accent); font-weight: 600; margin-bottom: 0.25rem; }
+    .tl-title { font-family: 'Great Vibes', cursive; font-size: 1.8rem; color: var(--text); line-height: 1.2; margin-bottom: 0.3rem; }
     .tl-desc { font-size: 0.8rem; color: var(--text-muted); line-height: 1.75; }
-
-    /* ============================================================
-       GETTING THERE
-       ============================================================ */
-    .dir-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.8rem;
-      margin-bottom: 2.8rem;
-    }
-    .dir-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 2.2rem;
-      transition: border-color var(--ease), transform var(--ease), box-shadow var(--ease);
-    }
-    .dir-card:hover {
-      border-color: rgba(201,168,76,0.38);
-      transform: translateY(-4px);
-      box-shadow: 0 16px 40px rgba(0,0,0,0.35);
-    }
+    .dir-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8rem; margin-bottom: 2.8rem; }
+    .dir-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 2.2rem; transition: border-color var(--ease), transform var(--ease), box-shadow var(--ease); }
+    .dir-card:hover { border-color: rgba(201,168,76,0.38); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.35); }
     .dir-icon { font-size: 2rem; margin-bottom: 1rem; line-height: 1; }
-    .dir-title {
-      font-size: 0.65rem;
-      text-transform: uppercase;
-      letter-spacing: 0.24em;
-      color: var(--accent);
-      font-weight: 600;
-      margin-bottom: 0.9rem;
-    }
+    .dir-title { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.24em; color: var(--accent); font-weight: 600; margin-bottom: 0.9rem; }
     .dir-text { font-size: 0.8rem; color: var(--text-muted); line-height: 1.85; }
-
-    .map-box {
-      width: 100%;
-      height: 380px;
-      background: var(--card-bg);
-      border: 2px dashed rgba(201,168,76,0.2);
-      border-radius: var(--radius);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 1.2rem;
-      color: var(--text-muted);
-      text-align: center;
-      padding: 2rem;
-    }
+    .map-box { width: 100%; height: 380px; background: var(--card-bg); border: 2px dashed rgba(201,168,76,0.2); border-radius: var(--radius); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.2rem; color: var(--text-muted); text-align: center; padding: 2rem; }
     .map-box-icon { font-size: 2.8rem; opacity: 0.35; }
-    .map-box p {
-      font-size: 0.75rem;
-      line-height: 1.8;
-      opacity: 0.55;
-      max-width: 340px;
-      letter-spacing: 0.06em;
-    }
-
-    /* ============================================================
-       ACCOMMODATION
-       ============================================================ */
-    .hotel-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.6rem;
-    }
-    .hotel-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: transform var(--ease), border-color var(--ease), box-shadow var(--ease);
-    }
-    .hotel-card:hover {
-      transform: translateY(-8px);
-      border-color: rgba(201,168,76,0.38);
-      box-shadow: 0 24px 50px rgba(0,0,0,0.45);
-    }
-    .hotel-thumb {
-      height: 150px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3rem;
-      flex-shrink: 0;
-      position: relative;
-      overflow: hidden;
-    }
+    .map-box p { font-size: 0.75rem; line-height: 1.8; opacity: 0.55; max-width: 340px; letter-spacing: 0.06em; }
+    .hotel-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.6rem; }
+    .hotel-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; transition: transform var(--ease), border-color var(--ease), box-shadow var(--ease); }
+    .hotel-card:hover { transform: translateY(-8px); border-color: rgba(201,168,76,0.38); box-shadow: 0 24px 50px rgba(0,0,0,0.45); }
+    .hotel-thumb { height: 150px; display: flex; align-items: center; justify-content: center; font-size: 3rem; flex-shrink: 0; }
     .hotel-thumb-1 { background: linear-gradient(135deg, #0d1a2a, #1a2d3d); }
     .hotel-thumb-2 { background: linear-gradient(135deg, #0d1a0d, #1a2d1a); }
     .hotel-thumb-3 { background: linear-gradient(135deg, #1a1510, #2a2015); }
-    .hotel-body {
-      padding: 1.6rem;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-      gap: 0.55rem;
-    }
+    .hotel-body { padding: 1.6rem; display: flex; flex-direction: column; flex-grow: 1; gap: 0.55rem; }
     .hotel-stars { color: var(--accent); font-size: 0.7rem; letter-spacing: 0.1em; }
-    .hotel-name {
-      font-family: 'Great Vibes', cursive;
-      font-size: 1.55rem;
-      color: var(--text);
-      line-height: 1.2;
-    }
-    .hotel-loc {
-      font-size: 0.62rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--accent);
-      font-weight: 600;
-    }
+    .hotel-name { font-family: 'Great Vibes', cursive; font-size: 1.55rem; color: var(--text); line-height: 1.2; }
+    .hotel-loc { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.18em; color: var(--accent); font-weight: 600; }
     .hotel-desc { font-size: 0.77rem; color: var(--text-muted); flex-grow: 1; line-height: 1.75; }
     .hotel-price { font-size: 0.7rem; color: var(--text-muted); font-style: italic; }
-
-    /* ============================================================
-       BUTTONS
-       ============================================================ */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      padding: 11px 24px;
-      font-size: 0.64rem;
-      font-weight: 600;
-      font-family: 'Montserrat', sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      border-radius: 100px;
-      cursor: pointer;
-      border: none;
-      transition: all var(--ease);
-      white-space: nowrap;
-    }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 11px 24px; font-size: 0.64rem; font-weight: 600; font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 0.2em; border-radius: 100px; cursor: pointer; border: none; transition: all var(--ease); white-space: nowrap; }
     .btn-block { width: 100%; margin-top: 1.2rem; }
-    .btn-outline {
-      background: transparent;
-      border: 1px solid var(--accent);
-      color: var(--accent);
-    }
-    .btn-outline:hover {
-      background: var(--accent);
-      color: #0b0b0b;
-      box-shadow: 0 6px 20px rgba(201,168,76,0.22);
-    }
-    .btn-filled {
-      background: var(--accent);
-      color: #0b0b0b;
-    }
-    .btn-filled:hover {
-      background: var(--accent-lt);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 26px rgba(201,168,76,0.28);
-    }
+    .btn-outline { background: transparent; border: 1px solid var(--accent); color: var(--accent); }
+    .btn-outline:hover { background: var(--accent); color: #0b0b0b; box-shadow: 0 6px 20px rgba(201,168,76,0.22); }
+    .btn-filled { background: var(--accent); color: #0b0b0b; }
+    .btn-filled:hover { background: var(--accent-lt); transform: translateY(-2px); box-shadow: 0 10px 26px rgba(201,168,76,0.28); }
     .btn-lg { padding: 14px 42px; font-size: 0.7rem; }
-
-    /* ============================================================
-       REGISTRY
-       ============================================================ */
-    .registry-center {
-      max-width: 680px;
-      margin: 0 auto;
-      text-align: center;
-    }
+    .registry-center { max-width: 680px; margin: 0 auto; text-align: center; }
     .registry-icon { font-size: 3.2rem; margin-bottom: 1.8rem; opacity: 0.65; line-height: 1; }
-    .registry-text {
-      font-size: 0.86rem;
-      color: var(--text-muted);
-      line-height: 1.95;
-      margin-bottom: 2.8rem;
-    }
-
-    /* ============================================================
-       CONTACT / RSVP
-       ============================================================ */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.45fr;
-      gap: 4.5rem;
-      align-items: start;
-    }
-    .contact-heading {
-      font-family: 'Great Vibes', cursive;
-      font-size: 2.2rem;
-      color: var(--accent);
-      margin-bottom: 2rem;
-    }
+    .registry-text { font-size: 0.86rem; color: var(--text-muted); line-height: 1.95; margin-bottom: 2.8rem; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.45fr; gap: 4.5rem; align-items: start; }
+    .contact-heading { font-family: 'Great Vibes', cursive; font-size: 2.2rem; color: var(--accent); margin-bottom: 2rem; }
     .contact-list { display: flex; flex-direction: column; gap: 1.5rem; }
     .contact-entry { display: flex; align-items: flex-start; gap: 1.1rem; }
     .contact-entry-icon { font-size: 1.05rem; flex-shrink: 0; margin-top: 3px; opacity: 0.65; }
-    .contact-entry-label {
-      font-size: 0.58rem;
-      text-transform: uppercase;
-      letter-spacing: 0.22em;
-      color: var(--accent);
-      font-weight: 600;
-      margin-bottom: 0.2rem;
-    }
-    .contact-entry-val {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
+    .contact-entry-label { font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.22em; color: var(--accent); font-weight: 600; margin-bottom: 0.2rem; }
+    .contact-entry-val { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
     .contact-entry-val a { transition: color var(--ease); }
     .contact-entry-val a:hover { color: var(--accent); }
-
-    /* RSVP form card */
-    .rsvp-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 2.8rem;
-    }
-    .rsvp-card-title {
-      font-family: 'Great Vibes', cursive;
-      font-size: 2.4rem;
-      color: var(--text);
-      margin-bottom: 0.2rem;
-      line-height: 1.2;
-    }
-    .rsvp-card-sub {
-      font-size: 0.7rem;
-      color: var(--text-muted);
-      margin-bottom: 2rem;
-      letter-spacing: 0.04em;
-    }
+    .rsvp-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 2.8rem; }
+    .rsvp-card-title { font-family: 'Great Vibes', cursive; font-size: 2.4rem; color: var(--text); margin-bottom: 0.2rem; line-height: 1.2; }
+    .rsvp-card-sub { font-size: 0.7rem; color: var(--text-muted); margin-bottom: 2rem; letter-spacing: 0.04em; }
     .form-group { margin-bottom: 1.5rem; }
-    .form-label {
-      display: block;
-      font-size: 0.58rem;
-      text-transform: uppercase;
-      letter-spacing: 0.22em;
-      color: var(--accent);
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-    .form-control {
-      width: 100%;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(201,168,76,0.14);
-      border-radius: 9px;
-      padding: 12px 16px;
-      color: var(--text);
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.82rem;
-      font-weight: 300;
-      transition: border-color var(--ease), background var(--ease);
-      outline: none;
-      -webkit-appearance: none;
-      appearance: none;
-    }
-    .form-control:focus {
-      border-color: rgba(201,168,76,0.55);
-      background: rgba(201,168,76,0.04);
-    }
+    .form-label { display: block; font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.22em; color: var(--accent); font-weight: 600; margin-bottom: 0.5rem; }
+    .form-control { width: 100%; background: rgba(255,255,255,0.03); border: 1px solid rgba(201,168,76,0.14); border-radius: 9px; padding: 12px 16px; color: var(--text); font-family: 'Montserrat', sans-serif; font-size: 0.82rem; font-weight: 300; transition: border-color var(--ease), background var(--ease); outline: none; -webkit-appearance: none; appearance: none; }
+    .form-control:focus { border-color: rgba(201,168,76,0.55); background: rgba(201,168,76,0.04); }
     .form-control::placeholder { color: var(--text-muted); opacity: 0.45; }
     textarea.form-control { min-height: 100px; resize: vertical; }
     select.form-control { cursor: pointer; }
     select.form-control option { background: #1a1a1a; color: var(--text); }
     .form-note { font-size: 0.68rem; color: var(--text-muted); text-align: center; margin-top: 1rem; opacity: 0.7; }
-    .form-success-msg {
-      display: none;
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-    .form-success-title {
-      font-family: 'Great Vibes', cursive;
-      font-size: 2.8rem;
-      color: var(--accent);
-      margin-bottom: 0.5rem;
-    }
+    .form-success-msg { display: none; text-align: center; padding: 2rem 1rem; }
+    .form-success-title { font-family: 'Great Vibes', cursive; font-size: 2.8rem; color: var(--accent); margin-bottom: 0.5rem; }
     .form-success-sub { font-size: 0.78rem; color: var(--text-muted); letter-spacing: 0.08em; }
-
-    /* ============================================================
-       FOOTER
-       ============================================================ */
-    .site-footer {
-      padding: 3.5rem 0;
-      text-align: center;
-      border-top: 1px solid var(--border);
-    }
-    .footer-names {
-      font-family: 'Great Vibes', cursive;
-      font-size: 2.2rem;
-      color: var(--accent);
-      margin-bottom: 0.5rem;
-    }
-    .footer-detail {
-      font-size: 0.62rem;
-      color: var(--text-muted);
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-    }
-
-    /* ============================================================
-       RESPONSIVE — 900px
-       ============================================================ */
+    .site-footer { padding: 3.5rem 0; text-align: center; border-top: 1px solid var(--border); }
+    .footer-names { font-family: 'Great Vibes', cursive; font-size: 2.2rem; color: var(--accent); margin-bottom: 0.5rem; }
+    .footer-detail { font-size: 0.62rem; color: var(--text-muted); letter-spacing: 0.24em; text-transform: uppercase; }
     @media (max-width: 960px) {
       .hotel-grid { grid-template-columns: 1fr 1fr; }
       .contact-grid { grid-template-columns: 1fr; gap: 3.5rem; }
       .dir-grid { grid-template-columns: 1fr; }
     }
-
-    /* ============================================================
-       RESPONSIVE — 768px (mobile)
-       ============================================================ */
     @media (max-width: 768px) {
       :root { --header-h: 64px; }
-
       .site-nav { display: none; }
       .hamburger { display: flex; }
-
       section { padding: 80px 0; }
-
-      .hotel-grid {
-        grid-template-columns: 1fr;
-        max-width: 420px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
+      .hotel-grid { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; }
       .countdown-wrap { gap: 0.4rem 1rem; }
       .cd-sep { font-size: 2.8rem; }
-
       .timeline-wrap { padding-left: 1.4rem; }
-
       .rsvp-card { padding: 2rem 1.6rem; }
     }
-
-    /* ============================================================
-       RESPONSIVE — 480px
-       ============================================================ */
     @media (max-width: 480px) {
       .hero-names { font-size: clamp(3.2rem, 15vw, 5rem); }
-      .hero-date-row::before,
-      .hero-date-row::after { width: 28px; }
+      .hero-date-row::before, .hero-date-row::after { width: 28px; }
       .lang-btn { padding: 5px 11px; font-size: 0.58rem; }
       .cd-number { font-size: clamp(2.6rem, 12vw, 3.8rem); }
       .cd-unit { min-width: 68px; }
@@ -796,17 +363,10 @@
     }
   </style>
 </head>
-
 <body>
-
-  <!-- ============================================================
-       STICKY HEADER
-       ============================================================ -->
   <header class="site-header">
     <div class="header-inner">
-
       <div class="header-logo">A &amp; E</div>
-
       <nav class="site-nav" role="navigation">
         <a href="#wedding-day"   data-i18n="nav_wedding_day"></a>
         <a href="#getting-there" data-i18n="nav_getting_there"></a>
@@ -814,7 +374,6 @@
         <a href="#registry"      data-i18n="nav_registry"></a>
         <a href="#contact"       data-i18n="nav_contact"></a>
       </nav>
-
       <div style="display:flex;align-items:center;gap:0.9rem;">
         <div class="lang-toggle" role="group" aria-label="Language">
           <button class="lang-btn active" id="btn-tr" onclick="setLang('tr')">TR</button>
@@ -824,11 +383,8 @@
           <span></span><span></span><span></span>
         </button>
       </div>
-
     </div>
   </header>
-
-  <!-- Mobile navigation drawer -->
   <nav class="mobile-nav" id="mobile-nav" role="navigation">
     <a href="#wedding-day"   data-i18n="nav_wedding_day"   onclick="closeMenu()"></a>
     <a href="#getting-there" data-i18n="nav_getting_there" onclick="closeMenu()"></a>
@@ -836,750 +392,204 @@
     <a href="#registry"      data-i18n="nav_registry"      onclick="closeMenu()"></a>
     <a href="#contact"       data-i18n="nav_contact"       onclick="closeMenu()"></a>
   </nav>
-
-
-  <!-- ============================================================
-       HERO
-       ============================================================ -->
   <section id="hero">
     <canvas id="star-canvas" aria-hidden="true"></canvas>
     <div class="hero-vignette" aria-hidden="true"></div>
     <div class="hero-content">
       <p class="hero-eyebrow" data-i18n="hero_eyebrow"></p>
-      <h1 class="hero-names">
-        Ayşegül <span class="hero-amp">&amp;</span><br>Emir Kaan
-      </h1>
+      <h1 class="hero-names">Ayşegül <span class="hero-amp">&amp;</span><br>Emir Kaan</h1>
       <p class="hero-subtitle" data-i18n="hero_subtitle"></p>
-      <div class="hero-date-row">
-        <span class="hero-date">20 · 06 · 2026</span>
-      </div>
+      <div class="hero-date-row"><span class="hero-date">20 · 06 · 2026</span></div>
       <p class="hero-location">Güzelbahçe, İzmir</p>
     </div>
-    <div class="scroll-cue" aria-hidden="true">
-      <div class="scroll-cue-dot"></div>
-      <div class="scroll-cue-line"></div>
-    </div>
+    <div class="scroll-cue" aria-hidden="true"><div class="scroll-cue-dot"></div><div class="scroll-cue-line"></div></div>
   </section>
-
-
-  <!-- ============================================================
-       WEDDING DAY
-       ============================================================ -->
   <section id="wedding-day" class="alt-bg">
     <div class="container">
-
       <h2 class="section-heading reveal" data-i18n="wd_title"></h2>
       <div class="ornament reveal reveal-d1"><span class="ornament-icon">✦</span></div>
       <p class="section-sub reveal reveal-d1" data-i18n="wd_sub"></p>
-
-      <!-- Countdown timer -->
       <div class="countdown-wrap" id="countdown-wrap">
-        <div class="cd-unit reveal reveal-d1">
-          <span class="cd-number" id="cd-days">---</span>
-          <span class="cd-label" data-i18n="cd_days"></span>
-        </div>
+        <div class="cd-unit reveal reveal-d1"><span class="cd-number" id="cd-days">---</span><span class="cd-label" data-i18n="cd_days"></span></div>
         <div class="cd-sep reveal reveal-d1">:</div>
-        <div class="cd-unit reveal reveal-d2">
-          <span class="cd-number" id="cd-hours">--</span>
-          <span class="cd-label" data-i18n="cd_hours"></span>
-        </div>
+        <div class="cd-unit reveal reveal-d2"><span class="cd-number" id="cd-hours">--</span><span class="cd-label" data-i18n="cd_hours"></span></div>
         <div class="cd-sep reveal reveal-d2">:</div>
-        <div class="cd-unit reveal reveal-d3">
-          <span class="cd-number" id="cd-minutes">--</span>
-          <span class="cd-label" data-i18n="cd_minutes"></span>
-        </div>
+        <div class="cd-unit reveal reveal-d3"><span class="cd-number" id="cd-minutes">--</span><span class="cd-label" data-i18n="cd_minutes"></span></div>
         <div class="cd-sep reveal reveal-d3">:</div>
-        <div class="cd-unit reveal reveal-d4">
-          <span class="cd-number" id="cd-seconds">--</span>
-          <span class="cd-label" data-i18n="cd_seconds"></span>
-        </div>
+        <div class="cd-unit reveal reveal-d4"><span class="cd-number" id="cd-seconds">--</span><span class="cd-label" data-i18n="cd_seconds"></span></div>
       </div>
-
-      <!-- Timeline / Schedule -->
       <div class="timeline-wrap reveal reveal-d2">
-        <div class="tl-item">
-          <div class="tl-dot"></div>
-          <div class="tl-time"  data-i18n="tl_ceremony_time"></div>
-          <div class="tl-title" data-i18n="tl_ceremony_title"></div>
-          <div class="tl-desc"  data-i18n="tl_ceremony_desc"></div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-dot"></div>
-          <div class="tl-time"  data-i18n="tl_cocktail_time"></div>
-          <div class="tl-title" data-i18n="tl_cocktail_title"></div>
-          <div class="tl-desc"  data-i18n="tl_cocktail_desc"></div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-dot"></div>
-          <div class="tl-time"  data-i18n="tl_dinner_time"></div>
-          <div class="tl-title" data-i18n="tl_dinner_title"></div>
-          <div class="tl-desc"  data-i18n="tl_dinner_desc"></div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-dot"></div>
-          <div class="tl-time"  data-i18n="tl_party_time"></div>
-          <div class="tl-title" data-i18n="tl_party_title"></div>
-          <div class="tl-desc"  data-i18n="tl_party_desc"></div>
-        </div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-time" data-i18n="tl_ceremony_time"></div><div class="tl-title" data-i18n="tl_ceremony_title"></div><div class="tl-desc" data-i18n="tl_ceremony_desc"></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-time" data-i18n="tl_cocktail_time"></div><div class="tl-title" data-i18n="tl_cocktail_title"></div><div class="tl-desc" data-i18n="tl_cocktail_desc"></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-time" data-i18n="tl_dinner_time"></div><div class="tl-title" data-i18n="tl_dinner_title"></div><div class="tl-desc" data-i18n="tl_dinner_desc"></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-time" data-i18n="tl_party_time"></div><div class="tl-title" data-i18n="tl_party_title"></div><div class="tl-desc" data-i18n="tl_party_desc"></div></div>
       </div>
-
     </div>
   </section>
-
-
-  <!-- ============================================================
-       GETTING THERE
-       ============================================================ -->
   <section id="getting-there">
     <div class="container">
-
       <h2 class="section-heading reveal" data-i18n="gt_title"></h2>
       <div class="ornament reveal reveal-d1"><span class="ornament-icon">✦</span></div>
       <p class="section-sub reveal reveal-d1" data-i18n="gt_sub"></p>
-
       <div class="dir-grid">
-        <div class="dir-card reveal reveal-d1">
-          <div class="dir-icon">🚗</div>
-          <div class="dir-title" data-i18n="gt_car_title"></div>
-          <div class="dir-text"  data-i18n="gt_car_text"></div>
-        </div>
-        <div class="dir-card reveal reveal-d2">
-          <div class="dir-icon">🚌</div>
-          <div class="dir-title" data-i18n="gt_transit_title"></div>
-          <div class="dir-text"  data-i18n="gt_transit_text"></div>
-        </div>
+        <div class="dir-card reveal reveal-d1"><div class="dir-icon">🚗</div><div class="dir-title" data-i18n="gt_car_title"></div><div class="dir-text" data-i18n="gt_car_text"></div></div>
+        <div class="dir-card reveal reveal-d2"><div class="dir-icon">🚌</div><div class="dir-title" data-i18n="gt_transit_title"></div><div class="dir-text" data-i18n="gt_transit_text"></div></div>
       </div>
-
-      <!--
-        ── MAP PLACEHOLDER ─────────────────────────────────────────
-        To embed Google Maps, replace the <div class="map-box"> below with:
-
-        <div style="width:100%;height:380px;border-radius:14px;overflow:hidden;
-             border:1px solid rgba(201,168,76,0.18);">
-          <iframe
-            src="YOUR_GOOGLE_MAPS_EMBED_URL"
-            width="100%" height="100%"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-        </div>
-        ────────────────────────────────────────────────────────────
-      -->
-      <div class="map-box reveal reveal-d3">
-        <div class="map-box-icon">📍</div>
-        <p data-i18n="gt_map_placeholder"></p>
-      </div>
-
+      <div class="map-box reveal reveal-d3"><div class="map-box-icon">📍</div><p data-i18n="gt_map_placeholder"></p></div>
     </div>
   </section>
-
-
-  <!-- ============================================================
-       ACCOMMODATION
-       ============================================================ -->
   <section id="accommodation" class="alt-bg">
     <div class="container">
-
       <h2 class="section-heading reveal" data-i18n="ac_title"></h2>
       <div class="ornament reveal reveal-d1"><span class="ornament-icon">✦</span></div>
       <p class="section-sub reveal reveal-d1" data-i18n="ac_sub"></p>
-
       <div class="hotel-grid">
-
-        <!-- Hotel 1 -->
-        <div class="hotel-card reveal reveal-d1">
-          <div class="hotel-thumb hotel-thumb-1">🌊</div>
-          <div class="hotel-body">
-            <div class="hotel-stars">★★★★★</div>
-            <div class="hotel-name" data-i18n="hotel1_name"></div>
-            <div class="hotel-loc"  data-i18n="hotel1_location"></div>
-            <div class="hotel-desc" data-i18n="hotel1_desc"></div>
-            <div class="hotel-price" data-i18n="hotel1_price"></div>
-            <a href="#" class="btn btn-outline btn-block" data-i18n="hotel_book_btn"></a>
-          </div>
-        </div>
-
-        <!-- Hotel 2 -->
-        <div class="hotel-card reveal reveal-d2">
-          <div class="hotel-thumb hotel-thumb-2">🌿</div>
-          <div class="hotel-body">
-            <div class="hotel-stars">★★★★</div>
-            <div class="hotel-name" data-i18n="hotel2_name"></div>
-            <div class="hotel-loc"  data-i18n="hotel2_location"></div>
-            <div class="hotel-desc" data-i18n="hotel2_desc"></div>
-            <div class="hotel-price" data-i18n="hotel2_price"></div>
-            <a href="#" class="btn btn-outline btn-block" data-i18n="hotel_book_btn"></a>
-          </div>
-        </div>
-
-        <!-- Hotel 3 -->
-        <div class="hotel-card reveal reveal-d3">
-          <div class="hotel-thumb hotel-thumb-3">🏛️</div>
-          <div class="hotel-body">
-            <div class="hotel-stars">★★★★</div>
-            <div class="hotel-name" data-i18n="hotel3_name"></div>
-            <div class="hotel-loc"  data-i18n="hotel3_location"></div>
-            <div class="hotel-desc" data-i18n="hotel3_desc"></div>
-            <div class="hotel-price" data-i18n="hotel3_price"></div>
-            <a href="#" class="btn btn-outline btn-block" data-i18n="hotel_book_btn"></a>
-          </div>
-        </div>
-
+        <div class="hotel-card reveal reveal-d1"><div class="hotel-thumb hotel-thumb-1">🌊</div><div class="hotel-body"><div class="hotel-stars">★★★★★</div><div class="hotel-name" data-i18n="hotel1_name"></div><div class="hotel-loc" data-i18n="hotel1_location"></div><div class="hotel-desc" data-i18n="hotel1_desc"></div><div class="hotel-price" data-i18n="hotel1_price"></div><a href="#" class="btn btn-outline btn-block" data-i18n="hotel_book_btn"></a></div></div>
+        <div class="hotel-card reveal reveal-d2"><div class="hotel-thumb hotel-thumb-2">🌿</div><div class="hotel-body"><div class="hotel-stars">★★★★</div><div class="hotel-name" data-i18n="hotel2_name"></div><div class="hotel-loc" data-i18n="hotel2_location"></div><div class="hotel-desc" data-i18n="hotel2_desc"></div><div class="hotel-price" data-i18n="hotel2_price"></div><a href="#" class="btn btn-outline btn-block" data-i18n="hotel_book_btn"></a></div></div>
+        <div class="hotel-card reveal reveal-d3"><div class="hotel-thumb hotel-thumb-3">🏛️</div><div class="hotel-body"><div class="hotel-stars">★★★★</div><div class="hotel-name" data-i18n="hotel3_name"></div><div class="hotel-loc" data-i18n="hotel3_location"></div><div class="hotel-desc" data-i18n="hotel3_desc"></div><div class="hotel-price" data-i18n="hotel3_price"></div><a href="#" class="btn btn-outline btn-block" data-i18n="hotel_book_btn"></a></div></div>
       </div>
     </div>
   </section>
-
-
-  <!-- ============================================================
-       REGISTRY
-       ============================================================ -->
   <section id="registry">
     <div class="container">
-
       <h2 class="section-heading reveal" data-i18n="reg_title"></h2>
       <div class="ornament reveal reveal-d1"><span class="ornament-icon">✦</span></div>
       <p class="section-sub reveal reveal-d1" data-i18n="reg_sub"></p>
-
-      <div class="registry-center reveal reveal-d2">
-        <div class="registry-icon">🎁</div>
-        <p class="registry-text" data-i18n="reg_text"></p>
-        <a href="#" class="btn btn-filled btn-lg" data-i18n="reg_btn"></a>
-      </div>
-
+      <div class="registry-center reveal reveal-d2"><div class="registry-icon">🎁</div><p class="registry-text" data-i18n="reg_text"></p><a href="#" class="btn btn-filled btn-lg" data-i18n="reg_btn"></a></div>
     </div>
   </section>
-
-
-  <!-- ============================================================
-       CONTACT / RSVP
-       ============================================================ -->
   <section id="contact" class="alt-bg">
     <div class="container">
-
       <h2 class="section-heading reveal" data-i18n="ct_title"></h2>
       <div class="ornament reveal reveal-d1"><span class="ornament-icon">✦</span></div>
       <p class="section-sub reveal reveal-d1" data-i18n="ct_sub"></p>
-
       <div class="contact-grid">
-
-        <!-- Left: Contact info -->
         <div class="reveal reveal-d1">
           <div class="contact-heading" data-i18n="ct_info_heading"></div>
           <div class="contact-list">
-
-            <div class="contact-entry">
-              <div class="contact-entry-icon">📞</div>
-              <div>
-                <div class="contact-entry-label" data-i18n="ct_bride_label"></div>
-                <div class="contact-entry-val">
-                  <a href="tel:+905001234567">+90 500 123 45 67</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="contact-entry">
-              <div class="contact-entry-icon">📞</div>
-              <div>
-                <div class="contact-entry-label" data-i18n="ct_groom_label"></div>
-                <div class="contact-entry-val">
-                  <a href="tel:+905009876543">+90 500 987 65 43</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="contact-entry">
-              <div class="contact-entry-icon">✉️</div>
-              <div>
-                <div class="contact-entry-label" data-i18n="ct_email_label"></div>
-                <div class="contact-entry-val">
-                  <a href="mailto:aysegul.emir@example.com">aysegul.emir@example.com</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="contact-entry">
-              <div class="contact-entry-icon">📍</div>
-              <div>
-                <div class="contact-entry-label" data-i18n="ct_venue_label"></div>
-                <div class="contact-entry-val" data-i18n="ct_venue_value"></div>
-              </div>
-            </div>
-
+            <div class="contact-entry"><div class="contact-entry-icon">📞</div><div><div class="contact-entry-label" data-i18n="ct_bride_label"></div><div class="contact-entry-val"><a href="tel:+905001234567">+90 500 123 45 67</a></div></div></div>
+            <div class="contact-entry"><div class="contact-entry-icon">📞</div><div><div class="contact-entry-label" data-i18n="ct_groom_label"></div><div class="contact-entry-val"><a href="tel:+905009876543">+90 500 987 65 43</a></div></div></div>
+            <div class="contact-entry"><div class="contact-entry-icon">✉️</div><div><div class="contact-entry-label" data-i18n="ct_email_label"></div><div class="contact-entry-val"><a href="mailto:aysegul.emir@example.com">aysegul.emir@example.com</a></div></div></div>
+            <div class="contact-entry"><div class="contact-entry-icon">📍</div><div><div class="contact-entry-label" data-i18n="ct_venue_label"></div><div class="contact-entry-val" data-i18n="ct_venue_value"></div></div></div>
           </div>
         </div>
-
-        <!-- Right: RSVP form -->
         <div class="rsvp-card reveal reveal-d2">
           <div class="rsvp-card-title" data-i18n="rsvp_title"></div>
-          <div class="rsvp-card-sub"   data-i18n="rsvp_sub"></div>
-
+          <div class="rsvp-card-sub" data-i18n="rsvp_sub"></div>
           <form id="rsvp-form" onsubmit="handleRsvp(event)" novalidate>
-
-            <div class="form-group">
-              <label class="form-label" for="f-name" data-i18n="form_name_label"></label>
-              <input
-                type="text"
-                id="f-name"
-                class="form-control"
-                data-i18n-placeholder="form_name_placeholder"
-                required
-              />
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="f-guests" data-i18n="form_guests_label"></label>
-              <select id="f-guests" class="form-control">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4+</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="f-msg" data-i18n="form_msg_label"></label>
-              <textarea
-                id="f-msg"
-                class="form-control"
-                data-i18n-placeholder="form_msg_placeholder"
-              ></textarea>
-            </div>
-
+            <div class="form-group"><label class="form-label" for="f-name" data-i18n="form_name_label"></label><input type="text" id="f-name" class="form-control" data-i18n-placeholder="form_name_placeholder" required /></div>
+            <div class="form-group"><label class="form-label" for="f-guests" data-i18n="form_guests_label"></label><select id="f-guests" class="form-control"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4+</option></select></div>
+            <div class="form-group"><label class="form-label" for="f-msg" data-i18n="form_msg_label"></label><textarea id="f-msg" class="form-control" data-i18n-placeholder="form_msg_placeholder"></textarea></div>
             <button type="submit" class="btn btn-filled" style="width:100%;" data-i18n="form_submit_btn"></button>
             <p class="form-note" data-i18n="form_note"></p>
-
           </form>
-
-          <div class="form-success-msg" id="form-success">
-            <div class="form-success-title" data-i18n="form_success_title"></div>
-            <div class="form-success-sub"   data-i18n="form_success_sub"></div>
-          </div>
+          <div class="form-success-msg" id="form-success"><div class="form-success-title" data-i18n="form_success_title"></div><div class="form-success-sub" data-i18n="form_success_sub"></div></div>
         </div>
-
       </div>
     </div>
   </section>
-
-
-  <!-- ============================================================
-       FOOTER
-       ============================================================ -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-names">Ayşegül &amp; Emir Kaan</div>
-      <p class="footer-detail">20 · 06 · 2026 — Güzelbahçe, İzmir</p>
-    </div>
-  </footer>
-
-
-  <!-- ============================================================
-       JAVASCRIPT
-       ============================================================ -->
+  <footer class="site-footer"><div class="container"><div class="footer-names">Ayşegül &amp; Emir Kaan</div><p class="footer-detail">20 · 06 · 2026 — Güzelbahçe, İzmir</p></div></footer>
   <script>
-
-    /* ============================================================
-       TRANSLATIONS DICTIONARY
-       ── Replace all placeholder text with your real content ──
-       ── Keys that start with "TR Placeholder" / "EN Placeholder"
-          are the ones you need to fill in.                        ──
-       ============================================================ */
     const i18n = {
-
-      /* ─── TURKISH ──────────────────────────────────────────── */
       tr: {
-        /* Header nav */
-        nav_wedding_day:   "Düğün Günü",
-        nav_getting_there: "Nasıl Gelinir",
-        nav_accommodation: "Konaklama",
-        nav_registry:      "Hediye Listesi",
-        nav_contact:       "İletişim & RSVP",
-
-        /* Hero */
-        hero_eyebrow:  "Sizi aramızda görmekten mutluluk duyarız",
-        hero_subtitle: "evleniyoruz",
-
-        /* Wedding Day section */
-        wd_title: "Düğün Günü",
-        wd_sub:   "TR Placeholder — Alt başlık metni (ör. \"Büyük günü birlikte kutlayalım\")",
-
-        /* Countdown */
-        cd_days:    "Gün",
-        cd_hours:   "Saat",
-        cd_minutes: "Dakika",
-        cd_seconds: "Saniye",
-
-        /* Timeline */
-        tl_ceremony_time:  "14:00",
-        tl_ceremony_title: "Nikah Töreni",
-        tl_ceremony_desc:  "TR Placeholder — Nikah töreninin yapılacağı mekan ve detaylar buraya gelecek. Ör: X Salonu, Güzelbahçe Sahil Bulvarı No: 1",
-
-        tl_cocktail_time:  "15:30",
-        tl_cocktail_title: "Kokteyl Saati",
-        tl_cocktail_desc:  "TR Placeholder — Kokteyl saati ve karşılama içeceğine ilişkin bilgi buraya eklenecek.",
-
-        tl_dinner_time:  "18:00",
-        tl_dinner_title: "Akşam Yemeği",
-        tl_dinner_desc:  "TR Placeholder — Akşam yemeği ve resepsiyona dair detaylar bu alana yazılacak.",
-
-        tl_party_time:  "21:00",
-        tl_party_title: "Dans & Kutlama",
-        tl_party_desc:  "TR Placeholder — Canlı müzik, DJ veya gösteri bilgisi buraya eklenebilir.",
-
-        /* Getting There */
-        gt_title: "Nasıl Gelinir",
-        gt_sub:   "TR Placeholder — Konum alt başlığı (ör. \"Güzelbahçe, İzmir\")",
-
-        gt_car_title: "Araçla Geliş",
-        gt_car_text:  "TR Placeholder — İzmir merkezden Güzelbahçe'ye araçla ulaşım talimatları buraya gelecek. Ör: İzmir çevre yolundan Güzelbahçe çıkışını alın, ardından Sahil Caddesi'ne yönelin. Mekan caddenin sonundadır.",
-
-        gt_transit_title: "Toplu Taşıma",
-        gt_transit_text:  "TR Placeholder — İzmir'den Güzelbahçe'ye otobüs veya İZBAN bilgisi buraya yazılacak. Ör: İZBAN ile Cumaovası durağına geldikten sonra 810 numaralı ESHOT otobüsüne binin.",
-
-        gt_map_placeholder: "TR Placeholder — Google Haritalar haritasını buraya yerleştirin.\nYukarıdaki HTML yorumuna bakın.",
-
-        /* Accommodation */
-        ac_title: "Konaklama",
-        ac_sub:   "TR Placeholder — Konaklama alt başlığı (ör. \"Güzelbahçe ve İzmir civarındaki önerilen oteller\")",
-
-        hotel1_name:     "Örnek Sahil Oteli",
-        hotel1_location: "Güzelbahçe, İzmir — 0.5 km",
-        hotel1_desc:     "TR Placeholder — Otelin kısa tanıtımı. Denize sıfır konumu, spa imkânları ve düğün misafirleri için özel indirimden bahsedilebilir.",
-        hotel1_price:    "TR Placeholder — Ör: ₺3.500 / gece'den başlayan fiyatlarla",
-
-        hotel2_name:     "Zeytin Bahçesi Butik",
-        hotel2_location: "Güzelbahçe merkez — 1.2 km",
-        hotel2_desc:     "TR Placeholder — Butik otelin tanıtımı. Tarihi zeytinlik içindeki konum, kahvaltı dahil seçenekler, sakin atmosfer.",
-        hotel2_price:    "TR Placeholder — Ör: ₺2.200 / gece'den başlayan fiyatlarla",
-
-        hotel3_name:     "İzmir Marina Hotel",
-        hotel3_location: "İzmir Konak — 18 km",
-        hotel3_desc:     "TR Placeholder — Şehir merkezine yakın otel. Havaalanı servisi, ücretsiz otopark ve uzun konaklamalarda özel indirim.",
-        hotel3_price:    "TR Placeholder — Ör: ₺2.800 / gece'den başlayan fiyatlarla",
-
+        nav_wedding_day: "Düğün Günü", nav_getting_there: "Nasıl Gelinir", nav_accommodation: "Konaklama", nav_registry: "Hediye Listesi", nav_contact: "İletişim & RSVP",
+        hero_eyebrow: "Sizi aramızda görmekten mutluluk duyarız", hero_subtitle: "evleniyoruz",
+        wd_title: "Düğün Günü", wd_sub: "TR Placeholder — Alt başlık metni",
+        cd_days: "Gün", cd_hours: "Saat", cd_minutes: "Dakika", cd_seconds: "Saniye",
+        tl_ceremony_time: "14:00", tl_ceremony_title: "Nikah Töreni", tl_ceremony_desc: "TR Placeholder — Nikah töreninin yapılacağı mekan ve detaylar buraya gelecek.",
+        tl_cocktail_time: "15:30", tl_cocktail_title: "Kokteyl Saati", tl_cocktail_desc: "TR Placeholder — Kokteyl saati bilgisi buraya eklenecek.",
+        tl_dinner_time: "18:00", tl_dinner_title: "Akşam Yemeği", tl_dinner_desc: "TR Placeholder — Akşam yemeği detayları bu alana yazılacak.",
+        tl_party_time: "21:00", tl_party_title: "Dans & Kutlama", tl_party_desc: "TR Placeholder — Müzik ve eğlence bilgisi buraya eklenebilir.",
+        gt_title: "Nasıl Gelinir", gt_sub: "TR Placeholder — Konum alt başlığı",
+        gt_car_title: "Araçla Geliş", gt_car_text: "TR Placeholder — İzmir merkezden Güzelbahçe'ye araçla ulaşım talimatları buraya gelecek.",
+        gt_transit_title: "Toplu Taşıma", gt_transit_text: "TR Placeholder — İzmir'den Güzelbahçe'ye otobüs veya İZBAN bilgisi buraya yazılacak.",
+        gt_map_placeholder: "TR Placeholder — Google Haritalar haritasını buraya yerleştirin.",
+        ac_title: "Konaklama", ac_sub: "TR Placeholder — Konaklama alt başlığı",
+        hotel1_name: "Örnek Sahil Oteli", hotel1_location: "Güzelbahçe, İzmir — 0.5 km", hotel1_desc: "TR Placeholder — Otelin kısa tanıtımı.", hotel1_price: "TR Placeholder — Fiyat bilgisi",
+        hotel2_name: "Zeytin Bahçesi Butik", hotel2_location: "Güzelbahçe merkez — 1.2 km", hotel2_desc: "TR Placeholder — Butik otelin tanıtımı.", hotel2_price: "TR Placeholder — Fiyat bilgisi",
+        hotel3_name: "İzmir Marina Hotel", hotel3_location: "İzmir Konak — 18 km", hotel3_desc: "TR Placeholder — Şehir otelinin tanıtımı.", hotel3_price: "TR Placeholder — Fiyat bilgisi",
         hotel_book_btn: "Rezervasyon Yap →",
-
-        /* Registry */
-        reg_title: "Hediye Listesi",
-        reg_sub:   "TR Placeholder — Hediye bölümü alt başlığı",
-        reg_text:  "TR Placeholder — Sevgili misafirlerimiz, varlığınız bizim için en anlamlı armağandır. Yine de hediye tercih ederseniz, birlikte hazırladığımız listemizi aşağıdaki bağlantıdan inceleyebilirsiniz. Listemiz kısa süre içinde güncellenecektir.",
-        reg_btn:   "Hediye Listesini Gör →",
-
-        /* Contact / RSVP */
-        ct_title: "İletişim & RSVP",
-        ct_sub:   "TR Placeholder — İletişim bölümü alt başlığı",
-
-        ct_info_heading: "Bize Ulaşın",
-        ct_bride_label:  "Gelin",
-        ct_groom_label:  "Damat",
-        ct_email_label:  "E-posta",
-        ct_venue_label:  "Mekan",
-        ct_venue_value:  "TR Placeholder — Düğün mekanının tam adı ve adresi buraya gelecek, Güzelbahçe / İzmir",
-
-        rsvp_title: "RSVP",
-        rsvp_sub:   "TR Placeholder — Ör: Lütfen 1 Mayıs 2026 tarihine kadar yanıt veriniz.",
-
-        form_name_label:        "Adınız Soyadınız",
-        form_name_placeholder:  "Adınızı girin...",
-        form_guests_label:      "Kişi Sayısı",
-        form_msg_label:         "Mesajınız (İsteğe Bağlı)",
-        form_msg_placeholder:   "Bize bir mesaj bırakın...",
-        form_submit_btn:        "Katılımı Onayla",
-        form_note:              "TR Placeholder — Ör: Yanıtınız için size e-posta ile geri dönüş yapılacaktır.",
-
-        form_success_title: "Teşekkürler!",
-        form_success_sub:   "Kaydınız alındı. Sizi aramızda görmek için sabırsızlanıyoruz ✦",
+        reg_title: "Hediye Listesi", reg_sub: "TR Placeholder — Hediye bölümü alt başlığı", reg_text: "TR Placeholder — Sevgili misafirlerimiz, varlığınız bizim için en anlamlı armağandır.", reg_btn: "Hediye Listesini Gör →",
+        ct_title: "İletişim & RSVP", ct_sub: "TR Placeholder — İletişim bölümü alt başlığı",
+        ct_info_heading: "Bize Ulaşın", ct_bride_label: "Gelin", ct_groom_label: "Damat", ct_email_label: "E-posta", ct_venue_label: "Mekan", ct_venue_value: "TR Placeholder — Düğün mekanının tam adı ve adresi",
+        rsvp_title: "RSVP", rsvp_sub: "TR Placeholder — Lütfen 1 Mayıs 2026 tarihine kadar yanıt veriniz.",
+        form_name_label: "Adınız Soyadınız", form_name_placeholder: "Adınızı girin...", form_guests_label: "Kişi Sayısı", form_msg_label: "Mesajınız (İsteğe Bağlı)", form_msg_placeholder: "Bize bir mesaj bırakın...", form_submit_btn: "Katılımı Onayla", form_note: "TR Placeholder — Yanıtınız için teşekkür ederiz.",
+        form_success_title: "Teşekkürler!", form_success_sub: "Kaydınız alındı. Sizi aramızda görmek için sabırsızlanıyoruz ✦"
       },
-
-      /* ─── ENGLISH ──────────────────────────────────────────── */
       en: {
-        /* Header nav */
-        nav_wedding_day:   "Wedding Day",
-        nav_getting_there: "Getting There",
-        nav_accommodation: "Accommodation",
-        nav_registry:      "Registry",
-        nav_contact:       "Contact & RSVP",
-
-        /* Hero */
-        hero_eyebrow:  "We joyfully invite you to celebrate with us",
-        hero_subtitle: "are getting married",
-
-        /* Wedding Day section */
-        wd_title: "Wedding Day",
-        wd_sub:   "EN Placeholder — Section subtitle (e.g. \"Join us as we celebrate our big day\")",
-
-        /* Countdown */
-        cd_days:    "Days",
-        cd_hours:   "Hours",
-        cd_minutes: "Minutes",
-        cd_seconds: "Seconds",
-
-        /* Timeline */
-        tl_ceremony_time:  "2:00 PM",
-        tl_ceremony_title: "Wedding Ceremony",
-        tl_ceremony_desc:  "EN Placeholder — Venue name and ceremony details will go here. E.g: The Grand Hall, Güzelbahçe Sahil Bulvarı No: 1",
-
-        tl_cocktail_time:  "3:30 PM",
-        tl_cocktail_title: "Cocktail Hour",
-        tl_cocktail_desc:  "EN Placeholder — Details about the cocktail reception and welcome drinks will appear here.",
-
-        tl_dinner_time:  "6:00 PM",
-        tl_dinner_title: "Dinner & Reception",
-        tl_dinner_desc:  "EN Placeholder — Information about the gala dinner and evening reception will be added here.",
-
-        tl_party_time:  "9:00 PM",
-        tl_party_title: "Dancing & Celebration",
-        tl_party_desc:  "EN Placeholder — Live music, DJ, or entertainment details can be placed in this space.",
-
-        /* Getting There */
-        gt_title: "Getting There",
-        gt_sub:   "EN Placeholder — Location subtitle (e.g. \"Güzelbahçe, İzmir, Türkiye\")",
-
-        gt_car_title: "By Car",
-        gt_car_text:  "EN Placeholder — Driving directions from İzmir city centre to Güzelbahçe will appear here. E.g: Take the İzmir ring road and exit at Güzelbahçe, then follow Sahil Avenue. The venue is at the end of the avenue.",
-
-        gt_transit_title: "By Public Transit",
-        gt_transit_text:  "EN Placeholder — Bus or İZBAN directions from İzmir to Güzelbahçe will be added here. E.g: Take the İZBAN train to Cumaovası station, then board ESHOT bus No. 810.",
-
-        gt_map_placeholder: "EN Placeholder — Embed your Google Maps iframe here.\nSee the HTML comment above for instructions.",
-
-        /* Accommodation */
-        ac_title: "Where to Stay",
-        ac_sub:   "EN Placeholder — Accommodation subtitle (e.g. \"Recommended hotels near Güzelbahçe & İzmir\")",
-
-        hotel1_name:     "Sample Seaside Hotel",
-        hotel1_location: "Güzelbahçe, İzmir — 0.5 km",
-        hotel1_desc:     "EN Placeholder — Brief hotel description. Mention beachfront location, spa facilities, and any special discount for wedding guests.",
-        hotel1_price:    "EN Placeholder — E.g: From €95 / night",
-
-        hotel2_name:     "Olive Grove Boutique",
-        hotel2_location: "Güzelbahçe centre — 1.2 km",
-        hotel2_desc:     "EN Placeholder — Boutique hotel description. Charming setting among historic olive groves, breakfast included, peaceful atmosphere.",
-        hotel2_price:    "EN Placeholder — E.g: From €65 / night",
-
-        hotel3_name:     "İzmir Marina Hotel",
-        hotel3_location: "İzmir Konak — 18 km",
-        hotel3_desc:     "EN Placeholder — City hotel description. Close to city centre, airport transfer available, special discount for extended stays.",
-        hotel3_price:    "EN Placeholder — E.g: From €80 / night",
-
+        nav_wedding_day: "Wedding Day", nav_getting_there: "Getting There", nav_accommodation: "Accommodation", nav_registry: "Registry", nav_contact: "Contact & RSVP",
+        hero_eyebrow: "We joyfully invite you to celebrate with us", hero_subtitle: "are getting married",
+        wd_title: "Wedding Day", wd_sub: "EN Placeholder — Section subtitle",
+        cd_days: "Days", cd_hours: "Hours", cd_minutes: "Minutes", cd_seconds: "Seconds",
+        tl_ceremony_time: "2:00 PM", tl_ceremony_title: "Wedding Ceremony", tl_ceremony_desc: "EN Placeholder — Venue name and ceremony details will go here.",
+        tl_cocktail_time: "3:30 PM", tl_cocktail_title: "Cocktail Hour", tl_cocktail_desc: "EN Placeholder — Details about the cocktail reception will appear here.",
+        tl_dinner_time: "6:00 PM", tl_dinner_title: "Dinner & Reception", tl_dinner_desc: "EN Placeholder — Information about the gala dinner will be added here.",
+        tl_party_time: "9:00 PM", tl_party_title: "Dancing & Celebration", tl_party_desc: "EN Placeholder — Live music or DJ details can be placed here.",
+        gt_title: "Getting There", gt_sub: "EN Placeholder — Location subtitle",
+        gt_car_title: "By Car", gt_car_text: "EN Placeholder — Driving directions from İzmir city centre to Güzelbahçe will appear here.",
+        gt_transit_title: "By Public Transit", gt_transit_text: "EN Placeholder — Bus or İZBAN directions from İzmir to Güzelbahçe will be added here.",
+        gt_map_placeholder: "EN Placeholder — Embed your Google Maps iframe here.",
+        ac_title: "Where to Stay", ac_sub: "EN Placeholder — Accommodation subtitle",
+        hotel1_name: "Sample Seaside Hotel", hotel1_location: "Güzelbahçe, İzmir — 0.5 km", hotel1_desc: "EN Placeholder — Brief hotel description.", hotel1_price: "EN Placeholder — Price per night",
+        hotel2_name: "Olive Grove Boutique", hotel2_location: "Güzelbahçe centre — 1.2 km", hotel2_desc: "EN Placeholder — Boutique hotel description.", hotel2_price: "EN Placeholder — Price per night",
+        hotel3_name: "İzmir Marina Hotel", hotel3_location: "İzmir Konak — 18 km", hotel3_desc: "EN Placeholder — City hotel description.", hotel3_price: "EN Placeholder — Price per night",
         hotel_book_btn: "Book Now →",
-
-        /* Registry */
-        reg_title: "Wedding Registry",
-        reg_sub:   "EN Placeholder — Registry section subtitle",
-        reg_text:  "EN Placeholder — Dear guests, your presence is the greatest gift of all. If you would like to give a gift, please find our registry at the link below. Our list will be updated shortly.",
-        reg_btn:   "View Wedding Registry →",
-
-        /* Contact / RSVP */
-        ct_title: "Contact & RSVP",
-        ct_sub:   "EN Placeholder — Contact section subtitle",
-
-        ct_info_heading: "Get in Touch",
-        ct_bride_label:  "Bride",
-        ct_groom_label:  "Groom",
-        ct_email_label:  "Email",
-        ct_venue_label:  "Venue",
-        ct_venue_value:  "EN Placeholder — Wedding venue full name and address will appear here, Güzelbahçe / İzmir",
-
-        rsvp_title: "RSVP",
-        rsvp_sub:   "EN Placeholder — E.g: Kindly respond by 1st May 2026.",
-
-        form_name_label:        "Full Name",
-        form_name_placeholder:  "Enter your name...",
-        form_guests_label:      "Number of Guests",
-        form_msg_label:         "Message (Optional)",
-        form_msg_placeholder:   "Leave us a message...",
-        form_submit_btn:        "Confirm Attendance",
-        form_note:              "EN Placeholder — E.g: We will follow up with a confirmation email.",
-
-        form_success_title: "Thank You!",
-        form_success_sub:   "We received your reply and can't wait to celebrate with you ✦",
+        reg_title: "Wedding Registry", reg_sub: "EN Placeholder — Registry section subtitle", reg_text: "EN Placeholder — Dear guests, your presence is the greatest gift of all.", reg_btn: "View Wedding Registry →",
+        ct_title: "Contact & RSVP", ct_sub: "EN Placeholder — Contact section subtitle",
+        ct_info_heading: "Get in Touch", ct_bride_label: "Bride", ct_groom_label: "Groom", ct_email_label: "Email", ct_venue_label: "Venue", ct_venue_value: "EN Placeholder — Wedding venue full name and address",
+        rsvp_title: "RSVP", rsvp_sub: "EN Placeholder — Kindly respond by 1st May 2026.",
+        form_name_label: "Full Name", form_name_placeholder: "Enter your name...", form_guests_label: "Number of Guests", form_msg_label: "Message (Optional)", form_msg_placeholder: "Leave us a message...", form_submit_btn: "Confirm Attendance", form_note: "EN Placeholder — We will follow up with a confirmation.",
+        form_success_title: "Thank You!", form_success_sub: "We received your reply and can't wait to celebrate with you ✦"
       }
     };
-
-
-    /* ============================================================
-       LANGUAGE MANAGER
-       ============================================================ */
     let currentLang = 'tr';
-
     function setLang(lang) {
       currentLang = lang;
       const dict = i18n[lang];
-
-      /* Update all data-i18n elements */
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (dict[key] != null) el.textContent = dict[key];
-      });
-
-      /* Update placeholder attributes */
-      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-        const key = el.getAttribute('data-i18n-placeholder');
-        if (dict[key] != null) el.setAttribute('placeholder', dict[key]);
-      });
-
-      /* Sync html[lang] */
+      document.querySelectorAll('[data-i18n]').forEach(el => { const k = el.getAttribute('data-i18n'); if (dict[k] != null) el.textContent = dict[k]; });
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => { const k = el.getAttribute('data-i18n-placeholder'); if (dict[k] != null) el.setAttribute('placeholder', dict[k]); });
       document.documentElement.lang = lang;
-
-      /* Toggle button states */
       document.getElementById('btn-tr').classList.toggle('active', lang === 'tr');
       document.getElementById('btn-en').classList.toggle('active', lang === 'en');
     }
-
-
-    /* ============================================================
-       HAMBURGER MENU
-       ============================================================ */
     function toggleMenu() {
-      const nav = document.getElementById('mobile-nav');
-      const ham = document.getElementById('hamburger');
+      const nav = document.getElementById('mobile-nav'), ham = document.getElementById('hamburger');
       const isOpen = nav.classList.toggle('open');
       ham.classList.toggle('open', isOpen);
       document.body.style.overflow = isOpen ? 'hidden' : '';
     }
-
     function closeMenu() {
       document.getElementById('mobile-nav').classList.remove('open');
       document.getElementById('hamburger').classList.remove('open');
       document.body.style.overflow = '';
     }
-
-    /* Close mobile nav on outside click */
     document.addEventListener('click', e => {
-      const nav = document.getElementById('mobile-nav');
-      const ham = document.getElementById('hamburger');
-      if (nav.classList.contains('open') && !nav.contains(e.target) && !ham.contains(e.target)) {
-        closeMenu();
-      }
+      const nav = document.getElementById('mobile-nav'), ham = document.getElementById('hamburger');
+      if (nav.classList.contains('open') && !nav.contains(e.target) && !ham.contains(e.target)) closeMenu();
     });
-
-
-    /* ============================================================
-       COUNTDOWN TIMER
-       Target: June 20, 2026 at 14:00 local time (TR)
-       ============================================================ */
     const WEDDING_DATE = new Date('2026-06-20T14:00:00+03:00').getTime();
-
     function pad(n, w) { return String(n).padStart(w, '0'); }
-
     function tickCountdown() {
       const diff = WEDDING_DATE - Date.now();
-
-      if (diff <= 0) {
-        ['cd-days','cd-hours','cd-minutes','cd-seconds'].forEach(id => {
-          document.getElementById(id).textContent = '00';
-        });
-        return;
-      }
-
-      const days    = Math.floor(diff / 86_400_000);
-      const hours   = Math.floor((diff % 86_400_000) / 3_600_000);
-      const minutes = Math.floor((diff % 3_600_000)  /    60_000);
-      const seconds = Math.floor((diff %    60_000)  /     1_000);
-
-      document.getElementById('cd-days').textContent    = pad(days, 3);
-      document.getElementById('cd-hours').textContent   = pad(hours, 2);
-      document.getElementById('cd-minutes').textContent = pad(minutes, 2);
-      document.getElementById('cd-seconds').textContent = pad(seconds, 2);
+      if (diff <= 0) { ['cd-days','cd-hours','cd-minutes','cd-seconds'].forEach(id => document.getElementById(id).textContent = '00'); return; }
+      document.getElementById('cd-days').textContent    = pad(Math.floor(diff / 86400000), 3);
+      document.getElementById('cd-hours').textContent   = pad(Math.floor((diff % 86400000) / 3600000), 2);
+      document.getElementById('cd-minutes').textContent = pad(Math.floor((diff % 3600000) / 60000), 2);
+      document.getElementById('cd-seconds').textContent = pad(Math.floor((diff % 60000) / 1000), 2);
     }
-
-    tickCountdown();
-    setInterval(tickCountdown, 1000);
-
-
-    /* ============================================================
-       STARFIELD CANVAS
-       ============================================================ */
+    tickCountdown(); setInterval(tickCountdown, 1000);
     (function starfield() {
-      const canvas = document.getElementById('star-canvas');
-      const ctx    = canvas.getContext('2d');
-      let stars    = [];
-      let W = 0, H = 0;
-      let raf;
-
-      function resize() {
-        W = canvas.width  = canvas.offsetWidth;
-        H = canvas.height = canvas.offsetHeight;
-        buildStars();
-      }
-
-      function buildStars() {
-        const count = Math.round((W * H) / 4200);   /* density */
-        stars = Array.from({ length: count }, () => ({
-          x:     Math.random() * W,
-          y:     Math.random() * H,
-          r:     Math.random() * 1.3 + 0.15,
-          base:  Math.random() * 0.65 + 0.15,
-          speed: Math.random() * 0.0025 + 0.0008,
-          phase: Math.random() * Math.PI * 2,
-        }));
-      }
-
-      function render(ts) {
-        ctx.fillStyle = '#0b0b0b';
-        ctx.fillRect(0, 0, W, H);
-
-        for (const s of stars) {
-          const alpha = s.base * (0.55 + 0.45 * Math.sin(ts * s.speed + s.phase));
-          ctx.beginPath();
-          ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(255, 248, 220, ${alpha})`;
-          ctx.fill();
-        }
-
-        raf = requestAnimationFrame(render);
-      }
-
-      const ro = new ResizeObserver(() => resize());
-      ro.observe(canvas.parentElement);
-      resize();
-      raf = requestAnimationFrame(render);
+      const canvas = document.getElementById('star-canvas'), ctx = canvas.getContext('2d');
+      let stars = [], W = 0, H = 0;
+      function resize() { W = canvas.width = canvas.offsetWidth; H = canvas.height = canvas.offsetHeight; buildStars(); }
+      function buildStars() { const n = Math.round((W * H) / 4200); stars = Array.from({length: n}, () => ({ x: Math.random()*W, y: Math.random()*H, r: Math.random()*1.3+0.15, base: Math.random()*0.65+0.15, speed: Math.random()*0.0025+0.0008, phase: Math.random()*Math.PI*2 })); }
+      function render(ts) { ctx.fillStyle='#0b0b0b'; ctx.fillRect(0,0,W,H); for(const s of stars){const a=s.base*(0.55+0.45*Math.sin(ts*s.speed+s.phase)); ctx.beginPath(); ctx.arc(s.x,s.y,s.r,0,Math.PI*2); ctx.fillStyle=`rgba(255,248,220,${a})`; ctx.fill();} requestAnimationFrame(render); }
+      new ResizeObserver(()=>resize()).observe(canvas.parentElement); resize(); requestAnimationFrame(render);
     })();
-
-
-    /* ============================================================
-       SCROLL REVEAL (IntersectionObserver)
-       ============================================================ */
-    const revealObs = new IntersectionObserver(
-      entries => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            e.target.classList.add('visible');
-            revealObs.unobserve(e.target);
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
-    );
+    const revealObs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('visible'); revealObs.unobserve(e.target);} }), {threshold:0.1, rootMargin:'0px 0px -40px 0px'});
     document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
-
-
-    /* ============================================================
-       RSVP FORM SUBMISSION
-       ============================================================ */
-    function handleRsvp(e) {
-      e.preventDefault();
-      const form    = document.getElementById('rsvp-form');
-      const success = document.getElementById('form-success');
-      form.style.display    = 'none';
-      success.style.display = 'block';
-      /*
-        ── Integration note ──────────────────────────────────────
-        To wire this up to a real backend, replace this function
-        body with a fetch() call, e.g. to Formspree, Netlify
-        Forms, or your own API endpoint.
-        ──────────────────────────────────────────────────────────
-      */
-    }
-
-
-    /* ============================================================
-       INIT — apply default language on DOMContentLoaded
-       ============================================================ */
+    function handleRsvp(e) { e.preventDefault(); document.getElementById('rsvp-form').style.display='none'; document.getElementById('form-success').style.display='block'; }
     setLang('tr');
-
-  </script>
+  <\/script>
 </body>
 </html>
