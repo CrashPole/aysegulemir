@@ -8,5 +8,5 @@
 window.AE_CONFIG = {
   /* Where guests upload their photos & videos.
      Google Drive folder URL, Google Photos shared album, etc. */
-  UPLOAD_URL: "https://drive.google.com/drive/folders/REPLACE-WITH-YOUR-FOLDER-ID",
+  UPLOAD_URL: "https://drive.google.com/drive/folders/167eUhWiqG0MJDZyet5hwTEcuc3XFrFWy?usp=drive_link",
 };
