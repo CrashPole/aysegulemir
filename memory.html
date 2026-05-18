@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bir Anı Bırakın — Ayşegül & Emir Kaan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+
+  <style>
+    :root {
+      --bg:          #faf8f3;
+      --bg-alt:      #f1ece0;
+      --card-bg:     #ffffff;
+      --text:        #1c1c1c;
+      --text-muted:  #7a7466;
+      --accent:      #8a7a5c;
+      --border:      rgba(28, 28, 28, 0.10);
+      --border-soft: rgba(28, 28, 28, 0.06);
+      --header-h:    76px;
+      --ease:        0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    a { color: inherit; text-decoration: none; }
+    img, svg, canvas { display: block; max-width: 100%; }
+
+    /* ============================================================
+       HEADER
+       ============================================================ */
+    .site-header {
+      position: sticky;
+      top: 0;
+      height: var(--header-h);
+      z-index: 1000;
+      background: rgba(250, 248, 243, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .header-inner {
+      width: min(1200px, 94vw);
+      margin: 0 auto;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+    .header-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      color: var(--text);
+    }
+    .back-link {
+      font-size: 0.7rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--text-muted);
+      transition: color var(--ease);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .back-link:hover { color: var(--text); }
+    .back-link::before { content: '←'; font-size: 0.9rem; }
+
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+    }
+    .lang-btn {
+      padding: 4px 8px;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+      letter-spacing: inherit;
+      text-transform: uppercase;
+      transition: color var(--ease);
+    }
+    .lang-btn.active { color: var(--text); font-weight: 600; }
+    .lang-btn:hover { color: var(--text); }
+    .lang-sep { color: var(--border); user-select: none; }
+
+    /* ============================================================
+       MAIN CONTENT
+       ============================================================ */
+    main {
+      flex: 1;
+      padding: 80px 0 120px;
+    }
+    .container {
+      width: min(960px, 92vw);
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .eyebrow {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.32em;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 1.2rem;
+    }
+    .page-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2.6rem, 6vw, 4.2rem);
+      line-height: 1.05;
+      letter-spacing: -0.015em;
+      margin-bottom: 0.8rem;
+    }
+    .page-title em {
+      font-style: italic;
+      color: var(--accent);
+      font-weight: 300;
+    }
+    .page-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 540px;
+      margin: 0 auto 3.5rem;
+      line-height: 1.6;
+    }
+
+    /* QR card */
+    .qr-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-soft);
+      padding: 3rem 2.4rem;
+      max-width: 460px;
+      margin: 0 auto 2.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.6rem;
+    }
+    .qr-card .couple {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      color: var(--text);
+      font-weight: 400;
+    }
+    .qr-card .couple em {
+      font-style: italic;
+      color: var(--accent);
+    }
+    .qr-card .date {
+      font-size: 0.7rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .qr-wrap {
+      padding: 1.4rem;
+      background: #fff;
+      border: 1px solid var(--border-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #qr-canvas { width: 240px; height: 240px; }
+    .qr-caption {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      max-width: 320px;
+    }
+
+    /* Action buttons */
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      justify-content: center;
+      margin-bottom: 4rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 14px 28px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      cursor: pointer;
+      border: 1px solid var(--text);
+      background: transparent;
+      color: var(--text);
+      transition: background var(--ease), color var(--ease), border-color var(--ease);
+    }
+    .btn:hover { background: var(--text); color: var(--bg); }
+    .btn-filled { background: var(--text); color: var(--bg); }
+    .btn-filled:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    /* Instructions */
+    .steps {
+      max-width: 640px;
+      margin: 0 auto;
+      text-align: left;
+      border-top: 1px solid var(--border-soft);
+      padding-top: 3rem;
+    }
+    .steps-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .step-item {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 1.2rem;
+      padding: 1.4rem 0;
+      border-bottom: 1px solid var(--border-soft);
+      align-items: flex-start;
+    }
+    .step-item:last-child { border-bottom: none; }
+    .step-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      color: var(--accent);
+      line-height: 1;
+      font-weight: 300;
+    }
+    .step-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      margin-bottom: 0.3rem;
+      font-weight: 400;
+    }
+    .step-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* Footer */
+    .site-footer {
+      padding: 60px 0;
+      text-align: center;
+      border-top: 1px solid var(--border-soft);
+      background: var(--bg);
+    }
+    .footer-names {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      margin-bottom: 0.4rem;
+      font-weight: 300;
+    }
+    .footer-detail {
+      font-size: 0.66rem;
+      text-transform: uppercase;
+      letter-spacing: 0.32em;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 600px) {
+      .qr-card { padding: 2.2rem 1.6rem; }
+      #qr-canvas { width: 200px; height: 200px; }
+      .actions { flex-direction: column; }
+      .btn { width: 100%; }
+    }
+
+    /* ============================================================
+       PRINT — table card layout
+       ============================================================ */
+    @media print {
+      @page { size: A6 portrait; margin: 12mm; }
+
+      body {
+        background: #fff !important;
+        color: #000 !important;
+      }
+      .site-header,
+      .site-footer,
+      .actions,
+      .steps,
+      .eyebrow,
+      .page-title,
+      .page-sub { display: none !important; }
+
+      main { padding: 0 !important; }
+
+      .qr-card {
+        border: 1px solid #ccc !important;
+        box-shadow: none !important;
+        padding: 18mm 10mm !important;
+        margin: 0 auto !important;
+        max-width: none !important;
+        width: 100% !important;
+        page-break-inside: avoid;
+      }
+      .qr-card .couple { color: #000 !important; }
+      .qr-card .couple em { color: #6a5d44 !important; }
+      .qr-card .date { color: #555 !important; }
+      .qr-caption { color: #555 !important; }
+      #qr-canvas { width: 60mm !important; height: 60mm !important; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-logo">A &amp; E</div>
+      <a class="back-link" href="index.html" data-i18n="back_home"></a>
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button class="lang-btn active" id="btn-tr" onclick="setLang('tr')">TR</button>
+        <span class="lang-sep">/</span>
+        <button class="lang-btn"        id="btn-en" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <p class="eyebrow" data-i18n="eyebrow"></p>
+      <h1 class="page-title" data-i18n="title"></h1>
+      <p class="page-sub" data-i18n="sub"></p>
+
+      <!-- Printable card -->
+      <div class="qr-card" id="qr-card">
+        <div class="couple">Ayşegül <em>&amp;</em> Emir Kaan</div>
+        <div class="date">20 · 06 · 2026</div>
+        <div class="qr-wrap">
+          <canvas id="qr-canvas" aria-label="QR code"></canvas>
+        </div>
+        <p class="qr-caption" data-i18n="caption"></p>
+      </div>
+
+      <!-- Actions -->
+      <div class="actions">
+        <a href="#" class="btn btn-filled" id="open-upload" target="_blank" rel="noopener" data-i18n="btn_open"></a>
+        <button class="btn" onclick="downloadCard()" data-i18n="btn_download"></button>
+        <button class="btn" onclick="window.print()" data-i18n="btn_print"></button>
+      </div>
+
+      <!-- How-to -->
+      <div class="steps">
+        <h2 class="steps-heading" data-i18n="steps_heading"></h2>
+
+        <div class="step-item">
+          <div class="step-num">01</div>
+          <div>
+            <div class="step-title" data-i18n="step1_title"></div>
+            <div class="step-desc"  data-i18n="step1_desc"></div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">02</div>
+          <div>
+            <div class="step-title" data-i18n="step2_title"></div>
+            <div class="step-desc"  data-i18n="step2_desc"></div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">03</div>
+          <div>
+            <div class="step-title" data-i18n="step3_title"></div>
+            <div class="step-desc"  data-i18n="step3_desc"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-names">Ayşegül &amp; Emir Kaan</div>
+      <p class="footer-detail">20 · 06 · 2026 — Güzelbahçe, İzmir</p>
+    </div>
+  </footer>
+
+
+  <script>
+    /* ============================================================
+       ⚙️  CONFIG — REPLACE THIS WITH YOUR REAL UPLOAD URL
+       ────────────────────────────────────────────────────────────
+       Paste the share link of your Google Drive folder
+       (or Google Photos album / WeTransfer collect link / etc.)
+       between the quotes below. Everything else updates automatically:
+         • the on-screen QR code
+         • the printable / downloadable QR card
+         • the "Open Upload Page" button
+       ============================================================ */
+    const UPLOAD_URL = "https://drive.google.com/drive/folders/REPLACE-WITH-YOUR-FOLDER-ID";
+
+    /* ============================================================
+       i18n
+       ============================================================ */
+    const i18n = {
+      tr: {
+        back_home:     "Ana Sayfa",
+        eyebrow:       "Bir Anı Bırakın",
+        title:         "Anılarımıza <em>Eklenin</em>",
+        sub:           "Çektiğiniz her fotoğraf ve video bizim için çok değerli. Aşağıdaki QR kodu okutarak özel klasörümüze yükleyebilirsiniz.",
+        caption:       "QR kodu okutun ve fotoğraflarınızı paylaşın",
+        btn_open:      "Yükleme Sayfasını Aç",
+        btn_download:  "QR Kartını İndir",
+        btn_print:     "Yazdır",
+        steps_heading: "Nasıl Yüklenir",
+        step1_title:   "QR Kodu Okutun",
+        step1_desc:    "Telefonunuzun kamerasını yukarıdaki QR koda doğrultun. Açılan bağlantıya dokunun.",
+        step2_title:   "Fotoğraflarınızı Seçin",
+        step2_desc:    "Klasör açıldığında \"Yükle\" butonuna basın ve paylaşmak istediğiniz fotoğraf ve videoları seçin.",
+        step3_title:   "Bizimle Paylaşın",
+        step3_desc:    "Yüklemeniz tamamlandığında her şey bizimle paylaşılmış olacak. Teşekkür ederiz!",
+      },
+      en: {
+        back_home:     "Home",
+        eyebrow:       "Leave a Memory",
+        title:         "Add to our <em>Memories</em>",
+        sub:           "Every photo and video you take means the world to us. Scan the QR code below to upload them straight to our shared folder.",
+        caption:       "Scan the QR code to share your photos with us",
+        btn_open:      "Open Upload Page",
+        btn_download:  "Download QR Card",
+        btn_print:     "Print",
+        steps_heading: "How to Upload",
+        step1_title:   "Scan the QR Code",
+        step1_desc:    "Point your phone's camera at the QR code above and tap the link that appears.",
+        step2_title:   "Choose Your Photos",
+        step2_desc:    "Once the folder opens, tap \"Upload\" and select the photos and videos you'd like to share.",
+        step3_title:   "Share With Us",
+        step3_desc:    "Once your upload is complete, everything will be shared with us. Thank you!",
+      }
+    };
+
+    let currentLang = 'tr';
+
+    function setLang(lang) {
+      currentLang = lang;
+      const dict = i18n[lang];
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key] != null) el.innerHTML = dict[key];
+      });
+      document.documentElement.lang = lang;
+      document.getElementById('btn-tr').classList.toggle('active', lang === 'tr');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    }
+
+
+    /* ============================================================
+       QR rendering — on-screen canvas
+       ============================================================ */
+    const canvas = document.getElementById('qr-canvas');
+    QRCode.toCanvas(canvas, UPLOAD_URL, {
+      width: 480,
+      margin: 1,
+      errorCorrectionLevel: 'M',
+      color: { dark: '#1c1c1c', light: '#ffffff' }
+    });
+
+    /* Wire up "open upload" button */
+    document.getElementById('open-upload').href = UPLOAD_URL;
+
+
+    /* ============================================================
+       Download printable QR card (PNG, 2048x2880 — table-card ratio)
+       Composes: couple names + date + QR + caption on a cream card.
+       ============================================================ */
+    function downloadCard() {
+      const W = 2048;
+      const H = 2880;
+      const card = document.createElement('canvas');
+      card.width = W; card.height = H;
+      const ctx = card.getContext('2d');
+
+      /* Card background (cream) */
+      ctx.fillStyle = '#faf8f3';
+      ctx.fillRect(0, 0, W, H);
+
+      /* Outer thin border */
+      ctx.strokeStyle = 'rgba(28,28,28,0.18)';
+      ctx.lineWidth = 4;
+      ctx.strokeRect(60, 60, W - 120, H - 120);
+
+      /* Couple names */
+      ctx.fillStyle = '#1c1c1c';
+      ctx.textAlign = 'center';
+      ctx.font = '300 180px "Cormorant Garamond", serif';
+      ctx.fillText('Ayşegül', W / 2 - 60, 360);
+      ctx.fillStyle = '#8a7a5c';
+      ctx.font = 'italic 200px "Cormorant Garamond", serif';
+      ctx.fillText('&', W / 2 + 250, 360);
+      ctx.fillStyle = '#1c1c1c';
+      ctx.font = '300 180px "Cormorant Garamond", serif';
+      ctx.fillText('Emir Kaan', W / 2, 560);
+
+      /* Date — letter-spaced */
+      ctx.fillStyle = '#7a7466';
+      ctx.font = '500 56px "Inter", sans-serif';
+      const date = '20 · 06 · 2026';
+      const tracked = date.split('').join('  ');
+      ctx.fillText(tracked, W / 2, 720);
+
+      /* QR — render at high resolution to a temp canvas, then draw centered */
+      const qrSize = 1300;
+      const qrCanvas = document.createElement('canvas');
+      QRCode.toCanvas(qrCanvas, UPLOAD_URL, {
+        width: qrSize,
+        margin: 1,
+        errorCorrectionLevel: 'M',
+        color: { dark: '#1c1c1c', light: '#ffffff' }
+      }, function (err) {
+        if (err) { console.error(err); return; }
+
+        const qrX = (W - qrSize) / 2;
+        const qrY = 920;
+
+        /* White frame around QR */
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(qrX - 60, qrY - 60, qrSize + 120, qrSize + 120);
+        ctx.strokeStyle = 'rgba(28,28,28,0.12)';
+        ctx.lineWidth = 2;
+        ctx.strokeRect(qrX - 60, qrY - 60, qrSize + 120, qrSize + 120);
+
+        ctx.drawImage(qrCanvas, qrX, qrY, qrSize, qrSize);
+
+        /* Caption */
+        ctx.fillStyle = '#7a7466';
+        ctx.font = 'italic 400 64px "Cormorant Garamond", serif';
+        const captionEN = 'Scan to share your photos with us';
+        const captionTR = 'Fotoğraflarınızı paylaşmak için okutun';
+        ctx.fillText(currentLang === 'tr' ? captionTR : captionEN, W / 2, qrY + qrSize + 180);
+
+        /* Small label */
+        ctx.fillStyle = '#8a7a5c';
+        ctx.font = '500 38px "Inter", sans-serif';
+        const labelTR = 'B İ R   A N I   B I R A K I N';
+        const labelEN = 'L E A V E   A   M E M O R Y';
+        ctx.fillText(currentLang === 'tr' ? labelTR : labelEN, W / 2, qrY + qrSize + 280);
+
+        /* Save */
+        const link = document.createElement('a');
+        link.download = 'ayseguil-emirkaan-qr-card.png';
+        link.href = card.toDataURL('image/png');
+        link.click();
+      });
+    }
+
+
+    /* ============================================================
+       INIT
+       ============================================================ */
+    setLang('tr');
+  </script>
+</body>
+</html>
