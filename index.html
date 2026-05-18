@@ -6,108 +6,113 @@
   <title>Ayşegül & Emir Kaan — 20.06.2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <style>
-    /* ============================================================
-       CUSTOM PROPERTIES
-       ============================================================ */
     :root {
-      --bg:          #0b0b0b;
-      --bg-alt:      #101010;
-      --card-bg:     #161616;
-      --card-hover:  #1c1c1c;
-      --text:        #f0ebe0;
-      --text-muted:  #8a7e72;
-      --accent:      #c9a84c;
-      --accent-lt:   #e0bc5f;
-      --accent-dim:  rgba(201, 168, 76, 0.18);
-      --border:      rgba(201, 168, 76, 0.15);
-      --header-h:    72px;
-      --radius:      14px;
-      --ease:        0.36s cubic-bezier(0.4, 0, 0.2, 1);
+      --bg:          #faf8f3;
+      --bg-alt:      #f1ece0;
+      --card-bg:     #ffffff;
+      --text:        #1c1c1c;
+      --text-muted:  #7a7466;
+      --accent:      #8a7a5c;
+      --accent-dark: #6a5d44;
+      --border:      rgba(28, 28, 28, 0.10);
+      --border-soft: rgba(28, 28, 28, 0.06);
+      --header-h:    76px;
+      --ease:        0.4s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
-    /* ============================================================
-       RESET & BASE
-       ============================================================ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; font-size: 16px; }
     body {
       background: var(--bg);
       color: var(--text);
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Inter', sans-serif;
       font-weight: 300;
-      line-height: 1.75;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
     a { color: inherit; text-decoration: none; }
     ul { list-style: none; }
     section { scroll-margin-top: var(--header-h); }
+    img, svg { display: block; max-width: 100%; }
 
-    /* ============================================================
-       TYPOGRAPHY HELPERS
-       ============================================================ */
-    .script { font-family: 'Great Vibes', cursive; }
+    .serif { font-family: 'Cormorant Garamond', serif; font-weight: 400; }
+    .italic { font-style: italic; }
+
+    .eyebrow {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.32em;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .section-label {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.32em;
+      color: var(--accent);
+      font-weight: 500;
+      text-align: center;
+      display: block;
+      margin-bottom: 1.2rem;
+    }
 
     .section-heading {
-      font-family: 'Great Vibes', cursive;
-      font-size: clamp(2.6rem, 6vw, 4.2rem);
-      color: var(--accent);
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2.5rem, 5.5vw, 3.8rem);
+      color: var(--text);
       text-align: center;
-      line-height: 1.15;
-      margin-bottom: 0.4rem;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.6rem;
     }
+    .section-heading em {
+      font-style: italic;
+      color: var(--accent);
+      font-weight: 300;
+    }
+
     .section-sub {
       text-align: center;
-      text-transform: uppercase;
-      letter-spacing: 0.3em;
-      font-size: 0.65rem;
+      font-size: 0.95rem;
       color: var(--text-muted);
-      margin-bottom: 4rem;
-      font-weight: 400;
+      max-width: 540px;
+      margin: 0 auto 4.5rem;
+      line-height: 1.7;
+      font-style: italic;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
     }
-    .ornament {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1.2rem;
-      margin-bottom: 0.8rem;
-    }
-    .ornament::before, .ornament::after {
-      content: '';
-      display: block;
-      width: 55px;
-      height: 1px;
-      background: var(--border);
-    }
-    .ornament-icon { color: var(--accent); font-size: 0.85rem; }
 
-    /* ============================================================
-       LAYOUT
-       ============================================================ */
-    section { padding: 110px 0; position: relative; }
-    .container { width: min(1120px, 92vw); margin: 0 auto; }
+    .rule {
+      width: 1px;
+      height: 56px;
+      background: var(--border);
+      margin: 0 auto 2.4rem;
+    }
+
+    section { padding: 120px 0; position: relative; }
+    .container { width: min(1120px, 90vw); margin: 0 auto; }
     .alt-bg { background: var(--bg-alt); }
 
-    /* ============================================================
-       SCROLL REVEAL ANIMATIONS
-       ============================================================ */
     .reveal {
       opacity: 0;
-      transform: translateY(42px);
-      transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-                  transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: translateY(28px);
+      transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
     }
     .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-d1 { transition-delay: 0.1s; }
-    .reveal-d2 { transition-delay: 0.22s; }
-    .reveal-d3 { transition-delay: 0.34s; }
-    .reveal-d4 { transition-delay: 0.46s; }
-    .reveal-d5 { transition-delay: 0.58s; }
+    .reveal-d1 { transition-delay: 0.08s; }
+    .reveal-d2 { transition-delay: 0.18s; }
+    .reveal-d3 { transition-delay: 0.28s; }
+    .reveal-d4 { transition-delay: 0.38s; }
 
     /* ============================================================
-       STICKY HEADER
+       HEADER
        ============================================================ */
     .site-header {
       position: fixed;
@@ -115,14 +120,14 @@
       inset-inline: 0;
       height: var(--header-h);
       z-index: 1000;
-      background: rgba(11, 11, 11, 0.82);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border-bottom: 1px solid var(--border);
+      background: rgba(250, 248, 243, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-soft);
       transition: background var(--ease);
     }
     .header-inner {
-      width: min(1200px, 96vw);
+      width: min(1200px, 94vw);
       margin: 0 auto;
       height: 100%;
       display: flex;
@@ -131,30 +136,28 @@
       gap: 1.5rem;
     }
     .header-logo {
-      font-family: 'Great Vibes', cursive;
-      font-size: 1.85rem;
-      color: var(--accent);
-      white-space: nowrap;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      color: var(--text);
       flex-shrink: 0;
-      letter-spacing: 0.02em;
     }
 
-    /* Desktop nav */
-    .site-nav { display: flex; align-items: center; gap: 2.4rem; }
+    .site-nav { display: flex; align-items: center; gap: 2.6rem; }
     .site-nav a {
-      font-size: 0.66rem;
+      font-size: 0.7rem;
       font-weight: 500;
       text-transform: uppercase;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.22em;
       color: var(--text-muted);
       transition: color var(--ease);
       position: relative;
-      padding-bottom: 2px;
     }
     .site-nav a::after {
       content: '';
       position: absolute;
-      bottom: -2px; left: 0;
+      bottom: -6px; left: 0;
       width: 0; height: 1px;
       background: var(--accent);
       transition: width var(--ease);
@@ -162,35 +165,34 @@
     .site-nav a:hover { color: var(--text); }
     .site-nav a:hover::after { width: 100%; }
 
-    /* Language toggle */
+    .header-right { display: flex; align-items: center; gap: 1.2rem; }
+
     .lang-toggle {
       display: flex;
       align-items: center;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--border);
-      border-radius: 100px;
-      overflow: hidden;
-      flex-shrink: 0;
+      gap: 0;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
     }
     .lang-btn {
-      padding: 6px 14px;
-      font-size: 0.62rem;
-      font-weight: 600;
-      font-family: 'Montserrat', sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
+      padding: 4px 8px;
       cursor: pointer;
       border: none;
       background: transparent;
       color: var(--text-muted);
-      transition: background var(--ease), color var(--ease);
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+      letter-spacing: inherit;
+      text-transform: uppercase;
+      transition: color var(--ease);
     }
-    .lang-btn.active {
-      background: var(--accent);
-      color: #0b0b0b;
-    }
+    .lang-btn.active { color: var(--text); font-weight: 600; }
+    .lang-btn:hover { color: var(--text); }
+    .lang-sep { color: var(--border); user-select: none; }
 
-    /* Hamburger */
     .hamburger {
       display: none;
       flex-direction: column;
@@ -203,29 +205,27 @@
     .hamburger span {
       display: block;
       width: 22px;
-      height: 1.5px;
+      height: 1px;
       background: var(--text);
-      border-radius: 2px;
       transition: transform 0.3s ease, opacity 0.3s ease;
     }
-    .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-    .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
-    /* Mobile nav drawer */
     .mobile-nav {
       display: none;
       position: fixed;
       top: var(--header-h);
       left: 0; right: 0;
-      background: rgba(10, 10, 10, 0.97);
-      backdrop-filter: blur(18px);
-      padding: 2.5rem 2rem;
+      background: rgba(250, 248, 243, 0.98);
+      backdrop-filter: blur(16px);
+      padding: 2.5rem 2rem 3rem;
       z-index: 999;
       flex-direction: column;
       align-items: center;
-      gap: 2rem;
-      border-bottom: 1px solid var(--border);
+      gap: 1.8rem;
+      border-bottom: 1px solid var(--border-soft);
       transform: translateY(-8px);
       opacity: 0;
       transition: opacity 0.25s ease, transform 0.25s ease;
@@ -238,22 +238,21 @@
       pointer-events: all;
     }
     .mobile-nav a {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 500;
       text-transform: uppercase;
-      letter-spacing: 0.22em;
+      letter-spacing: 0.24em;
       color: var(--text-muted);
       transition: color var(--ease);
     }
-    .mobile-nav a:hover { color: var(--accent); }
+    .mobile-nav a:hover { color: var(--text); }
 
     /* ============================================================
        HERO
        ============================================================ */
     #hero {
       position: relative;
-      height: 100svh;
-      min-height: 620px;
+      min-height: 100svh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -261,195 +260,190 @@
       overflow: hidden;
       padding: 0;
       scroll-margin-top: 0;
-    }
-    #star-canvas {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-    }
-    .hero-vignette {
-      position: absolute;
-      inset: 0;
       background:
-        radial-gradient(ellipse 80% 60% at 50% 50%, transparent 0%, rgba(11,11,11,0.6) 60%, rgba(11,11,11,0.92) 100%),
-        linear-gradient(to bottom, rgba(11,11,11,0.5) 0%, transparent 30%, transparent 70%, rgba(11,11,11,0.8) 100%);
+        radial-gradient(ellipse 70% 50% at 50% 100%, rgba(138, 122, 92, 0.08), transparent 70%),
+        radial-gradient(ellipse 90% 60% at 50% 0%, rgba(241, 236, 224, 0.6), transparent 65%),
+        var(--bg);
     }
+
+    .hero-mark {
+      position: absolute;
+      top: calc(var(--header-h) + 40px);
+      left: 50%;
+      transform: translateX(-50%);
+      width: 38px;
+      height: 1px;
+      background: var(--accent);
+    }
+
     .hero-content {
       position: relative;
       z-index: 2;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 0.9rem;
+      gap: 1.6rem;
       padding: 0 1.5rem;
-      animation: heroFadeIn 1.6s ease forwards;
+      animation: heroFadeIn 1.4s ease forwards;
     }
     @keyframes heroFadeIn {
-      from { opacity: 0; transform: translateY(24px); }
+      from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
     }
+
     .hero-eyebrow {
       text-transform: uppercase;
       letter-spacing: 0.42em;
-      font-size: 0.6rem;
+      font-size: 0.66rem;
       color: var(--accent);
       font-weight: 500;
     }
     .hero-names {
-      font-family: 'Great Vibes', cursive;
-      font-size: clamp(3.8rem, 12vw, 8.5rem);
-      line-height: 1.08;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.6rem, 11vw, 8rem);
+      font-weight: 300;
+      line-height: 1.0;
+      letter-spacing: -0.015em;
       color: var(--text);
-      text-shadow: 0 2px 60px rgba(201, 168, 76, 0.2), 0 0 120px rgba(201, 168, 76, 0.08);
     }
-    .hero-amp { color: var(--accent); }
-    .hero-subtitle {
-      font-size: 0.66rem;
-      text-transform: uppercase;
-      letter-spacing: 0.38em;
-      color: var(--text-muted);
-      font-weight: 400;
+    .hero-amp {
+      font-style: italic;
+      color: var(--accent);
+      font-weight: 300;
     }
-    .hero-date-row {
+    .hero-divider {
       display: flex;
       align-items: center;
       gap: 1.4rem;
-      margin-top: 0.3rem;
+      margin-top: 0.6rem;
     }
-    .hero-date-row::before, .hero-date-row::after {
-      content: '';
+    .hero-divider span {
       display: block;
-      width: 48px;
+      width: 56px;
       height: 1px;
-      background: rgba(201,168,76,0.3);
+      background: var(--border);
     }
     .hero-date {
-      font-size: 0.78rem;
-      letter-spacing: 0.3em;
-      color: var(--accent);
-      font-weight: 500;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      letter-spacing: 0.4em;
+      color: var(--text);
+      font-weight: 400;
     }
     .hero-location {
-      font-size: 0.64rem;
-      letter-spacing: 0.28em;
+      font-size: 0.66rem;
+      letter-spacing: 0.32em;
       color: var(--text-muted);
       text-transform: uppercase;
+      font-weight: 500;
     }
+
     .scroll-cue {
       position: absolute;
-      bottom: 2.8rem;
+      bottom: 3rem;
       left: 50%;
       transform: translateX(-50%);
       z-index: 2;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 6px;
-      animation: scrollBounce 2.2s ease-in-out infinite;
-      opacity: 0.5;
-    }
-    .scroll-cue-dot {
-      width: 4px; height: 4px;
-      border-radius: 50%;
-      background: var(--accent);
+      gap: 10px;
+      color: var(--text-muted);
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
     }
     .scroll-cue-line {
-      width: 1px; height: 36px;
+      width: 1px;
+      height: 44px;
       background: linear-gradient(to bottom, var(--accent), transparent);
+      animation: scrollPulse 2.4s ease-in-out infinite;
+      transform-origin: top;
     }
-    @keyframes scrollBounce {
-      0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.5; }
-      50%       { transform: translateX(-50%) translateY(7px); opacity: 0.8; }
+    @keyframes scrollPulse {
+      0%, 100% { transform: scaleY(0.4); opacity: 0.4; }
+      50%       { transform: scaleY(1);   opacity: 1; }
     }
 
     /* ============================================================
        COUNTDOWN
        ============================================================ */
     .countdown-wrap {
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 0.6rem 1.6rem;
-      margin: 0 0 4rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      max-width: 640px;
+      margin: 0 auto 5rem;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
     .cd-unit {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 0.35rem;
-      min-width: 88px;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 2.2rem 0.8rem;
+      position: relative;
+    }
+    .cd-unit + .cd-unit::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 18%;
+      bottom: 18%;
+      width: 1px;
+      background: var(--border);
     }
     .cd-number {
-      font-family: 'Great Vibes', cursive;
-      font-size: clamp(3.2rem, 9vw, 5.8rem);
-      color: var(--accent);
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2.8rem, 6vw, 4rem);
+      color: var(--text);
       line-height: 1;
-      min-width: 1.2ch;
-      text-align: center;
+      letter-spacing: -0.02em;
     }
     .cd-label {
-      font-size: 0.57rem;
+      font-size: 0.6rem;
       text-transform: uppercase;
       letter-spacing: 0.28em;
       color: var(--text-muted);
       font-weight: 500;
     }
-    .cd-sep {
-      font-family: 'Great Vibes', cursive;
-      font-size: 3.8rem;
-      color: var(--accent-dim);
-      line-height: 1;
-      padding-top: 0.5rem;
-      user-select: none;
-    }
 
     /* Timeline */
     .timeline-wrap {
-      max-width: 560px;
+      max-width: 600px;
       margin: 0 auto;
-      position: relative;
-      padding-left: 1.8rem;
-    }
-    .timeline-wrap::before {
-      content: '';
-      position: absolute;
-      left: 0; top: 10px; bottom: 10px;
-      width: 1px;
-      background: linear-gradient(to bottom, transparent, var(--border) 10%, var(--border) 90%, transparent);
     }
     .tl-item {
-      position: relative;
-      padding: 0 0 2.8rem 1.8rem;
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 2rem;
+      padding: 2rem 0;
+      border-top: 1px solid var(--border-soft);
+      align-items: baseline;
     }
-    .tl-item:last-child { padding-bottom: 0; }
-    .tl-dot {
-      position: absolute;
-      left: -5px; top: 7px;
-      width: 11px; height: 11px;
-      border-radius: 50%;
-      border: 2px solid var(--accent);
-      background: var(--bg-alt);
-      transition: background var(--ease);
-    }
-    .tl-item:hover .tl-dot { background: var(--accent); }
+    .tl-item:last-child { border-bottom: 1px solid var(--border-soft); }
     .tl-time {
-      font-size: 0.6rem;
-      text-transform: uppercase;
-      letter-spacing: 0.22em;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
       color: var(--accent);
-      font-weight: 600;
-      margin-bottom: 0.25rem;
+      letter-spacing: 0.04em;
     }
     .tl-title {
-      font-family: 'Great Vibes', cursive;
-      font-size: 1.8rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
       color: var(--text);
       line-height: 1.2;
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.5rem;
+      font-weight: 400;
     }
-    .tl-desc { font-size: 0.8rem; color: var(--text-muted); line-height: 1.75; }
+    .tl-desc {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
 
     /* ============================================================
        GETTING THERE
@@ -457,54 +451,63 @@
     .dir-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1.8rem;
+      gap: 1.4rem;
       margin-bottom: 2.8rem;
     }
     .dir-card {
       background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 2.2rem;
-      transition: border-color var(--ease), transform var(--ease), box-shadow var(--ease);
+      border: 1px solid var(--border-soft);
+      padding: 2.6rem 2.2rem;
+      transition: border-color var(--ease), transform var(--ease);
     }
     .dir-card:hover {
-      border-color: rgba(201,168,76,0.38);
-      transform: translateY(-4px);
-      box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+      border-color: var(--accent);
+      transform: translateY(-3px);
     }
-    .dir-icon { font-size: 2rem; margin-bottom: 1rem; line-height: 1; }
-    .dir-title {
-      font-size: 0.65rem;
-      text-transform: uppercase;
-      letter-spacing: 0.24em;
+    .dir-icon {
+      width: 32px;
+      height: 32px;
+      margin-bottom: 1.4rem;
       color: var(--accent);
-      font-weight: 600;
-      margin-bottom: 0.9rem;
     }
-    .dir-text { font-size: 0.8rem; color: var(--text-muted); line-height: 1.85; }
+    .dir-icon svg { width: 100%; height: 100%; stroke: currentColor; fill: none; stroke-width: 1.2; }
+    .dir-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      color: var(--text);
+      margin-bottom: 0.8rem;
+      font-weight: 400;
+    }
+    .dir-text {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
 
     .map-box {
       width: 100%;
-      height: 380px;
+      height: 360px;
       background: var(--card-bg);
-      border: 2px dashed rgba(201,168,76,0.2);
-      border-radius: var(--radius);
+      border: 1px solid var(--border-soft);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 1.2rem;
-      color: var(--text-muted);
+      gap: 1rem;
       text-align: center;
+      color: var(--text-muted);
       padding: 2rem;
     }
-    .map-box-icon { font-size: 2.8rem; opacity: 0.35; }
+    .map-box-icon {
+      width: 36px; height: 36px;
+      color: var(--accent);
+    }
+    .map-box-icon svg { width: 100%; height: 100%; stroke: currentColor; fill: none; stroke-width: 1.2; }
     .map-box p {
-      font-size: 0.75rem;
-      line-height: 1.8;
-      opacity: 0.55;
-      max-width: 340px;
-      letter-spacing: 0.06em;
+      font-size: 0.82rem;
+      max-width: 420px;
+      line-height: 1.7;
+      white-space: pre-line;
     }
 
     /* ============================================================
@@ -517,54 +520,79 @@
     }
     .hotel-card {
       background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
+      border: 1px solid var(--border-soft);
       display: flex;
       flex-direction: column;
-      transition: transform var(--ease), border-color var(--ease), box-shadow var(--ease);
+      transition: border-color var(--ease), transform var(--ease), box-shadow var(--ease);
     }
     .hotel-card:hover {
-      transform: translateY(-8px);
-      border-color: rgba(201,168,76,0.38);
-      box-shadow: 0 24px 50px rgba(0,0,0,0.45);
+      border-color: var(--accent);
+      transform: translateY(-4px);
+      box-shadow: 0 24px 50px -28px rgba(28, 28, 28, 0.18);
     }
     .hotel-thumb {
-      height: 150px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3rem;
-      flex-shrink: 0;
+      width: 100%;
+      aspect-ratio: 4 / 3;
       position: relative;
       overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      padding: 1.4rem;
     }
-    .hotel-thumb-1 { background: linear-gradient(135deg, #0d1a2a, #1a2d3d); }
-    .hotel-thumb-2 { background: linear-gradient(135deg, #0d1a0d, #1a2d1a); }
-    .hotel-thumb-3 { background: linear-gradient(135deg, #1a1510, #2a2015); }
+    .hotel-thumb-1 { background: linear-gradient(135deg, #d8d3c4 0%, #a8a08c 100%); }
+    .hotel-thumb-2 { background: linear-gradient(135deg, #cdd1bf 0%, #8a9479 100%); }
+    .hotel-thumb-3 { background: linear-gradient(135deg, #d8c9b8 0%, #a8957a 100%); }
+    .hotel-tag {
+      font-size: 0.58rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.92);
+      font-weight: 500;
+      background: rgba(28,28,28,0.18);
+      padding: 5px 10px;
+      backdrop-filter: blur(6px);
+    }
     .hotel-body {
-      padding: 1.6rem;
+      padding: 1.8rem 1.6rem 1.8rem;
       display: flex;
       flex-direction: column;
+      gap: 0.5rem;
       flex-grow: 1;
-      gap: 0.55rem;
     }
-    .hotel-stars { color: var(--accent); font-size: 0.7rem; letter-spacing: 0.1em; }
+    .hotel-stars {
+      color: var(--accent);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      margin-bottom: 0.2rem;
+    }
     .hotel-name {
-      font-family: 'Great Vibes', cursive;
+      font-family: 'Cormorant Garamond', serif;
       font-size: 1.55rem;
       color: var(--text);
       line-height: 1.2;
+      font-weight: 400;
     }
     .hotel-loc {
-      font-size: 0.62rem;
+      font-size: 0.7rem;
       text-transform: uppercase;
       letter-spacing: 0.18em;
-      color: var(--accent);
-      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
     }
-    .hotel-desc { font-size: 0.77rem; color: var(--text-muted); flex-grow: 1; line-height: 1.75; }
-    .hotel-price { font-size: 0.7rem; color: var(--text-muted); font-style: italic; }
+    .hotel-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      flex-grow: 1;
+    }
+    .hotel-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.95rem;
+      color: var(--text);
+      font-style: italic;
+      margin-top: 0.4rem;
+    }
+    .hotel-card .btn { margin-top: 1.2rem; }
 
     /* ============================================================
        BUTTONS
@@ -573,55 +601,59 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.5rem;
-      padding: 11px 24px;
-      font-size: 0.64rem;
-      font-weight: 600;
-      font-family: 'Montserrat', sans-serif;
+      gap: 0.6rem;
+      padding: 14px 28px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
       text-transform: uppercase;
-      letter-spacing: 0.2em;
-      border-radius: 100px;
+      letter-spacing: 0.22em;
       cursor: pointer;
-      border: none;
-      transition: all var(--ease);
-      white-space: nowrap;
-    }
-    .btn-block { width: 100%; margin-top: 1.2rem; }
-    .btn-outline {
+      border: 1px solid var(--text);
       background: transparent;
-      border: 1px solid var(--accent);
-      color: var(--accent);
+      color: var(--text);
+      transition: background var(--ease), color var(--ease), border-color var(--ease);
     }
-    .btn-outline:hover {
-      background: var(--accent);
-      color: #0b0b0b;
-      box-shadow: 0 6px 20px rgba(201,168,76,0.22);
-    }
+    .btn:hover { background: var(--text); color: var(--bg); }
+
     .btn-filled {
-      background: var(--accent);
-      color: #0b0b0b;
+      background: var(--text);
+      color: var(--bg);
     }
     .btn-filled:hover {
-      background: var(--accent-lt);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 26px rgba(201,168,76,0.28);
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
     }
-    .btn-lg { padding: 14px 42px; font-size: 0.7rem; }
+
+    .btn-outline { border-color: var(--border); color: var(--text); }
+    .btn-outline:hover { background: var(--text); color: var(--bg); border-color: var(--text); }
+
+    .btn-block { width: 100%; }
+    .btn-lg { padding: 16px 36px; }
 
     /* ============================================================
        REGISTRY
        ============================================================ */
     .registry-center {
-      max-width: 680px;
+      max-width: 580px;
       margin: 0 auto;
       text-align: center;
     }
-    .registry-icon { font-size: 3.2rem; margin-bottom: 1.8rem; opacity: 0.65; line-height: 1; }
+    .registry-icon {
+      width: 44px;
+      height: 44px;
+      margin: 0 auto 1.8rem;
+      color: var(--accent);
+    }
+    .registry-icon svg { width: 100%; height: 100%; stroke: currentColor; fill: none; stroke-width: 1.2; }
     .registry-text {
-      font-size: 0.86rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-style: italic;
       color: var(--text-muted);
-      line-height: 1.95;
-      margin-bottom: 2.8rem;
+      margin-bottom: 2.4rem;
+      line-height: 1.7;
     }
 
     /* ============================================================
@@ -629,170 +661,192 @@
        ============================================================ */
     .contact-grid {
       display: grid;
-      grid-template-columns: 1fr 1.45fr;
-      gap: 4.5rem;
-      align-items: start;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 4rem;
+      align-items: flex-start;
     }
     .contact-heading {
-      font-family: 'Great Vibes', cursive;
-      font-size: 2.2rem;
-      color: var(--accent);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      color: var(--text);
       margin-bottom: 2rem;
+      font-weight: 400;
     }
-    .contact-list { display: flex; flex-direction: column; gap: 1.5rem; }
-    .contact-entry { display: flex; align-items: flex-start; gap: 1.1rem; }
-    .contact-entry-icon { font-size: 1.05rem; flex-shrink: 0; margin-top: 3px; opacity: 0.65; }
-    .contact-entry-label {
-      font-size: 0.58rem;
-      text-transform: uppercase;
-      letter-spacing: 0.22em;
+    .contact-list { display: flex; flex-direction: column; gap: 1.8rem; }
+    .contact-entry {
+      display: flex;
+      gap: 1.2rem;
+      align-items: flex-start;
+      padding-bottom: 1.6rem;
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .contact-entry:last-child { border-bottom: none; }
+    .contact-entry-icon {
+      width: 22px; height: 22px;
       color: var(--accent);
-      font-weight: 600;
-      margin-bottom: 0.2rem;
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+    .contact-entry-icon svg { width: 100%; height: 100%; stroke: currentColor; fill: none; stroke-width: 1.2; }
+    .contact-entry-label {
+      font-size: 0.62rem;
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      color: var(--text-muted);
+      margin-bottom: 0.3rem;
+      font-weight: 500;
     }
     .contact-entry-val {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      line-height: 1.6;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--text);
     }
-    .contact-entry-val a { transition: color var(--ease); }
     .contact-entry-val a:hover { color: var(--accent); }
 
-    /* RSVP form card */
     .rsvp-card {
       background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 2.8rem;
+      border: 1px solid var(--border-soft);
+      padding: 2.8rem 2.4rem;
     }
     .rsvp-card-title {
-      font-family: 'Great Vibes', cursive;
-      font-size: 2.4rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
       color: var(--text);
-      margin-bottom: 0.2rem;
-      line-height: 1.2;
+      margin-bottom: 0.3rem;
+      font-weight: 400;
     }
     .rsvp-card-sub {
-      font-size: 0.7rem;
+      font-size: 0.82rem;
       color: var(--text-muted);
       margin-bottom: 2rem;
-      letter-spacing: 0.04em;
+      font-style: italic;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
     }
-    .form-group { margin-bottom: 1.5rem; }
+    .form-group { margin-bottom: 1.6rem; }
     .form-label {
       display: block;
-      font-size: 0.58rem;
+      font-size: 0.6rem;
       text-transform: uppercase;
-      letter-spacing: 0.22em;
-      color: var(--accent);
-      font-weight: 600;
-      margin-bottom: 0.5rem;
+      letter-spacing: 0.26em;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+      font-weight: 500;
     }
     .form-control {
       width: 100%;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(201,168,76,0.14);
-      border-radius: 9px;
-      padding: 12px 16px;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--border);
+      padding: 10px 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.92rem;
       color: var(--text);
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.82rem;
-      font-weight: 300;
-      transition: border-color var(--ease), background var(--ease);
-      outline: none;
-      -webkit-appearance: none;
-      appearance: none;
+      transition: border-color var(--ease);
     }
     .form-control:focus {
-      border-color: rgba(201,168,76,0.55);
-      background: rgba(201,168,76,0.04);
+      outline: none;
+      border-bottom-color: var(--accent);
     }
-    .form-control::placeholder { color: var(--text-muted); opacity: 0.45; }
-    textarea.form-control { min-height: 100px; resize: vertical; }
-    select.form-control { cursor: pointer; }
-    select.form-control option { background: #1a1a1a; color: var(--text); }
-    .form-note { font-size: 0.68rem; color: var(--text-muted); text-align: center; margin-top: 1rem; opacity: 0.7; }
+    .form-control::placeholder { color: var(--text-muted); opacity: 0.6; }
+    select.form-control {
+      appearance: none;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237a7466' stroke-width='1.5'><polyline points='6 9 12 15 18 9'/></svg>");
+      background-repeat: no-repeat;
+      background-position: right 4px center;
+      background-size: 14px;
+      padding-right: 28px;
+      cursor: pointer;
+    }
+    textarea.form-control {
+      min-height: 90px;
+      resize: vertical;
+      line-height: 1.6;
+    }
+    .form-note {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: 1rem;
+      font-style: italic;
+    }
     .form-success-msg {
       display: none;
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 2.5rem 0.5rem;
     }
     .form-success-title {
-      font-family: 'Great Vibes', cursive;
-      font-size: 2.8rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
       color: var(--accent);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.6rem;
+      font-weight: 400;
     }
-    .form-success-sub { font-size: 0.78rem; color: var(--text-muted); letter-spacing: 0.08em; }
+    .form-success-sub {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
 
     /* ============================================================
        FOOTER
        ============================================================ */
     .site-footer {
-      padding: 3.5rem 0;
+      padding: 80px 0;
       text-align: center;
-      border-top: 1px solid var(--border);
+      border-top: 1px solid var(--border-soft);
+      background: var(--bg);
     }
     .footer-names {
-      font-family: 'Great Vibes', cursive;
-      font-size: 2.2rem;
-      color: var(--accent);
-      margin-bottom: 0.5rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      color: var(--text);
+      margin-bottom: 0.6rem;
+      font-weight: 300;
     }
     .footer-detail {
-      font-size: 0.62rem;
-      color: var(--text-muted);
-      letter-spacing: 0.24em;
+      font-size: 0.7rem;
       text-transform: uppercase;
+      letter-spacing: 0.32em;
+      color: var(--text-muted);
+      font-weight: 500;
     }
 
     /* ============================================================
-       RESPONSIVE — 900px
+       RESPONSIVE
        ============================================================ */
-    @media (max-width: 960px) {
+    @media (max-width: 880px) {
       .hotel-grid { grid-template-columns: 1fr 1fr; }
-      .contact-grid { grid-template-columns: 1fr; gap: 3.5rem; }
-      .dir-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
     }
-
-    /* ============================================================
-       RESPONSIVE — 768px (mobile)
-       ============================================================ */
-    @media (max-width: 768px) {
-      :root { --header-h: 64px; }
-
+    @media (max-width: 760px) {
       .site-nav { display: none; }
       .hamburger { display: flex; }
 
-      section { padding: 80px 0; }
+      section { padding: 90px 0; }
 
-      .hotel-grid {
+      .dir-grid { grid-template-columns: 1fr; }
+      .hotel-grid { grid-template-columns: 1fr; }
+
+      .countdown-wrap {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .cd-unit { padding: 1.6rem 0.6rem; }
+      .cd-unit:nth-child(3)::before,
+      .cd-unit:nth-child(2)::before { display: block; }
+      .cd-unit:nth-child(odd)::before { display: none; }
+
+      .tl-item {
         grid-template-columns: 1fr;
-        max-width: 420px;
-        margin-left: auto;
-        margin-right: auto;
+        gap: 0.4rem;
+        padding: 1.6rem 0;
       }
 
-      .countdown-wrap { gap: 0.4rem 1rem; }
-      .cd-sep { font-size: 2.8rem; }
+      .rsvp-card { padding: 2rem 1.4rem; }
+      .section-heading { font-size: clamp(2.1rem, 8vw, 2.8rem); }
 
-      .timeline-wrap { padding-left: 1.4rem; }
-
-      .rsvp-card { padding: 2rem 1.6rem; }
-    }
-
-    /* ============================================================
-       RESPONSIVE — 480px
-       ============================================================ */
-    @media (max-width: 480px) {
-      .hero-names { font-size: clamp(3.2rem, 15vw, 5rem); }
-      .hero-date-row::before,
-      .hero-date-row::after { width: 28px; }
-      .lang-btn { padding: 5px 11px; font-size: 0.58rem; }
-      .cd-number { font-size: clamp(2.6rem, 12vw, 3.8rem); }
-      .cd-unit { min-width: 68px; }
-      .cd-sep { font-size: 2.2rem; }
-      .section-heading { font-size: clamp(2.2rem, 8vw, 3rem); }
+      .header-inner { width: 96vw; }
+      .header-logo { font-size: 1.1rem; }
     }
   </style>
 </head>
@@ -800,7 +854,7 @@
 <body>
 
   <!-- ============================================================
-       STICKY HEADER
+       HEADER
        ============================================================ -->
   <header class="site-header">
     <div class="header-inner">
@@ -815,9 +869,10 @@
         <a href="#contact"       data-i18n="nav_contact"></a>
       </nav>
 
-      <div style="display:flex;align-items:center;gap:0.9rem;">
+      <div class="header-right">
         <div class="lang-toggle" role="group" aria-label="Language">
           <button class="lang-btn active" id="btn-tr" onclick="setLang('tr')">TR</button>
+          <span class="lang-sep">/</span>
           <button class="lang-btn"        id="btn-en" onclick="setLang('en')">EN</button>
         </div>
         <button class="hamburger" id="hamburger" aria-label="Toggle menu" onclick="toggleMenu()">
@@ -828,7 +883,6 @@
     </div>
   </header>
 
-  <!-- Mobile navigation drawer -->
   <nav class="mobile-nav" id="mobile-nav" role="navigation">
     <a href="#wedding-day"   data-i18n="nav_wedding_day"   onclick="closeMenu()"></a>
     <a href="#getting-there" data-i18n="nav_getting_there" onclick="closeMenu()"></a>
@@ -842,21 +896,20 @@
        HERO
        ============================================================ -->
   <section id="hero">
-    <canvas id="star-canvas" aria-hidden="true"></canvas>
-    <div class="hero-vignette" aria-hidden="true"></div>
+    <span class="hero-mark" aria-hidden="true"></span>
     <div class="hero-content">
       <p class="hero-eyebrow" data-i18n="hero_eyebrow"></p>
       <h1 class="hero-names">
         Ayşegül <span class="hero-amp">&amp;</span><br>Emir Kaan
       </h1>
-      <p class="hero-subtitle" data-i18n="hero_subtitle"></p>
-      <div class="hero-date-row">
+      <div class="hero-divider">
+        <span></span>
         <span class="hero-date">20 · 06 · 2026</span>
+        <span></span>
       </div>
-      <p class="hero-location">Güzelbahçe, İzmir</p>
+      <p class="hero-location">Güzelbahçe · İzmir</p>
     </div>
     <div class="scroll-cue" aria-hidden="true">
-      <div class="scroll-cue-dot"></div>
       <div class="scroll-cue-line"></div>
     </div>
   </section>
@@ -868,58 +921,59 @@
   <section id="wedding-day" class="alt-bg">
     <div class="container">
 
-      <h2 class="section-heading reveal" data-i18n="wd_title"></h2>
-      <div class="ornament reveal reveal-d1"><span class="ornament-icon">✦</span></div>
+      <span class="section-label reveal" data-i18n="wd_label"></span>
+      <h2 class="section-heading reveal reveal-d1" data-i18n="wd_title"></h2>
       <p class="section-sub reveal reveal-d1" data-i18n="wd_sub"></p>
 
-      <!-- Countdown timer -->
-      <div class="countdown-wrap" id="countdown-wrap">
-        <div class="cd-unit reveal reveal-d1">
+      <!-- Countdown -->
+      <div class="countdown-wrap reveal reveal-d2" id="countdown-wrap">
+        <div class="cd-unit">
           <span class="cd-number" id="cd-days">---</span>
           <span class="cd-label" data-i18n="cd_days"></span>
         </div>
-        <div class="cd-sep reveal reveal-d1">:</div>
-        <div class="cd-unit reveal reveal-d2">
+        <div class="cd-unit">
           <span class="cd-number" id="cd-hours">--</span>
           <span class="cd-label" data-i18n="cd_hours"></span>
         </div>
-        <div class="cd-sep reveal reveal-d2">:</div>
-        <div class="cd-unit reveal reveal-d3">
+        <div class="cd-unit">
           <span class="cd-number" id="cd-minutes">--</span>
           <span class="cd-label" data-i18n="cd_minutes"></span>
         </div>
-        <div class="cd-sep reveal reveal-d3">:</div>
-        <div class="cd-unit reveal reveal-d4">
+        <div class="cd-unit">
           <span class="cd-number" id="cd-seconds">--</span>
           <span class="cd-label" data-i18n="cd_seconds"></span>
         </div>
       </div>
 
-      <!-- Timeline / Schedule -->
-      <div class="timeline-wrap reveal reveal-d2">
+      <!-- Timeline -->
+      <div class="timeline-wrap reveal reveal-d3">
         <div class="tl-item">
-          <div class="tl-dot"></div>
           <div class="tl-time"  data-i18n="tl_ceremony_time"></div>
-          <div class="tl-title" data-i18n="tl_ceremony_title"></div>
-          <div class="tl-desc"  data-i18n="tl_ceremony_desc"></div>
+          <div>
+            <div class="tl-title" data-i18n="tl_ceremony_title"></div>
+            <div class="tl-desc"  data-i18n="tl_ceremony_desc"></div>
+          </div>
         </div>
         <div class="tl-item">
-          <div class="tl-dot"></div>
           <div class="tl-time"  data-i18n="tl_cocktail_time"></div>
-          <div class="tl-title" data-i18n="tl_cocktail_title"></div>
-          <div class="tl-desc"  data-i18n="tl_cocktail_desc"></div>
+          <div>
+            <div class="tl-title" data-i18n="tl_cocktail_title"></div>
+            <div class="tl-desc"  data-i18n="tl_cocktail_desc"></div>
+          </div>
         </div>
         <div class="tl-item">
-          <div class="tl-dot"></div>
           <div class="tl-time"  data-i18n="tl_dinner_time"></div>
-          <div class="tl-title" data-i18n="tl_dinner_title"></div>
-          <div class="tl-desc"  data-i18n="tl_dinner_desc"></div>
+          <div>
+            <div class="tl-title" data-i18n="tl_dinner_title"></div>
+            <div class="tl-desc"  data-i18n="tl_dinner_desc"></div>
+          </div>
         </div>
         <div class="tl-item">
-          <div class="tl-dot"></div>
           <div class="tl-time"  data-i18n="tl_party_time"></div>
-          <div class="tl-title" data-i18n="tl_party_title"></div>
-          <div class="tl-desc"  data-i18n="tl_party_desc"></div>
+          <div>
+            <div class="tl-title" data-i18n="tl_party_title"></div>
+            <div class="tl-desc"  data-i18n="tl_party_desc"></div>
+          </div>
         </div>
       </div>
 
@@ -933,18 +987,22 @@
   <section id="getting-there">
     <div class="container">
 
-      <h2 class="section-heading reveal" data-i18n="gt_title"></h2>
-      <div class="ornament reveal reveal-d1"><span class="ornament-icon">✦</span></div>
+      <span class="section-label reveal" data-i18n="gt_label"></span>
+      <h2 class="section-heading reveal reveal-d1" data-i18n="gt_title"></h2>
       <p class="section-sub reveal reveal-d1" data-i18n="gt_sub"></p>
 
       <div class="dir-grid">
         <div class="dir-card reveal reveal-d1">
-          <div class="dir-icon">🚗</div>
+          <div class="dir-icon">
+            <svg viewBox="0 0 24 24"><path d="M5 16V9a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v7M5 16h14M5 16v2a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-2M16 16v2a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-2M7 13h2M15 13h2"/></svg>
+          </div>
           <div class="dir-title" data-i18n="gt_car_title"></div>
           <div class="dir-text"  data-i18n="gt_car_text"></div>
         </div>
         <div class="dir-card reveal reveal-d2">
-          <div class="dir-icon">🚌</div>
+          <div class="dir-icon">
+            <svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="14" rx="2"/><path d="M5 14h14M9 4v10M15 4v10M8 21l1-3M16 21l-1-3"/><circle cx="9" cy="17" r="0.5" fill="currentColor" stroke="none"/><circle cx="15" cy="17" r="0.5" fill="currentColor" stroke="none"/></svg>
+          </div>
           <div class="dir-title" data-i18n="gt_transit_title"></div>
           <div class="dir-text"  data-i18n="gt_transit_text"></div>
         </div>
@@ -954,8 +1012,8 @@
         ── MAP PLACEHOLDER ─────────────────────────────────────────
         To embed Google Maps, replace the <div class="map-box"> below with:
 
-        <div style="width:100%;height:380px;border-radius:14px;overflow:hidden;
-             border:1px solid rgba(201,168,76,0.18);">
+        <div style="width:100%;height:380px;overflow:hidden;
+             border:1px solid rgba(28,28,28,0.06);">
           <iframe
             src="YOUR_GOOGLE_MAPS_EMBED_URL"
             width="100%" height="100%"
@@ -968,7 +1026,9 @@
         ────────────────────────────────────────────────────────────
       -->
       <div class="map-box reveal reveal-d3">
-        <div class="map-box-icon">📍</div>
+        <div class="map-box-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        </div>
         <p data-i18n="gt_map_placeholder"></p>
       </div>
 
@@ -982,15 +1042,16 @@
   <section id="accommodation" class="alt-bg">
     <div class="container">
 
-      <h2 class="section-heading reveal" data-i18n="ac_title"></h2>
-      <div class="ornament reveal reveal-d1"><span class="ornament-icon">✦</span></div>
+      <span class="section-label reveal" data-i18n="ac_label"></span>
+      <h2 class="section-heading reveal reveal-d1" data-i18n="ac_title"></h2>
       <p class="section-sub reveal reveal-d1" data-i18n="ac_sub"></p>
 
       <div class="hotel-grid">
 
-        <!-- Hotel 1 -->
         <div class="hotel-card reveal reveal-d1">
-          <div class="hotel-thumb hotel-thumb-1">🌊</div>
+          <div class="hotel-thumb hotel-thumb-1">
+            <span class="hotel-tag" data-i18n="hotel1_tag"></span>
+          </div>
           <div class="hotel-body">
             <div class="hotel-stars">★★★★★</div>
             <div class="hotel-name" data-i18n="hotel1_name"></div>
@@ -1001,9 +1062,10 @@
           </div>
         </div>
 
-        <!-- Hotel 2 -->
         <div class="hotel-card reveal reveal-d2">
-          <div class="hotel-thumb hotel-thumb-2">🌿</div>
+          <div class="hotel-thumb hotel-thumb-2">
+            <span class="hotel-tag" data-i18n="hotel2_tag"></span>
+          </div>
           <div class="hotel-body">
             <div class="hotel-stars">★★★★</div>
             <div class="hotel-name" data-i18n="hotel2_name"></div>
@@ -1014,9 +1076,10 @@
           </div>
         </div>
 
-        <!-- Hotel 3 -->
         <div class="hotel-card reveal reveal-d3">
-          <div class="hotel-thumb hotel-thumb-3">🏛️</div>
+          <div class="hotel-thumb hotel-thumb-3">
+            <span class="hotel-tag" data-i18n="hotel3_tag"></span>
+          </div>
           <div class="hotel-body">
             <div class="hotel-stars">★★★★</div>
             <div class="hotel-name" data-i18n="hotel3_name"></div>
@@ -1038,12 +1101,14 @@
   <section id="registry">
     <div class="container">
 
-      <h2 class="section-heading reveal" data-i18n="reg_title"></h2>
-      <div class="ornament reveal reveal-d1"><span class="ornament-icon">✦</span></div>
+      <span class="section-label reveal" data-i18n="reg_label"></span>
+      <h2 class="section-heading reveal reveal-d1" data-i18n="reg_title"></h2>
       <p class="section-sub reveal reveal-d1" data-i18n="reg_sub"></p>
 
       <div class="registry-center reveal reveal-d2">
-        <div class="registry-icon">🎁</div>
+        <div class="registry-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="12" rx="1"/><path d="M3 12h18M12 8v12M8 8s-2-3 0-4 4 4 4 4-2 0-4 0zM16 8s2-3 0-4-4 4-4 4 2 0 4 0z"/></svg>
+        </div>
         <p class="registry-text" data-i18n="reg_text"></p>
         <a href="#" class="btn btn-filled btn-lg" data-i18n="reg_btn"></a>
       </div>
@@ -1058,19 +1123,20 @@
   <section id="contact" class="alt-bg">
     <div class="container">
 
-      <h2 class="section-heading reveal" data-i18n="ct_title"></h2>
-      <div class="ornament reveal reveal-d1"><span class="ornament-icon">✦</span></div>
+      <span class="section-label reveal" data-i18n="ct_label"></span>
+      <h2 class="section-heading reveal reveal-d1" data-i18n="ct_title"></h2>
       <p class="section-sub reveal reveal-d1" data-i18n="ct_sub"></p>
 
       <div class="contact-grid">
 
-        <!-- Left: Contact info -->
         <div class="reveal reveal-d1">
           <div class="contact-heading" data-i18n="ct_info_heading"></div>
           <div class="contact-list">
 
             <div class="contact-entry">
-              <div class="contact-entry-icon">📞</div>
+              <div class="contact-entry-icon">
+                <svg viewBox="0 0 24 24"><path d="M5 4h3l2 5-2 1a11 11 0 0 0 6 6l1-2 5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+              </div>
               <div>
                 <div class="contact-entry-label" data-i18n="ct_bride_label"></div>
                 <div class="contact-entry-val">
@@ -1080,7 +1146,9 @@
             </div>
 
             <div class="contact-entry">
-              <div class="contact-entry-icon">📞</div>
+              <div class="contact-entry-icon">
+                <svg viewBox="0 0 24 24"><path d="M5 4h3l2 5-2 1a11 11 0 0 0 6 6l1-2 5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+              </div>
               <div>
                 <div class="contact-entry-label" data-i18n="ct_groom_label"></div>
                 <div class="contact-entry-val">
@@ -1090,7 +1158,9 @@
             </div>
 
             <div class="contact-entry">
-              <div class="contact-entry-icon">✉️</div>
+              <div class="contact-entry-icon">
+                <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 7l9 6 9-6"/></svg>
+              </div>
               <div>
                 <div class="contact-entry-label" data-i18n="ct_email_label"></div>
                 <div class="contact-entry-val">
@@ -1100,7 +1170,9 @@
             </div>
 
             <div class="contact-entry">
-              <div class="contact-entry-icon">📍</div>
+              <div class="contact-entry-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+              </div>
               <div>
                 <div class="contact-entry-label" data-i18n="ct_venue_label"></div>
                 <div class="contact-entry-val" data-i18n="ct_venue_value"></div>
@@ -1110,7 +1182,6 @@
           </div>
         </div>
 
-        <!-- Right: RSVP form -->
         <div class="rsvp-card reveal reveal-d2">
           <div class="rsvp-card-title" data-i18n="rsvp_title"></div>
           <div class="rsvp-card-sub"   data-i18n="rsvp_sub"></div>
@@ -1147,7 +1218,7 @@
               ></textarea>
             </div>
 
-            <button type="submit" class="btn btn-filled" style="width:100%;" data-i18n="form_submit_btn"></button>
+            <button type="submit" class="btn btn-filled btn-block" data-i18n="form_submit_btn"></button>
             <p class="form-note" data-i18n="form_note"></p>
 
           </form>
@@ -1168,55 +1239,39 @@
        ============================================================ -->
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-names">Ayşegül &amp; Emir Kaan</div>
+      <div class="footer-names">Ayşegül <em class="italic" style="color:var(--accent)">&amp;</em> Emir Kaan</div>
       <p class="footer-detail">20 · 06 · 2026 — Güzelbahçe, İzmir</p>
     </div>
   </footer>
 
 
-  <!-- ============================================================
-       JAVASCRIPT
-       ============================================================ -->
   <script>
-
-    /* ============================================================
-       TRANSLATIONS DICTIONARY
-       ── Replace all placeholder text with your real content ──
-       ── Keys that start with "TR Placeholder" / "EN Placeholder"
-          are the ones you need to fill in.                        ──
-       ============================================================ */
     const i18n = {
 
-      /* ─── TURKISH ──────────────────────────────────────────── */
       tr: {
-        /* Header nav */
         nav_wedding_day:   "Düğün Günü",
         nav_getting_there: "Nasıl Gelinir",
         nav_accommodation: "Konaklama",
         nav_registry:      "Hediye Listesi",
-        nav_contact:       "İletişim & RSVP",
+        nav_contact:       "İletişim",
 
-        /* Hero */
-        hero_eyebrow:  "Sizi aramızda görmekten mutluluk duyarız",
-        hero_subtitle: "evleniyoruz",
+        hero_eyebrow:  "Bizimle Kutlayın",
 
-        /* Wedding Day section */
+        wd_label: "Programımız",
         wd_title: "Düğün Günü",
-        wd_sub:   "TR Placeholder — Alt başlık metni (ör. \"Büyük günü birlikte kutlayalım\")",
+        wd_sub:   "Bu özel günü sizinle birlikte kutlamak için sabırsızlanıyoruz",
 
-        /* Countdown */
         cd_days:    "Gün",
         cd_hours:   "Saat",
         cd_minutes: "Dakika",
         cd_seconds: "Saniye",
 
-        /* Timeline */
         tl_ceremony_time:  "14:00",
         tl_ceremony_title: "Nikah Töreni",
-        tl_ceremony_desc:  "TR Placeholder — Nikah töreninin yapılacağı mekan ve detaylar buraya gelecek. Ör: X Salonu, Güzelbahçe Sahil Bulvarı No: 1",
+        tl_ceremony_desc:  "TR Placeholder — Nikah töreninin yapılacağı mekan ve detaylar buraya gelecek.",
 
         tl_cocktail_time:  "15:30",
-        tl_cocktail_title: "Kokteyl Saati",
+        tl_cocktail_title: "Kokteyl",
         tl_cocktail_desc:  "TR Placeholder — Kokteyl saati ve karşılama içeceğine ilişkin bilgi buraya eklenecek.",
 
         tl_dinner_time:  "18:00",
@@ -1227,98 +1282,96 @@
         tl_party_title: "Dans & Kutlama",
         tl_party_desc:  "TR Placeholder — Canlı müzik, DJ veya gösteri bilgisi buraya eklenebilir.",
 
-        /* Getting There */
+        gt_label: "Yol Tarifi",
         gt_title: "Nasıl Gelinir",
-        gt_sub:   "TR Placeholder — Konum alt başlığı (ör. \"Güzelbahçe, İzmir\")",
+        gt_sub:   "Güzelbahçe, İzmir — sizleri ağırlamak için sabırsızlanıyoruz",
 
-        gt_car_title: "Araçla Geliş",
-        gt_car_text:  "TR Placeholder — İzmir merkezden Güzelbahçe'ye araçla ulaşım talimatları buraya gelecek. Ör: İzmir çevre yolundan Güzelbahçe çıkışını alın, ardından Sahil Caddesi'ne yönelin. Mekan caddenin sonundadır.",
+        gt_car_title: "Araçla",
+        gt_car_text:  "TR Placeholder — İzmir merkezden Güzelbahçe'ye araçla ulaşım talimatları buraya gelecek. Ör: İzmir çevre yolundan Güzelbahçe çıkışını alın, ardından Sahil Caddesi'ne yönelin.",
 
         gt_transit_title: "Toplu Taşıma",
         gt_transit_text:  "TR Placeholder — İzmir'den Güzelbahçe'ye otobüs veya İZBAN bilgisi buraya yazılacak. Ör: İZBAN ile Cumaovası durağına geldikten sonra 810 numaralı ESHOT otobüsüne binin.",
 
-        gt_map_placeholder: "TR Placeholder — Google Haritalar haritasını buraya yerleştirin.\nYukarıdaki HTML yorumuna bakın.",
+        gt_map_placeholder: "Google Haritalar yer işareti buraya yerleştirilecek.\nDetaylı yol tarifi için yukarıdaki HTML yorumuna bakın.",
 
-        /* Accommodation */
-        ac_title: "Konaklama",
-        ac_sub:   "TR Placeholder — Konaklama alt başlığı (ör. \"Güzelbahçe ve İzmir civarındaki önerilen oteller\")",
+        ac_label: "Konaklama",
+        ac_title: "Nerede Kalınır",
+        ac_sub:   "Güzelbahçe ve İzmir civarındaki seçili konaklama önerileri",
 
+        hotel1_tag:      "Deniz Manzaralı",
         hotel1_name:     "Örnek Sahil Oteli",
-        hotel1_location: "Güzelbahçe, İzmir — 0.5 km",
-        hotel1_desc:     "TR Placeholder — Otelin kısa tanıtımı. Denize sıfır konumu, spa imkânları ve düğün misafirleri için özel indirimden bahsedilebilir.",
-        hotel1_price:    "TR Placeholder — Ör: ₺3.500 / gece'den başlayan fiyatlarla",
+        hotel1_location: "Güzelbahçe · 0.5 km",
+        hotel1_desc:     "TR Placeholder — Denize sıfır konum, spa imkânları ve düğün misafirleri için özel indirim.",
+        hotel1_price:    "₺3.500 / gece'den",
 
+        hotel2_tag:      "Butik",
         hotel2_name:     "Zeytin Bahçesi Butik",
-        hotel2_location: "Güzelbahçe merkez — 1.2 km",
-        hotel2_desc:     "TR Placeholder — Butik otelin tanıtımı. Tarihi zeytinlik içindeki konum, kahvaltı dahil seçenekler, sakin atmosfer.",
-        hotel2_price:    "TR Placeholder — Ör: ₺2.200 / gece'den başlayan fiyatlarla",
+        hotel2_location: "Güzelbahçe merkez · 1.2 km",
+        hotel2_desc:     "TR Placeholder — Tarihi zeytinlik içindeki konum, kahvaltı dahil, sakin ve özel atmosfer.",
+        hotel2_price:    "₺2.200 / gece'den",
 
+        hotel3_tag:      "Şehir Merkezi",
         hotel3_name:     "İzmir Marina Hotel",
-        hotel3_location: "İzmir Konak — 18 km",
-        hotel3_desc:     "TR Placeholder — Şehir merkezine yakın otel. Havaalanı servisi, ücretsiz otopark ve uzun konaklamalarda özel indirim.",
-        hotel3_price:    "TR Placeholder — Ör: ₺2.800 / gece'den başlayan fiyatlarla",
+        hotel3_location: "İzmir Konak · 18 km",
+        hotel3_desc:     "TR Placeholder — Şehir merkezine yakın, havaalanı servisi ve uzun konaklamalarda özel indirim.",
+        hotel3_price:    "₺2.800 / gece'den",
 
-        hotel_book_btn: "Rezervasyon Yap →",
+        hotel_book_btn: "Rezervasyon Yap",
 
-        /* Registry */
+        reg_label: "Hediye Önerisi",
         reg_title: "Hediye Listesi",
-        reg_sub:   "TR Placeholder — Hediye bölümü alt başlığı",
-        reg_text:  "TR Placeholder — Sevgili misafirlerimiz, varlığınız bizim için en anlamlı armağandır. Yine de hediye tercih ederseniz, birlikte hazırladığımız listemizi aşağıdaki bağlantıdan inceleyebilirsiniz. Listemiz kısa süre içinde güncellenecektir.",
-        reg_btn:   "Hediye Listesini Gör →",
+        reg_sub:   "Sevginiz bizim için en güzel hediye",
 
-        /* Contact / RSVP */
+        reg_text:  "Sevgili misafirlerimiz, varlığınız bizim için en anlamlı armağandır. Yine de hediye etmek isterseniz, birlikte hazırladığımız listemizi inceleyebilirsiniz.",
+        reg_btn:   "Hediye Listesini Gör",
+
+        ct_label: "İletişim",
         ct_title: "İletişim & RSVP",
-        ct_sub:   "TR Placeholder — İletişim bölümü alt başlığı",
+        ct_sub:   "Sorularınız için bize ulaşın ve katılımınızı onaylayın",
 
         ct_info_heading: "Bize Ulaşın",
         ct_bride_label:  "Gelin",
         ct_groom_label:  "Damat",
         ct_email_label:  "E-posta",
         ct_venue_label:  "Mekan",
-        ct_venue_value:  "TR Placeholder — Düğün mekanının tam adı ve adresi buraya gelecek, Güzelbahçe / İzmir",
+        ct_venue_value:  "TR Placeholder — Düğün mekanı adı ve adresi, Güzelbahçe / İzmir",
 
-        rsvp_title: "RSVP",
-        rsvp_sub:   "TR Placeholder — Ör: Lütfen 1 Mayıs 2026 tarihine kadar yanıt veriniz.",
+        rsvp_title: "Katılımınızı Onaylayın",
+        rsvp_sub:   "Lütfen 1 Mayıs 2026 tarihine kadar yanıt veriniz",
 
-        form_name_label:        "Adınız Soyadınız",
-        form_name_placeholder:  "Adınızı girin...",
+        form_name_label:        "Ad Soyad",
+        form_name_placeholder:  "Adınızı girin",
         form_guests_label:      "Kişi Sayısı",
         form_msg_label:         "Mesajınız (İsteğe Bağlı)",
         form_msg_placeholder:   "Bize bir mesaj bırakın...",
         form_submit_btn:        "Katılımı Onayla",
-        form_note:              "TR Placeholder — Ör: Yanıtınız için size e-posta ile geri dönüş yapılacaktır.",
+        form_note:              "Yanıtınız için size geri dönüş yapılacaktır",
 
-        form_success_title: "Teşekkürler!",
-        form_success_sub:   "Kaydınız alındı. Sizi aramızda görmek için sabırsızlanıyoruz ✦",
+        form_success_title: "Teşekkürler",
+        form_success_sub:   "Kaydınız alındı. Sizi aramızda görmek için sabırsızlanıyoruz",
       },
 
-      /* ─── ENGLISH ──────────────────────────────────────────── */
       en: {
-        /* Header nav */
         nav_wedding_day:   "Wedding Day",
         nav_getting_there: "Getting There",
         nav_accommodation: "Accommodation",
         nav_registry:      "Registry",
-        nav_contact:       "Contact & RSVP",
+        nav_contact:       "Contact",
 
-        /* Hero */
-        hero_eyebrow:  "We joyfully invite you to celebrate with us",
-        hero_subtitle: "are getting married",
+        hero_eyebrow:  "Celebrate With Us",
 
-        /* Wedding Day section */
+        wd_label: "The Schedule",
         wd_title: "Wedding Day",
-        wd_sub:   "EN Placeholder — Section subtitle (e.g. \"Join us as we celebrate our big day\")",
+        wd_sub:   "We can't wait to share this special day with you",
 
-        /* Countdown */
         cd_days:    "Days",
         cd_hours:   "Hours",
         cd_minutes: "Minutes",
         cd_seconds: "Seconds",
 
-        /* Timeline */
         tl_ceremony_time:  "2:00 PM",
         tl_ceremony_title: "Wedding Ceremony",
-        tl_ceremony_desc:  "EN Placeholder — Venue name and ceremony details will go here. E.g: The Grand Hall, Güzelbahçe Sahil Bulvarı No: 1",
+        tl_ceremony_desc:  "EN Placeholder — Venue name and ceremony details will go here.",
 
         tl_cocktail_time:  "3:30 PM",
         tl_cocktail_title: "Cocktail Hour",
@@ -1332,106 +1385,100 @@
         tl_party_title: "Dancing & Celebration",
         tl_party_desc:  "EN Placeholder — Live music, DJ, or entertainment details can be placed in this space.",
 
-        /* Getting There */
+        gt_label: "Directions",
         gt_title: "Getting There",
-        gt_sub:   "EN Placeholder — Location subtitle (e.g. \"Güzelbahçe, İzmir, Türkiye\")",
+        gt_sub:   "Güzelbahçe, İzmir — we look forward to welcoming you",
 
         gt_car_title: "By Car",
-        gt_car_text:  "EN Placeholder — Driving directions from İzmir city centre to Güzelbahçe will appear here. E.g: Take the İzmir ring road and exit at Güzelbahçe, then follow Sahil Avenue. The venue is at the end of the avenue.",
+        gt_car_text:  "EN Placeholder — Driving directions from İzmir city centre to Güzelbahçe will appear here. E.g: Take the İzmir ring road and exit at Güzelbahçe, then follow Sahil Avenue.",
 
         gt_transit_title: "By Public Transit",
         gt_transit_text:  "EN Placeholder — Bus or İZBAN directions from İzmir to Güzelbahçe will be added here. E.g: Take the İZBAN train to Cumaovası station, then board ESHOT bus No. 810.",
 
-        gt_map_placeholder: "EN Placeholder — Embed your Google Maps iframe here.\nSee the HTML comment above for instructions.",
+        gt_map_placeholder: "Google Maps marker will be embedded here.\nSee the HTML comment above for detailed instructions.",
 
-        /* Accommodation */
-        ac_title: "Where to Stay",
-        ac_sub:   "EN Placeholder — Accommodation subtitle (e.g. \"Recommended hotels near Güzelbahçe & İzmir\")",
+        ac_label: "Where To Stay",
+        ac_title: "Accommodation",
+        ac_sub:   "A curated selection of hotels near Güzelbahçe & İzmir",
 
+        hotel1_tag:      "Seaside",
         hotel1_name:     "Sample Seaside Hotel",
-        hotel1_location: "Güzelbahçe, İzmir — 0.5 km",
-        hotel1_desc:     "EN Placeholder — Brief hotel description. Mention beachfront location, spa facilities, and any special discount for wedding guests.",
-        hotel1_price:    "EN Placeholder — E.g: From €95 / night",
+        hotel1_location: "Güzelbahçe · 0.5 km",
+        hotel1_desc:     "EN Placeholder — Beachfront location, spa facilities, and a special discount for wedding guests.",
+        hotel1_price:    "From €95 / night",
 
+        hotel2_tag:      "Boutique",
         hotel2_name:     "Olive Grove Boutique",
-        hotel2_location: "Güzelbahçe centre — 1.2 km",
-        hotel2_desc:     "EN Placeholder — Boutique hotel description. Charming setting among historic olive groves, breakfast included, peaceful atmosphere.",
-        hotel2_price:    "EN Placeholder — E.g: From €65 / night",
+        hotel2_location: "Güzelbahçe centre · 1.2 km",
+        hotel2_desc:     "EN Placeholder — Charming setting among historic olive groves, breakfast included, peaceful atmosphere.",
+        hotel2_price:    "From €65 / night",
 
+        hotel3_tag:      "City Centre",
         hotel3_name:     "İzmir Marina Hotel",
-        hotel3_location: "İzmir Konak — 18 km",
-        hotel3_desc:     "EN Placeholder — City hotel description. Close to city centre, airport transfer available, special discount for extended stays.",
-        hotel3_price:    "EN Placeholder — E.g: From €80 / night",
+        hotel3_location: "İzmir Konak · 18 km",
+        hotel3_desc:     "EN Placeholder — Close to city centre, airport transfer available, special discount for extended stays.",
+        hotel3_price:    "From €80 / night",
 
-        hotel_book_btn: "Book Now →",
+        hotel_book_btn: "Book Now",
 
-        /* Registry */
+        reg_label: "Gift Note",
         reg_title: "Wedding Registry",
-        reg_sub:   "EN Placeholder — Registry section subtitle",
-        reg_text:  "EN Placeholder — Dear guests, your presence is the greatest gift of all. If you would like to give a gift, please find our registry at the link below. Our list will be updated shortly.",
-        reg_btn:   "View Wedding Registry →",
+        reg_sub:   "Your love is the greatest gift we could ask for",
 
-        /* Contact / RSVP */
+        reg_text:  "Dear guests, your presence is the greatest gift of all. If you would still like to give a gift, please find our registry at the link below.",
+        reg_btn:   "View Registry",
+
+        ct_label: "Reach Out",
         ct_title: "Contact & RSVP",
-        ct_sub:   "EN Placeholder — Contact section subtitle",
+        ct_sub:   "Get in touch with any questions and confirm your attendance",
 
         ct_info_heading: "Get in Touch",
         ct_bride_label:  "Bride",
         ct_groom_label:  "Groom",
         ct_email_label:  "Email",
         ct_venue_label:  "Venue",
-        ct_venue_value:  "EN Placeholder — Wedding venue full name and address will appear here, Güzelbahçe / İzmir",
+        ct_venue_value:  "EN Placeholder — Wedding venue full name and address, Güzelbahçe / İzmir",
 
-        rsvp_title: "RSVP",
-        rsvp_sub:   "EN Placeholder — E.g: Kindly respond by 1st May 2026.",
+        rsvp_title: "Confirm Your Attendance",
+        rsvp_sub:   "Kindly respond by 1st May 2026",
 
         form_name_label:        "Full Name",
-        form_name_placeholder:  "Enter your name...",
+        form_name_placeholder:  "Enter your name",
         form_guests_label:      "Number of Guests",
         form_msg_label:         "Message (Optional)",
         form_msg_placeholder:   "Leave us a message...",
         form_submit_btn:        "Confirm Attendance",
-        form_note:              "EN Placeholder — E.g: We will follow up with a confirmation email.",
+        form_note:              "We will follow up with a confirmation email",
 
-        form_success_title: "Thank You!",
-        form_success_sub:   "We received your reply and can't wait to celebrate with you ✦",
+        form_success_title: "Thank You",
+        form_success_sub:   "We received your reply and can't wait to celebrate with you",
       }
     };
 
 
-    /* ============================================================
-       LANGUAGE MANAGER
-       ============================================================ */
     let currentLang = 'tr';
 
     function setLang(lang) {
       currentLang = lang;
       const dict = i18n[lang];
 
-      /* Update all data-i18n elements */
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (dict[key] != null) el.textContent = dict[key];
       });
 
-      /* Update placeholder attributes */
       document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
         const key = el.getAttribute('data-i18n-placeholder');
         if (dict[key] != null) el.setAttribute('placeholder', dict[key]);
       });
 
-      /* Sync html[lang] */
       document.documentElement.lang = lang;
 
-      /* Toggle button states */
       document.getElementById('btn-tr').classList.toggle('active', lang === 'tr');
       document.getElementById('btn-en').classList.toggle('active', lang === 'en');
     }
 
 
-    /* ============================================================
-       HAMBURGER MENU
-       ============================================================ */
     function toggleMenu() {
       const nav = document.getElementById('mobile-nav');
       const ham = document.getElementById('hamburger');
@@ -1446,7 +1493,6 @@
       document.body.style.overflow = '';
     }
 
-    /* Close mobile nav on outside click */
     document.addEventListener('click', e => {
       const nav = document.getElementById('mobile-nav');
       const ham = document.getElementById('hamburger');
@@ -1456,10 +1502,7 @@
     });
 
 
-    /* ============================================================
-       COUNTDOWN TIMER
-       Target: June 20, 2026 at 14:00 local time (TR)
-       ============================================================ */
+    /* Countdown — target: June 20, 2026 at 14:00 Türkiye time */
     const WEDDING_DATE = new Date('2026-06-20T14:00:00+03:00').getTime();
 
     function pad(n, w) { return String(n).padStart(w, '0'); }
@@ -1489,59 +1532,6 @@
     setInterval(tickCountdown, 1000);
 
 
-    /* ============================================================
-       STARFIELD CANVAS
-       ============================================================ */
-    (function starfield() {
-      const canvas = document.getElementById('star-canvas');
-      const ctx    = canvas.getContext('2d');
-      let stars    = [];
-      let W = 0, H = 0;
-      let raf;
-
-      function resize() {
-        W = canvas.width  = canvas.offsetWidth;
-        H = canvas.height = canvas.offsetHeight;
-        buildStars();
-      }
-
-      function buildStars() {
-        const count = Math.round((W * H) / 4200);   /* density */
-        stars = Array.from({ length: count }, () => ({
-          x:     Math.random() * W,
-          y:     Math.random() * H,
-          r:     Math.random() * 1.3 + 0.15,
-          base:  Math.random() * 0.65 + 0.15,
-          speed: Math.random() * 0.0025 + 0.0008,
-          phase: Math.random() * Math.PI * 2,
-        }));
-      }
-
-      function render(ts) {
-        ctx.fillStyle = '#0b0b0b';
-        ctx.fillRect(0, 0, W, H);
-
-        for (const s of stars) {
-          const alpha = s.base * (0.55 + 0.45 * Math.sin(ts * s.speed + s.phase));
-          ctx.beginPath();
-          ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(255, 248, 220, ${alpha})`;
-          ctx.fill();
-        }
-
-        raf = requestAnimationFrame(render);
-      }
-
-      const ro = new ResizeObserver(() => resize());
-      ro.observe(canvas.parentElement);
-      resize();
-      raf = requestAnimationFrame(render);
-    })();
-
-
-    /* ============================================================
-       SCROLL REVEAL (IntersectionObserver)
-       ============================================================ */
     const revealObs = new IntersectionObserver(
       entries => {
         entries.forEach(e => {
@@ -1556,9 +1546,6 @@
     document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
 
-    /* ============================================================
-       RSVP FORM SUBMISSION
-       ============================================================ */
     function handleRsvp(e) {
       e.preventDefault();
       const form    = document.getElementById('rsvp-form');
@@ -1575,9 +1562,6 @@
     }
 
 
-    /* ============================================================
-       INIT — apply default language on DOMContentLoaded
-       ============================================================ */
     setLang('tr');
 
   </script>
