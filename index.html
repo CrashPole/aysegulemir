@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="config.js"></script>
 
   <style>
     :root {
@@ -718,6 +719,63 @@
     }
 
     /* ============================================================
+       MEMORY (QR upload)
+       ============================================================ */
+    .memory-block {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 3rem;
+      align-items: center;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .memory-qr-card {
+      padding: 1.2rem;
+      background: #ffffff;
+      border: 1px solid var(--border-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #memory-qr-img {
+      width: 220px;
+      height: 220px;
+      display: block;
+    }
+    .memory-side {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .memory-lead {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.2rem;
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .memory-help {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .memory-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 0.4rem;
+    }
+    @media (max-width: 680px) {
+      .memory-block {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+      }
+      .memory-side { align-items: center; }
+      .memory-actions { justify-content: center; }
+    }
+
+    /* ============================================================
        CONTACT / RSVP
        ============================================================ */
     .contact-grid {
@@ -927,7 +985,7 @@
         <a href="#getting-there" data-i18n="nav_getting_there"></a>
         <a href="#accommodation" data-i18n="nav_accommodation"></a>
         <a href="#registry"      data-i18n="nav_registry"></a>
-        <a href="memory.html"    data-i18n="nav_memory"></a>
+        <a href="#memory"        data-i18n="nav_memory"</a>
         <a href="#contact"       data-i18n="nav_contact"></a>
       </nav>
 
@@ -1192,9 +1250,37 @@
 
 
   <!-- ============================================================
+       MEMORY (QR upload)
+       ============================================================ -->
+  <section id="memory" class="alt-bg">
+    <div class="container">
+
+      <span class="section-label reveal" data-i18n="mem_label"></span>
+      <h2 class="section-heading reveal reveal-d1" data-i18n="mem_title"></h2>
+      <p class="section-sub reveal reveal-d1" data-i18n="mem_sub"></p>
+
+      <div class="memory-block reveal reveal-d2">
+        <div class="memory-qr-card">
+          <img id="memory-qr-img" alt="QR code" />
+        </div>
+        <div class="memory-side">
+          <p class="memory-lead" data-i18n="mem_lead"></p>
+          <p class="memory-help" data-i18n="mem_help"></p>
+          <div class="memory-actions">
+            <a id="memory-open-link" class="btn btn-filled" href="#" target="_blank" rel="noopener" data-i18n="mem_open_btn"></a>
+            <a class="btn" href="memory.html" data-i18n="mem_print_btn"></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
        CONTACT / RSVP
        ============================================================ -->
-  <section id="contact" class="alt-bg">
+  <section id="contact">
     <div class="container">
 
       <span class="section-label reveal" data-i18n="ct_label"></span>
@@ -1404,6 +1490,14 @@
         reg_copy_btn:    "IBAN'ı Kopyala",
         reg_copied:      "Kopyalandı ✓",
 
+        mem_label:       "Bir Anı Bırakın",
+        mem_title:       "Anılarımıza <em>Eklenin</em>",
+        mem_sub:         "Çektiğiniz her kare bizim için çok değerli",
+        mem_lead:        "QR kodu okutarak fotoğraf ve videolarınızı paylaşın.",
+        mem_help:        "Telefonunuzun kamerasını yandaki QR koda doğrultun, açılan bağlantıya dokunun ve istediğiniz fotoğrafları yükleyin.",
+        mem_open_btn:    "Yükleme Sayfasını Aç",
+        mem_print_btn:   "Yazdırılabilir Kartı Aç",
+
         ct_label: "İletişim",
         ct_title: "İletişim & RSVP",
         ct_sub:   "Sorularınız için bize ulaşın ve katılımınızı onaylayın",
@@ -1512,6 +1606,14 @@
         reg_copy_btn:    "Copy IBAN",
         reg_copied:      "Copied ✓",
 
+        mem_label:       "Leave a Memory",
+        mem_title:       "Add to our <em>Memories</em>",
+        mem_sub:         "Every photo you take means the world to us",
+        mem_lead:        "Scan the QR code to share your photos and videos with us.",
+        mem_help:        "Point your phone's camera at the QR code, tap the link that appears, and upload the photos you'd like to share.",
+        mem_open_btn:    "Open Upload Page",
+        mem_print_btn:   "Open Printable Card",
+
         ct_label: "Reach Out",
         ct_title: "Contact & RSVP",
         ct_sub:   "Get in touch with any questions and confirm your attendance",
@@ -1548,7 +1650,7 @@
 
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
-        if (dict[key] != null) el.textContent = dict[key];
+        if (dict[key] != null) el.innerHTML = dict[key];
       });
 
       document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
@@ -1628,6 +1730,25 @@
       { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
     );
     document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+
+    /* ============================================================
+       MEMORY / QR
+       Reads UPLOAD_URL from /config.js (window.AE_CONFIG).
+       ============================================================ */
+    const UPLOAD_URL = window.AE_CONFIG.UPLOAD_URL;
+
+    function qrImageUrl(data, size) {
+      return "https://api.qrserver.com/v1/create-qr-code/"
+        + "?size=" + size + "x" + size
+        + "&margin=8"
+        + "&ecc=M"
+        + "&format=png"
+        + "&data=" + encodeURIComponent(data);
+    }
+
+    document.getElementById('memory-qr-img').src = qrImageUrl(UPLOAD_URL, 440);
+    document.getElementById('memory-open-link').href = UPLOAD_URL;
 
 
     function copyIban() {

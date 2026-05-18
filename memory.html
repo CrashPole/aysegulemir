@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="config.js"></script>
 
   <style>
     :root {
@@ -416,16 +417,10 @@
 
   <script>
     /* ============================================================
-       ⚙️  CONFIG — REPLACE THIS WITH YOUR REAL UPLOAD URL
-       ────────────────────────────────────────────────────────────
-       Paste the share link of your Google Drive folder
-       (or Google Photos album / WeTransfer collect link / etc.)
-       between the quotes below. Everything else updates automatically:
-         • the on-screen QR code
-         • the printable / downloadable QR card
-         • the "Open Upload Page" button
+       Reads UPLOAD_URL from /config.js (window.AE_CONFIG).
+       Edit /config.js to change the upload destination.
        ============================================================ */
-    const UPLOAD_URL = "https://drive.google.com/drive/folders/167eUhWiqG0MJDZyet5hwTEcuc3XFrFWy?usp=drive_link";
+    const UPLOAD_URL = window.AE_CONFIG.UPLOAD_URL;
 
     /* ============================================================
        i18n
