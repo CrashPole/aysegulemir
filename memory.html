@@ -7,7 +7,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
 
   <style>
     :root {
@@ -188,7 +187,7 @@
       align-items: center;
       justify-content: center;
     }
-    #qr-canvas { width: 240px; height: 240px; }
+    #qr-img { width: 240px; height: 240px; display: block; }
     .qr-caption {
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
@@ -296,7 +295,7 @@
 
     @media (max-width: 600px) {
       .qr-card { padding: 2.2rem 1.6rem; }
-      #qr-canvas { width: 200px; height: 200px; }
+      #qr-img { width: 200px; height: 200px; }
       .actions { flex-direction: column; }
       .btn { width: 100%; }
     }
@@ -334,7 +333,7 @@
       .qr-card .couple em { color: #6a5d44 !important; }
       .qr-card .date { color: #555 !important; }
       .qr-caption { color: #555 !important; }
-      #qr-canvas { width: 60mm !important; height: 60mm !important; }
+      #qr-img { width: 60mm !important; height: 60mm !important; }
     }
   </style>
 </head>
@@ -365,7 +364,7 @@
         <div class="couple">Ayşegül <em>&amp;</em> Emir Kaan</div>
         <div class="date">20 · 06 · 2026</div>
         <div class="qr-wrap">
-          <canvas id="qr-canvas" aria-label="QR code"></canvas>
+          <img id="qr-img" alt="QR code" />
         </div>
         <p class="qr-caption" data-i18n="caption"></p>
       </div>
@@ -486,13 +485,16 @@
     /* ============================================================
        QR rendering — on-screen canvas
        ============================================================ */
-    const canvas = document.getElementById('qr-canvas');
-    QRCode.toCanvas(canvas, UPLOAD_URL, {
-      width: 480,
-      margin: 1,
-      errorCorrectionLevel: 'M',
-      color: { dark: '#1c1c1c', light: '#ffffff' }
-    });
+    function qrImageUrl(data, size) {
+      return "https://api.qrserver.com/v1/create-qr-code/"
+        + "?size=" + size + "x" + size
+        + "&margin=8"
+        + "&ecc=M"
+        + "&format=png"
+        + "&data=" + encodeURIComponent(data);
+    }
+
+    document.getElementById('qr-img').src = qrImageUrl(UPLOAD_URL, 480);
 
     /* Wire up "open upload" button */
     document.getElementById('open-upload').href = UPLOAD_URL;
@@ -539,15 +541,12 @@
 
       /* QR — render at high resolution to a temp canvas, then draw centered */
       const qrSize = 1300;
-      const qrCanvas = document.createElement('canvas');
-      QRCode.toCanvas(qrCanvas, UPLOAD_URL, {
-        width: qrSize,
-        margin: 1,
-        errorCorrectionLevel: 'M',
-        color: { dark: '#1c1c1c', light: '#ffffff' }
-      }, function (err) {
-        if (err) { console.error(err); return; }
-
+      const qrImg = new Image();
+      qrImg.crossOrigin = 'anonymous';
+      qrImg.onerror = function () {
+        alert('Could not load the QR image. Please check your network and try again.');
+      };
+      qrImg.onload = function () {
         const qrX = (W - qrSize) / 2;
         const qrY = 920;
 
@@ -558,7 +557,7 @@
         ctx.lineWidth = 2;
         ctx.strokeRect(qrX - 60, qrY - 60, qrSize + 120, qrSize + 120);
 
-        ctx.drawImage(qrCanvas, qrX, qrY, qrSize, qrSize);
+        ctx.drawImage(qrImg, qrX, qrY, qrSize, qrSize);
 
         /* Caption */
         ctx.fillStyle = '#7a7466';
@@ -579,7 +578,8 @@
         link.download = 'ayseguil-emirkaan-qr-card.png';
         link.href = card.toDataURL('image/png');
         link.click();
-      });
+      };
+      qrImg.src = qrImageUrl(UPLOAD_URL, qrSize);
     }
 
 
