@@ -1566,15 +1566,33 @@ textarea.form-control {
 
   .countdown { grid-template-columns: repeat(2, 1fr); }
 
-  .hero-grid { padding: calc(var(--header-h) + 24px) 0 32px; }
-  .hero-info { gap: 1.6rem 2rem; }
+  .hero-grid { padding: calc(var(--header-h) + 20px) 0 28px; }
+
+  /* sticker moves to top-right corner, out of the text area */
   .hero-sticker {
-    top: auto;
-    bottom: 160px;
-    right: -10px;
-    width: 130px;
-    height: 130px;
+    top: calc(var(--header-h) + 10px);
+    bottom: auto;
+    right: 14px;
+    width: 108px;
+    height: 108px;
   }
+
+  /* names lose the indent on line-2 so they stack flush */
+  .hero-name-line.line-2 { padding-left: 0; }
+
+  /* info becomes a clean 2-column grid */
+  .hero-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.4rem 1rem;
+    margin-top: 1.8rem;
+  }
+
+  /* hide the large right-side lily so it doesn't crowd the sticker */
+  .hero-flora-2 { display: none; }
+
+  /* pull the gold daisy off-screen right to avoid collision */
+  .hero-flora-3 { display: none; }
 
   .tl-row {
     grid-template-columns: 1fr;
