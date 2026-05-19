@@ -38,7 +38,7 @@ const i18n = {
     cd_seconds: "Saniye",
 
     tl_ceremony_title: "Varış &amp; Nikah Töreni",
-    tl_ceremony_desc:  "Lütfen saat 19:00'da mekanda olun. Sembolik nikah törenimiz başlıyor.",
+    tl_ceremony_desc:  "Lütfen saat 19:00'da mekanda olun. Sembolik nikah törenimiz 19:30'da başlıyor.",
 
     tl_cocktail_title: "Nikah Töreni &amp; Kokteyl",
     tl_cocktail_desc:  "Saat 19:00'da sembolik nikah törenimiz başlıyor. Törenin ardından kokteyl saati ile kutlamalar başlıyor.",
@@ -168,7 +168,7 @@ const i18n = {
     cd_seconds: "Seconds",
 
     tl_ceremony_title: "Arrival &amp; Wedding Ceremony",
-    tl_ceremony_desc:  "Please be at the venue by 19:00. Our symbolic wedding ceremony begins.",
+    tl_ceremony_desc:  "Please be at the venue by 19:00. Our symbolic wedding ceremony begins at 19:30.",
 
     tl_cocktail_title: "Wedding Ceremony &amp; Cocktail",
     tl_cocktail_desc:  "Our symbolic wedding ceremony begins at 19:00. Cocktails and celebrations follow immediately after.",
