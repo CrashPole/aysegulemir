@@ -37,8 +37,8 @@ const i18n = {
     cd_minutes: "Dakika",
     cd_seconds: "Saniye",
 
-    tl_ceremony_title: "Varış &amp; Grup Fotoğrafları",
-    tl_ceremony_desc:  "Lütfen saat 17:00'de mekanda olun. Törenden önce tüm misafirlerimizle birlikte grup fotoğrafı çekeceğiz.",
+    tl_ceremony_title: "Varış &amp; Nikah Töreni",
+    tl_ceremony_desc:  "Lütfen saat 19:00'da mekanda olun. Sembolik nikah törenimiz başlıyor.",
 
     tl_cocktail_title: "Nikah Töreni &amp; Kokteyl",
     tl_cocktail_desc:  "Saat 19:00'da sembolik nikah törenimiz başlıyor. Törenin ardından kokteyl saati ile kutlamalar başlıyor.",
@@ -46,8 +46,8 @@ const i18n = {
     tl_dinner_title: "Akşam Yemeği",
     tl_dinner_desc:  "Yemek servisi 20:00–20:30 saatleri arasında gerçekleşir. İzmir mutfağından özel hazırlanmış lezzetler sizi bekliyor.",
 
-    tl_party_title: "Sonrası Parti",
-    tl_party_desc:  "İlk dansımızla gerçek parti başlıyor — müzik, dans ve unutulmaz anlar.",
+    tl_party_title: "Dans &amp; Kutlama",
+    tl_party_desc:  "DJ seti, sürprizler ve sabaha kadar süren parti. Rahat ayakkabılarınızı getirmenizi öneririz.",
 
     tl_end_title: "Gece Yarısı · Veda",
     tl_end_desc:  "Bu özel geceyi bizimle paylaştığınız için teşekkür ederiz. Güvenli yolculuklar.",
@@ -167,8 +167,8 @@ const i18n = {
     cd_minutes: "Minutes",
     cd_seconds: "Seconds",
 
-    tl_ceremony_title: "Arrival &amp; Group Photos",
-    tl_ceremony_desc:  "Please arrive at the venue by 17:00. We'll take a big group photo with everyone before the celebrations begin.",
+    tl_ceremony_title: "Arrival &amp; Wedding Ceremony",
+    tl_ceremony_desc:  "Please be at the venue by 19:00. Our symbolic wedding ceremony begins.",
 
     tl_cocktail_title: "Wedding Ceremony &amp; Cocktail",
     tl_cocktail_desc:  "Our symbolic wedding ceremony begins at 19:00. Cocktails and celebrations follow immediately after.",
@@ -176,8 +176,8 @@ const i18n = {
     tl_dinner_title: "Dinner",
     tl_dinner_desc:  "Dinner service runs from 20:00 to 20:30. İzmir-inspired dishes specially prepared for the occasion.",
 
-    tl_party_title: "After Party",
-    tl_party_desc:  "The real party begins with our first dance — music, dancing, and unforgettable memories.",
+    tl_party_title: "Dance &amp; Celebrate",
+    tl_party_desc:  "DJ set, a few surprises, and dancing until midnight. Comfortable shoes strongly recommended.",
 
     tl_end_title: "Midnight · Farewell",
     tl_end_desc:  "Thank you for sharing this special night with us. Safe travels home.",
