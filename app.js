@@ -223,7 +223,7 @@ const i18n = {
     reg_sub:   "Especially for our guests joining us from outside of Türkiye.",
     reg_band_left:  "Gift · Ticket N°&nbsp;2026",
     reg_presence:   "&ldquo;Dear guests — sharing this moment with you is the <em>most beautiful gift</em> we could ask for.&rdquo;",
-    reg_intro:      "In Turkish wedding tradition, gifts are warmly given in person on the day of the celebration. For our beloved guests travelling from abroad who wish to contribute from afar, we have shared our account details below. Your thoughtfulness truly means the world to us.",
+    reg_intro:      "If you would still like to contribute, we have shared our account details below. Your thoughtfulness truly means the world to us.",
     reg_holder_label:"Account Holder",
     reg_bank_label:  "Bank",
     reg_copy_btn:    "Copy IBAN",
