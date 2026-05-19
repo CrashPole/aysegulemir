@@ -289,6 +289,10 @@ function setLang(lang) {
     : "Ayşegül & Emir Kaan — June 20, 2026";
   document.getElementById('btn-tr').classList.toggle('active', lang === 'tr');
   document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+
+  // Registry section is only relevant for international guests
+  const registry = document.getElementById('registry');
+  if (registry) registry.style.display = lang === 'tr' ? 'none' : '';
 }
 
 /* ============================================================
