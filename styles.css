@@ -1568,29 +1568,24 @@ textarea.form-control {
 
   .hero-grid { padding: calc(var(--header-h) + 20px) 0 28px; }
 
-  /* sticker moves to top-right corner, out of the text area */
-  .hero-sticker {
-    top: calc(var(--header-h) + 10px);
-    bottom: auto;
-    right: 14px;
-    width: 108px;
-    height: 108px;
-  }
+  /* hide sticker and scroll cue — both are decorative/desktop-only */
+  .hero-sticker { display: none; }
+  .scroll-cue   { display: none; }
 
-  /* names lose the indent on line-2 so they stack flush */
+  /* names flush left, no indent */
   .hero-name-line.line-2 { padding-left: 0; }
 
-  /* info stacks in a single column, confined to the left half */
+  /* info stacks vertically, full width */
   .hero-info {
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: flex-start;
     gap: 1.2rem;
     margin-top: 1.8rem;
-    max-width: 58%;
+    max-width: 100%;
   }
 
-  /* hide the right-side flora so nothing competes with the sticker */
+  /* hide right-side flora on mobile */
   .hero-flora-2 { display: none; }
   .hero-flora-3 { display: none; }
 
