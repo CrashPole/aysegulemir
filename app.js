@@ -47,7 +47,10 @@ const i18n = {
     tl_dinner_desc:  "Yemek servisi 20:00–20:30 saatleri arasında gerçekleşir. İzmir mutfağından özel hazırlanmış lezzetler sizi bekliyor.",
 
     tl_party_title: "Sonrası Parti",
-    tl_party_desc:  "İlk dansımızla gerçek parti başlıyor — sabah 03:00'a kadar müzik, dans ve unutulmaz anlar.",
+    tl_party_desc:  "İlk dansımızla gerçek parti başlıyor — müzik, dans ve unutulmaz anlar.",
+
+    tl_end_title: "Gece Yarısı · Veda",
+    tl_end_desc:  "Bu özel geceyi bizimle paylaştığınız için teşekkür ederiz. Güvenli yolculuklar.",
 
     gt_label: "02 · Yol",
     gt_title: "Nasıl <em>Gelinir</em>",
@@ -174,7 +177,10 @@ const i18n = {
     tl_dinner_desc:  "Dinner service runs from 20:00 to 20:30. İzmir-inspired dishes specially prepared for the occasion.",
 
     tl_party_title: "After Party",
-    tl_party_desc:  "The real party begins with our first dance — music, dancing, and unforgettable memories until 3:00 AM.",
+    tl_party_desc:  "The real party begins with our first dance — music, dancing, and unforgettable memories.",
+
+    tl_end_title: "Midnight · Farewell",
+    tl_end_desc:  "Thank you for sharing this special night with us. Safe travels home.",
 
     gt_label: "02 · Travel",
     gt_title: "Getting <em>There</em>",
