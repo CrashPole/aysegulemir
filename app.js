@@ -44,7 +44,7 @@ const i18n = {
     tl_cocktail_desc:  "Saat 19:00'da sembolik nikah törenimiz başlıyor. Törenin ardından kokteyl saati ile kutlamalar başlıyor.",
 
     tl_dinner_title: "Akşam Yemeği",
-    tl_dinner_desc:  "Yemek servisi 20:00–20:30 saatleri arasında gerçekleşir. İzmir mutfağından özel hazırlanmış lezzetler sizi bekliyor.",
+    tl_dinner_desc:  "Gece boyunca İzmir mutfağından özel hazırlanmış lezzetler servis edilecektir.",
 
     tl_party_title: "Dans &amp; Kutlama",
     tl_party_desc:  "DJ seti, sürprizler ve sabaha kadar süren parti. Rahat ayakkabılarınızı getirmenizi öneririz.",
@@ -174,7 +174,7 @@ const i18n = {
     tl_cocktail_desc:  "Our symbolic wedding ceremony begins at 19:00. Cocktails and celebrations follow immediately after.",
 
     tl_dinner_title: "Dinner",
-    tl_dinner_desc:  "Dinner service runs from 20:00 to 20:30. İzmir-inspired dishes specially prepared for the occasion.",
+    tl_dinner_desc:  "İzmir-inspired dishes will be served throughout the evening.",
 
     tl_party_title: "Dance &amp; Celebrate",
     tl_party_desc:  "DJ set, a few surprises, and dancing until midnight. Comfortable shoes strongly recommended.",
