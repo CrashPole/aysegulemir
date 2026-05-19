@@ -220,7 +220,7 @@ const i18n = {
 
     reg_label: "03 · Gift",
     reg_title: "A Little <em>Note</em>",
-    reg_sub:   "Especially for our guests joining us from outside of Türkiye.",
+    reg_sub:   "",
     reg_band_left:  "Gift · Ticket N°&nbsp;2026",
     reg_presence:   "&ldquo;Dear guests — sharing this moment with you is the <em>most beautiful gift</em> we could ask for.&rdquo;",
     reg_intro:      "If you would still like to contribute, we have shared our account details below. Your thoughtfulness truly means the world to us.",
