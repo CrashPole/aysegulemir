@@ -1580,18 +1580,17 @@ textarea.form-control {
   /* names lose the indent on line-2 so they stack flush */
   .hero-name-line.line-2 { padding-left: 0; }
 
-  /* info becomes a clean 2-column grid */
+  /* info stacks in a single column, confined to the left half */
   .hero-info {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.4rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
     margin-top: 1.8rem;
+    max-width: 55%;
   }
 
-  /* hide the large right-side lily so it doesn't crowd the sticker */
+  /* hide the right-side flora so nothing competes with the sticker */
   .hero-flora-2 { display: none; }
-
-  /* pull the gold daisy off-screen right to avoid collision */
   .hero-flora-3 { display: none; }
 
   .tl-row {
