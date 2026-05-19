@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ayşegül &amp; Emir Kaan — 20.06.2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="config.js"></script>
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER
+       ============================================================ -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <a href="#hero" class="header-logo">
+        A<span class="amp">&amp;</span>E
+        <span class="dot"></span>
+      </a>
+
+      <nav class="site-nav" role="navigation">
+        <a href="#wedding-day"   data-i18n="nav_wedding_day"></a>
+        <a href="#getting-there" data-i18n="nav_getting_there"></a>
+        <a href="#accommodation" data-i18n="nav_accommodation"></a>
+        <a href="#registry"      data-i18n="nav_registry"></a>
+        <a href="#memory"        data-i18n="nav_memory"></a>
+        <a href="#contact"       data-i18n="nav_contact"></a>
+      </nav>
+
+      <div class="header-right">
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button class="lang-btn active" id="btn-tr" onclick="setLang('tr')">TR</button>
+          <button class="lang-btn"        id="btn-en" onclick="setLang('en')">EN</button>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <nav class="mobile-nav" id="mobile-nav" role="navigation">
+    <a href="#wedding-day"   data-i18n="nav_wedding_day"   onclick="closeMenu()"></a>
+    <a href="#getting-there" data-i18n="nav_getting_there" onclick="closeMenu()"></a>
+    <a href="#accommodation" data-i18n="nav_accommodation" onclick="closeMenu()"></a>
+    <a href="#registry"      data-i18n="nav_registry"      onclick="closeMenu()"></a>
+    <a href="#memory"        data-i18n="nav_memory"        onclick="closeMenu()"></a>
+    <a href="#contact"       data-i18n="nav_contact"       onclick="closeMenu()"></a>
+  </nav>
+
+
+  <!-- ============================================================
+       FLORAL SVG DEFS — reusable via <use>
+       ============================================================ -->
+  <svg width="0" height="0" style="position:absolute;" aria-hidden="true">
+    <defs>
+      <!-- LILY — 6-petal star lily with stamens (front view) -->
+      <symbol id="flora-lily" viewBox="0 0 200 220">
+        <g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <!-- stem -->
+          <path d="M 100 218 Q 100 165, 100 115" />
+          <!-- leaves on stem -->
+          <path d="M 100 175 Q 78 168, 64 188 Q 78 178, 100 175 Z" fill="currentColor" fill-opacity="0.12" />
+          <path d="M 100 150 Q 122 142, 138 158 Q 122 152, 100 150 Z" fill="currentColor" fill-opacity="0.12" />
+          <!-- bloom: 6 petals around (100,90) -->
+          <g transform="translate(100 90)">
+            <g fill="currentColor" fill-opacity="0.10" stroke="currentColor" stroke-width="1.3">
+              <path d="M 0 0 Q -10 -32, -2 -78 Q 0 -86, 2 -78 Q 10 -32, 0 0 Z" />
+              <path d="M 0 0 Q -10 -32, -2 -78 Q 0 -86, 2 -78 Q 10 -32, 0 0 Z" transform="rotate(60)" />
+              <path d="M 0 0 Q -10 -32, -2 -78 Q 0 -86, 2 -78 Q 10 -32, 0 0 Z" transform="rotate(120)" />
+              <path d="M 0 0 Q -10 -32, -2 -78 Q 0 -86, 2 -78 Q 10 -32, 0 0 Z" transform="rotate(180)" />
+              <path d="M 0 0 Q -10 -32, -2 -78 Q 0 -86, 2 -78 Q 10 -32, 0 0 Z" transform="rotate(240)" />
+              <path d="M 0 0 Q -10 -32, -2 -78 Q 0 -86, 2 -78 Q 10 -32, 0 0 Z" transform="rotate(300)" />
+            </g>
+            <!-- subtle petal mid-veins -->
+            <g stroke="currentColor" stroke-width="0.8" opacity="0.6">
+              <line x1="0" y1="-6" x2="0" y2="-70" />
+              <line x1="0" y1="-6" x2="0" y2="-70" transform="rotate(60)" />
+              <line x1="0" y1="-6" x2="0" y2="-70" transform="rotate(120)" />
+              <line x1="0" y1="-6" x2="0" y2="-70" transform="rotate(180)" />
+              <line x1="0" y1="-6" x2="0" y2="-70" transform="rotate(240)" />
+              <line x1="0" y1="-6" x2="0" y2="-70" transform="rotate(300)" />
+            </g>
+            <!-- stamens -->
+            <g stroke="currentColor" stroke-width="1.1" fill="currentColor">
+              <line x1="0" y1="0" x2="-9" y2="-13" />
+              <line x1="0" y1="0" x2="9"  y2="-13" />
+              <line x1="0" y1="0" x2="-13" y2="-2" />
+              <line x1="0" y1="0" x2="13"  y2="-2" />
+              <line x1="0" y1="0" x2="-7" y2="11" />
+              <line x1="0" y1="0" x2="7"  y2="11" />
+              <ellipse cx="-9"  cy="-13" rx="1.5" ry="2.3" />
+              <ellipse cx="9"   cy="-13" rx="1.5" ry="2.3" />
+              <ellipse cx="-13" cy="-2"  rx="2.2" ry="1.5" />
+              <ellipse cx="13"  cy="-2"  rx="2.2" ry="1.5" />
+              <ellipse cx="-7"  cy="11"  rx="1.5" ry="2.2" />
+              <ellipse cx="7"   cy="11"  rx="1.5" ry="2.2" />
+            </g>
+            <circle cx="0" cy="0" r="3.5" fill="currentColor" />
+          </g>
+        </g>
+      </symbol>
+      <!-- LILY-SIDE — side-view trumpet lily (more naturalistic) -->
+      <symbol id="flora-lily-side" viewBox="0 0 200 220">
+        <g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <!-- stem -->
+          <path d="M 50 218 Q 70 175, 95 130" />
+          <!-- leaf -->
+          <path d="M 78 175 Q 58 170, 48 192 Q 62 180, 78 175 Z" fill="currentColor" fill-opacity="0.12" />
+          <!-- trumpet bloom side view -->
+          <g>
+            <!-- back petals curling away -->
+            <path d="M 95 130 Q 80 95, 78 55 Q 86 35, 100 30" />
+            <path d="M 95 130 Q 110 95, 122 55 Q 122 35, 110 28" />
+            <!-- central trumpet -->
+            <path d="M 95 130 Q 90 90, 100 45 Q 110 90, 105 130" fill="currentColor" fill-opacity="0.10" />
+            <!-- front petal curling forward -->
+            <path d="M 95 130 Q 85 100, 78 70 Q 70 50, 80 40" />
+            <path d="M 105 130 Q 115 100, 122 70 Q 130 50, 120 40" />
+            <!-- stamens shooting up & out -->
+            <line x1="100" y1="60" x2="86" y2="15" stroke-width="1" />
+            <line x1="100" y1="60" x2="100" y2="10" stroke-width="1" />
+            <line x1="100" y1="60" x2="114" y2="15" stroke-width="1" />
+            <ellipse cx="86"  cy="13" rx="2" ry="3.2" fill="currentColor" />
+            <ellipse cx="100" cy="8"  rx="2" ry="3.2" fill="currentColor" />
+            <ellipse cx="114" cy="13" rx="2" ry="3.2" fill="currentColor" />
+          </g>
+        </g>
+      </symbol>
+      <!-- Daisy / wildflower -->
+      <symbol id="flora-daisy" viewBox="0 0 100 100">
+        <g stroke="currentColor" stroke-width="1.3" fill="none">
+          <path d="M 50 100 L 50 60" stroke-linecap="round" />
+          <ellipse cx="42" cy="78" rx="6" ry="3" transform="rotate(-25 42 78)" />
+          <g transform="translate(50 50)" fill="currentColor" fill-opacity="0.18" stroke="currentColor">
+            <ellipse cx="0" cy="-15" rx="4" ry="11" />
+            <ellipse cx="0" cy="-15" rx="4" ry="11" transform="rotate(45)" />
+            <ellipse cx="0" cy="-15" rx="4" ry="11" transform="rotate(90)" />
+            <ellipse cx="0" cy="-15" rx="4" ry="11" transform="rotate(135)" />
+            <ellipse cx="0" cy="-15" rx="4" ry="11" transform="rotate(180)" />
+            <ellipse cx="0" cy="-15" rx="4" ry="11" transform="rotate(225)" />
+            <ellipse cx="0" cy="-15" rx="4" ry="11" transform="rotate(270)" />
+            <ellipse cx="0" cy="-15" rx="4" ry="11" transform="rotate(315)" />
+          </g>
+          <circle cx="50" cy="50" r="5" fill="#C8A053" stroke="none" />
+        </g>
+      </symbol>
+      <!-- Wave / scallop -->
+      <symbol id="flora-wave" viewBox="0 0 200 60">
+        <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+          <path d="M 5 30 Q 25 10, 45 30 T 85 30 T 125 30 T 165 30 T 195 30" />
+          <path d="M 5 45 Q 25 25, 45 45 T 85 45 T 125 45 T 165 45 T 195 45" opacity="0.5" />
+        </g>
+      </symbol>
+      <!-- Small sprig -->
+      <symbol id="flora-sprig" viewBox="0 0 100 100">
+        <g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round">
+          <path d="M 50 95 Q 50 60, 55 25" />
+          <ellipse cx="42" cy="70" rx="10" ry="4" transform="rotate(-40 42 70)" />
+          <ellipse cx="60" cy="55" rx="10" ry="4" transform="rotate(45 60 55)" />
+          <ellipse cx="45" cy="40" rx="9" ry="3.5" transform="rotate(-50 45 40)" />
+          <ellipse cx="58" cy="30" rx="7" ry="3" transform="rotate(40 58 30)" />
+        </g>
+      </symbol>
+    </defs>
+  </svg>
+
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section id="hero" data-screen-label="hero">
+    <!-- Hero flora -->
+    <div class="flora f-cream hero-flora-1 flora-sway-slow" aria-hidden="true"><svg><use href="#flora-lily-side" /></svg></div>
+    <div class="flora f-cream hero-flora-2 flora-sway"      aria-hidden="true"><svg><use href="#flora-lily" /></svg></div>
+    <div class="flora f-gold  hero-flora-3"                 aria-hidden="true"><svg><use href="#flora-daisy" /></svg></div>
+
+    <div class="hero-grid">
+      <div class="hero-stack">
+        <div class="hero-meta-top">
+          <span class="eyebrow" data-i18n="hero_eyebrow"></span>
+          <span class="eyebrow" data-i18n="hero_meta_loc"></span>
+        </div>
+
+        <h1 class="hero-names">
+          <span class="hero-name-line line-1">Ayşegül</span>
+          <span class="hero-name-line line-2"><span class="hero-amp">&amp;</span> Emir&nbsp;Kaan</span>
+        </h1>
+
+        <div class="hero-info">
+          <div class="hero-info-block">
+            <span class="hero-info-label" data-i18n="hero_lbl_date"></span>
+            <span class="hero-info-value">20 · 06 · <span class="accent">2026</span></span>
+          </div>
+          <div class="hero-info-block">
+            <span class="hero-info-label" data-i18n="hero_lbl_day"></span>
+            <span class="hero-info-value" data-i18n="hero_val_day"></span>
+          </div>
+          <div class="hero-info-block">
+            <span class="hero-info-label" data-i18n="hero_lbl_place"></span>
+            <span class="hero-info-value">Güzelbahçe, <span class="accent">İzmir</span></span>
+          </div>
+          <div class="hero-info-block">
+            <span class="hero-info-label" data-i18n="hero_lbl_dress"></span>
+            <span class="hero-info-value" data-i18n="hero_val_dress"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rotating sticker -->
+      <div class="hero-sticker" aria-hidden="true">
+        <svg class="hero-sticker-rotate" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <path id="circlePath" d="M 100, 100 m -78, 0 a 78,78 0 1,1 156,0 a 78,78 0 1,1 -156,0" />
+          </defs>
+          <text fill="#F4EFE2" font-family="JetBrains Mono, monospace" font-size="11" letter-spacing="3">
+            <textPath href="#circlePath" startOffset="0">
+              SAVE  THE  DATE  ·  20·06·2026  ·  AEGEAN  WEDDING  ·  
+            </textPath>
+          </text>
+        </svg>
+        <div class="hero-sticker-center">&amp;</div>
+      </div>
+
+      <div class="scroll-cue" aria-hidden="true">
+        <span data-i18n="scroll_cue"></span>
+        <div class="scroll-cue-arrow"></div>
+      </div>
+    </div>
+
+    <!-- Marquee at bottom of hero -->
+    <div class="hero-marquee" aria-hidden="true">
+      <div class="marquee-track" id="hero-marquee-track"></div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       WEDDING DAY — countdown + timeline
+       ============================================================ -->
+  <section id="wedding-day" class="section-pad alt-bg-cream" data-screen-label="wedding day">
+    <div class="flora section-flora f-cream flora-tr" aria-hidden="true"><svg><use href="#flora-lily" /></svg></div>
+    <div class="flora section-flora f-gold flora-bl flora-sway-slow" aria-hidden="true"><svg><use href="#flora-daisy" /></svg></div>
+    <div class="container">
+
+      <div class="section-head">
+        <span class="section-tag reveal"><span class="dot"></span><span data-i18n="wd_label"></span></span>
+        <h2 class="h-display reveal reveal-d1" data-i18n="wd_title"></h2>
+        <p class="lede reveal reveal-d1" data-i18n="wd_sub"></p>
+      </div>
+
+      <div class="cd-banner reveal reveal-d2" data-i18n="cd_banner"></div>
+      <div class="countdown reveal reveal-d2" id="countdown-wrap">
+        <div class="cd-tile" data-index="01">
+          <span class="cd-number" id="cd-days">--</span>
+          <span class="cd-label" data-i18n="cd_days"></span>
+        </div>
+        <div class="cd-tile" data-index="02">
+          <span class="cd-number" id="cd-hours">--</span>
+          <span class="cd-label" data-i18n="cd_hours"></span>
+        </div>
+        <div class="cd-tile" data-index="03">
+          <span class="cd-number" id="cd-minutes">--</span>
+          <span class="cd-label" data-i18n="cd_minutes"></span>
+        </div>
+        <div class="cd-tile" data-index="04">
+          <span class="cd-number" id="cd-seconds">--</span>
+          <span class="cd-label" data-i18n="cd_seconds"></span>
+        </div>
+      </div>
+
+      <!-- Timeline -->
+      <div class="timeline reveal reveal-d3">
+
+        <div class="tl-row">
+          <div class="tl-num">N°&nbsp;01</div>
+          <div class="tl-time">14:00</div>
+          <div class="tl-body">
+            <div class="tl-title" data-i18n="tl_ceremony_title"></div>
+            <div class="tl-desc"  data-i18n="tl_ceremony_desc"></div>
+          </div>
+          <div class="tl-icon">✺</div>
+        </div>
+
+        <div class="tl-row">
+          <div class="tl-num">N°&nbsp;02</div>
+          <div class="tl-time">15:30</div>
+          <div class="tl-body">
+            <div class="tl-title" data-i18n="tl_cocktail_title"></div>
+            <div class="tl-desc"  data-i18n="tl_cocktail_desc"></div>
+          </div>
+          <div class="tl-icon">◊</div>
+        </div>
+
+        <div class="tl-row">
+          <div class="tl-num">N°&nbsp;03</div>
+          <div class="tl-time">18:00</div>
+          <div class="tl-body">
+            <div class="tl-title" data-i18n="tl_dinner_title"></div>
+            <div class="tl-desc"  data-i18n="tl_dinner_desc"></div>
+          </div>
+          <div class="tl-icon">✦</div>
+        </div>
+
+        <div class="tl-row">
+          <div class="tl-num">N°&nbsp;04</div>
+          <div class="tl-time">21:00</div>
+          <div class="tl-body">
+            <div class="tl-title" data-i18n="tl_party_title"></div>
+            <div class="tl-desc"  data-i18n="tl_party_desc"></div>
+          </div>
+          <div class="tl-icon">♪</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       GETTING THERE
+       ============================================================ -->
+  <section id="getting-there" class="section-pad" data-screen-label="getting there">
+    <div class="flora section-flora f-cream flora-tl flora-sway-slow" aria-hidden="true"><svg><use href="#flora-lily-side" /></svg></div>
+    <div class="flora section-flora f-gold flora-br" aria-hidden="true"><svg><use href="#flora-daisy" /></svg></div>
+    <div class="container">
+
+      <div class="section-head">
+        <span class="section-tag tag-clay reveal"><span class="dot"></span><span data-i18n="gt_label"></span></span>
+        <h2 class="h-display reveal reveal-d1" data-i18n="gt_title"></h2>
+        <p class="lede reveal reveal-d1" data-i18n="gt_sub"></p>
+      </div>
+
+      <div class="gt-layout">
+        <div class="gt-card reveal reveal-d1">
+          <span class="gt-card-num">N°&nbsp;01</span>
+          <div class="gt-icon-box">
+            <svg viewBox="0 0 24 24"><path d="M5 16V9a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v7M5 16h14M5 16v2a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-2M16 16v2a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-2M7 13h2M15 13h2"/></svg>
+          </div>
+          <div class="gt-card-title" data-i18n="gt_car_title"></div>
+          <div class="gt-card-text"  data-i18n="gt_car_text"></div>
+        </div>
+        <div class="gt-card reveal reveal-d2">
+          <span class="gt-card-num">N°&nbsp;02</span>
+          <div class="gt-icon-box">
+            <svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="14" rx="2"/><path d="M5 14h14M9 4v10M15 4v10M8 21l1-3M16 21l-1-3"/><circle cx="9" cy="17" r="0.6" fill="currentColor" stroke="none"/><circle cx="15" cy="17" r="0.6" fill="currentColor" stroke="none"/></svg>
+          </div>
+          <div class="gt-card-title" data-i18n="gt_transit_title"></div>
+          <div class="gt-card-text"  data-i18n="gt_transit_text"></div>
+        </div>
+      </div>
+
+      <div class="map-wrap reveal reveal-d3">
+        <div class="map-meta">
+          <span class="pin"></span>
+          <span>Güzelbahçe · İzmir · 38.36°N 26.85°E</span>
+        </div>
+        <iframe
+          src="https://www.google.com/maps?q=G%C3%BCzelbah%C3%A7e%2C%20%C4%B0zmir%2C%20Turkey&hl=tr&z=13&output=embed"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Google Maps — Güzelbahçe, İzmir">
+        </iframe>
+      </div>
+
+      <div class="map-action reveal reveal-d3">
+        <a class="btn btn-filled btn-lg"
+           href="https://maps.app.goo.gl/hZJZBb7vHxMT7HbWA"
+           target="_blank" rel="noopener"
+           data-i18n="gt_map_btn"></a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       ACCOMMODATION
+       ============================================================ -->
+  <section id="accommodation" class="section-pad alt-bg-cream" data-screen-label="accommodation">
+    <div class="flora section-flora f-cream flora-tr flora-sway" aria-hidden="true"><svg><use href="#flora-lily" /></svg></div>
+    <div class="flora section-flora f-gold flora-bl flora-sway-slow" aria-hidden="true"><svg><use href="#flora-daisy" /></svg></div>
+    <div class="container">
+
+      <div class="section-head">
+        <span class="section-tag tag-olive reveal"><span class="dot"></span><span data-i18n="ac_label"></span></span>
+        <h2 class="h-display reveal reveal-d1" data-i18n="ac_title"></h2>
+        <p class="lede reveal reveal-d1" data-i18n="ac_sub"></p>
+      </div>
+
+      <div class="hotels">
+
+        <div class="hotel-card reveal reveal-d1">
+          <div class="hotel-thumb hotel-thumb-1">
+            <span class="hotel-tag" data-i18n="hotel1_tag"></span>
+            <span class="hotel-icon">~</span>
+          </div>
+          <div class="hotel-body">
+            <div class="hotel-stars">★★★★★</div>
+            <div class="hotel-name" data-i18n="hotel1_name"></div>
+            <div class="hotel-loc"  data-i18n="hotel1_location"></div>
+            <div class="hotel-desc" data-i18n="hotel1_desc"></div>
+            <div class="hotel-price" data-i18n="hotel1_price"></div>
+            <a href="#" class="btn btn-block btn-noarrow" data-i18n="hotel_book_btn"></a>
+          </div>
+        </div>
+
+        <div class="hotel-card reveal reveal-d2">
+          <div class="hotel-thumb hotel-thumb-2">
+            <span class="hotel-tag" data-i18n="hotel2_tag"></span>
+            <span class="hotel-icon">✺</span>
+          </div>
+          <div class="hotel-body">
+            <div class="hotel-stars">★★★★</div>
+            <div class="hotel-name" data-i18n="hotel2_name"></div>
+            <div class="hotel-loc"  data-i18n="hotel2_location"></div>
+            <div class="hotel-desc" data-i18n="hotel2_desc"></div>
+            <div class="hotel-price" data-i18n="hotel2_price"></div>
+            <a href="#" class="btn btn-block btn-noarrow" data-i18n="hotel_book_btn"></a>
+          </div>
+        </div>
+
+        <div class="hotel-card reveal reveal-d3">
+          <div class="hotel-thumb hotel-thumb-3">
+            <span class="hotel-tag" data-i18n="hotel3_tag"></span>
+            <span class="hotel-icon">◈</span>
+          </div>
+          <div class="hotel-body">
+            <div class="hotel-stars">★★★★</div>
+            <div class="hotel-name" data-i18n="hotel3_name"></div>
+            <div class="hotel-loc"  data-i18n="hotel3_location"></div>
+            <div class="hotel-desc" data-i18n="hotel3_desc"></div>
+            <div class="hotel-price" data-i18n="hotel3_price"></div>
+            <a href="#" class="btn btn-block btn-noarrow" data-i18n="hotel_book_btn"></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       REGISTRY — ticket card
+       ============================================================ -->
+  <section id="registry" class="section-pad" data-screen-label="registry">
+    <div class="flora section-flora f-cream flora-tl flora-sway" aria-hidden="true"><svg><use href="#flora-lily" /></svg></div>
+    <div class="flora section-flora f-gold flora-br" aria-hidden="true"><svg><use href="#flora-daisy" /></svg></div>
+    <div class="container">
+
+      <div class="section-head center">
+        <span class="section-tag reveal"><span class="dot"></span><span data-i18n="reg_label"></span></span>
+        <h2 class="h-display reveal reveal-d1" data-i18n="reg_title"></h2>
+        <p class="lede reveal reveal-d1" style="text-align:center;margin:0 auto;" data-i18n="reg_sub"></p>
+      </div>
+
+      <div class="ticket reveal reveal-d2">
+        <div class="ticket-band">
+          <span data-i18n="reg_band_left"></span>
+          <span>Ayşegül &amp; Emir Kaan</span>
+        </div>
+        <div class="ticket-perf" aria-hidden="true"></div>
+        <div class="ticket-inner">
+          <p class="ticket-quote" data-i18n="reg_presence"></p>
+          <p class="ticket-intro" data-i18n="reg_intro"></p>
+
+          <div class="iban-block">
+            <div class="iban-row">
+              <span class="iban-label" data-i18n="reg_holder_label"></span>
+              <span class="iban-value" id="account-holder">Ayşegül [Soyad]</span>
+            </div>
+            <div class="iban-row">
+              <span class="iban-label">IBAN</span>
+              <span class="iban-value iban-code" id="iban-code">TR00 0000 0000 0000 0000 0000 00</span>
+            </div>
+            <div class="iban-row">
+              <span class="iban-label" data-i18n="reg_bank_label"></span>
+              <span class="iban-value" id="bank-name">[Banka Adı]</span>
+            </div>
+          </div>
+
+          <div class="copy-row">
+            <button class="btn btn-clay btn-noarrow" onclick="copyIban()" data-i18n="reg_copy_btn"></button>
+            <span class="iban-copied" id="iban-copied" data-i18n="reg_copied"></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       MEMORY
+       ============================================================ -->
+  <section id="memory" class="section-pad alt-bg-ink" data-screen-label="memory" style="color:var(--cream);">
+    <div class="container">
+
+      <div class="section-head">
+        <span class="section-tag tag-clay reveal"><span class="dot"></span><span data-i18n="mem_label"></span></span>
+        <h2 class="h-display reveal reveal-d1" style="color:var(--cream);" data-i18n="mem_title"></h2>
+        <p class="lede reveal reveal-d1" style="color:rgba(242,232,213,0.7);" data-i18n="mem_sub"></p>
+      </div>
+
+      <div class="memory reveal reveal-d2">
+        <div class="memory-qr-frame">
+          <div class="memory-qr-arrow">
+            <span data-i18n="mem_arrow"></span>
+            <svg viewBox="0 0 60 40">
+              <path d="M5 30 Q 25 5, 55 12" />
+              <path d="M48 8 L 55 12 L 51 18" />
+            </svg>
+          </div>
+          <div class="memory-qr-card">
+            <img id="memory-qr-img" alt="QR code" />
+          </div>
+        </div>
+        <div class="memory-side">
+          <h3 class="memory-lead" style="color:var(--cream);" data-i18n="mem_lead"></h3>
+          <p class="memory-help" style="color:rgba(242,232,213,0.7);" data-i18n="mem_help"></p>
+          <div class="memory-actions">
+            <a id="memory-open-link" class="btn btn-clay" href="#" target="_blank" rel="noopener" data-i18n="mem_open_btn"></a>
+            <a class="btn btn-outline-paper" href="memory.html" data-i18n="mem_print_btn"></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CONTACT / RSVP
+       ============================================================ -->
+  <section id="contact" class="section-pad" data-screen-label="contact">
+    <div class="flora section-flora f-cream flora-bl flora-sway-slow" aria-hidden="true"><svg><use href="#flora-lily-side" /></svg></div>
+    <div class="flora section-flora f-gold flora-tr" aria-hidden="true"><svg><use href="#flora-daisy" /></svg></div>
+    <div class="container">
+
+      <div class="section-head">
+        <span class="section-tag reveal"><span class="dot"></span><span data-i18n="ct_label"></span></span>
+        <h2 class="h-display reveal reveal-d1" data-i18n="ct_title"></h2>
+        <p class="lede reveal reveal-d1" data-i18n="ct_sub"></p>
+      </div>
+
+      <div class="contact-grid">
+
+        <div class="reveal reveal-d1">
+          <div class="contact-heading" data-i18n="ct_info_heading"></div>
+          <div class="contact-list">
+
+            <div class="contact-entry">
+              <div class="contact-entry-icon">
+                <svg viewBox="0 0 24 24"><path d="M5 4h3l2 5-2 1a11 11 0 0 0 6 6l1-2 5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+              </div>
+              <div>
+                <div class="contact-entry-label" data-i18n="ct_bride_label"></div>
+                <div class="contact-entry-val">
+                  <a href="tel:+905001234567">+90 500 123 45 67</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-entry">
+              <div class="contact-entry-icon">
+                <svg viewBox="0 0 24 24"><path d="M5 4h3l2 5-2 1a11 11 0 0 0 6 6l1-2 5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+              </div>
+              <div>
+                <div class="contact-entry-label" data-i18n="ct_groom_label"></div>
+                <div class="contact-entry-val">
+                  <a href="tel:+905009876543">+90 500 987 65 43</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-entry">
+              <div class="contact-entry-icon">
+                <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 7l9 6 9-6"/></svg>
+              </div>
+              <div>
+                <div class="contact-entry-label" data-i18n="ct_email_label"></div>
+                <div class="contact-entry-val">
+                  <a href="/cdn-cgi/l/email-protection#fb9a82889e9c8e97d59e969289bb9e839a968b979ed5989496"><span class="__cf_email__" data-cfemail="503129233537253c7e353d3922103528313d203c357e333f3d">[email&#160;protected]</span></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-entry">
+              <div class="contact-entry-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+              </div>
+              <div>
+                <div class="contact-entry-label" data-i18n="ct_venue_label"></div>
+                <div class="contact-entry-val" data-i18n="ct_venue_value"></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="rsvp-card reveal reveal-d2">
+          <div class="rsvp-card-title" data-i18n="rsvp_title"></div>
+          <div class="rsvp-card-sub"   data-i18n="rsvp_sub"></div>
+
+          <form id="rsvp-form" onsubmit="handleRsvp(event)" novalidate>
+
+            <div class="form-group">
+              <label class="form-label" data-i18n="form_attend_label"></label>
+              <div class="form-attend">
+                <label>
+                  <input type="radio" name="attending" value="yes" checked />
+                  <span class="y-icon">✓</span>
+                  <span data-i18n="form_attend_yes"></span>
+                </label>
+                <label>
+                  <input type="radio" name="attending" value="no" />
+                  <span class="y-icon">×</span>
+                  <span data-i18n="form_attend_no"></span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="f-name" data-i18n="form_name_label"></label>
+              <input type="text" id="f-name" class="form-control"
+                     data-i18n-placeholder="form_name_placeholder" required />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="f-guests" data-i18n="form_guests_label"></label>
+              <select id="f-guests" class="form-control">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4+</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="f-msg" data-i18n="form_msg_label"></label>
+              <textarea id="f-msg" class="form-control"
+                        data-i18n-placeholder="form_msg_placeholder"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-clay btn-block btn-lg" data-i18n="form_submit_btn"></button>
+            <p class="form-note" data-i18n="form_note"></p>
+
+          </form>
+
+          <div class="form-success-msg" id="form-success">
+            <div class="form-success-icon">&amp;</div>
+            <div class="form-success-title" data-i18n="form_success_title"></div>
+            <div class="form-success-sub"   data-i18n="form_success_sub"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="footer-marquee" aria-hidden="true">
+      <div class="marquee-track" id="footer-marquee-track"></div>
+    </div>
+    <div class="flora footer-flora-l flora-sway-slow" aria-hidden="true"><svg><use href="#flora-lily-side" /></svg></div>
+    <div class="flora footer-flora-r" aria-hidden="true"><svg><use href="#flora-lily" /></svg></div>
+    <div class="footer-body">
+      <div class="container">
+        <div class="footer-names">Ayşegül <em>&amp;</em> Emir&nbsp;Kaan</div>
+        <p class="footer-detail">20 · 06 · 2026 — Güzelbahçe, İzmir</p>
+        <div class="footer-meta">
+          <span>Made with love</span>
+          <span>· · ·</span>
+          <span data-i18n="footer_thanks"></span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="app.js"></script>
+</body>
+</html>
