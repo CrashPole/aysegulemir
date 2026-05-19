@@ -1582,11 +1582,12 @@ textarea.form-control {
 
   /* info stacks in a single column, confined to the left half */
   .hero-info {
-    display: flex;
     flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
     gap: 1.2rem;
     margin-top: 1.8rem;
-    max-width: 55%;
+    max-width: 58%;
   }
 
   /* hide the right-side flora so nothing competes with the sticker */
