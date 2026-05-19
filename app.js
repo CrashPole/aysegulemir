@@ -3,7 +3,7 @@
    ============================================================ */
 
 const UPLOAD_URL = window.AE_CONFIG.UPLOAD_URL;
-const WEDDING_DATE = new Date("2026-06-20T14:00:00+03:00");
+const WEDDING_DATE = new Date("2026-06-20T19:00:00+03:00");
 
 /* ============================================================
    i18n
@@ -18,7 +18,7 @@ const i18n = {
     nav_contact:       "İletişim",
 
     hero_eyebrow:   "Bizimle Kutlayın",
-    hero_meta_loc:  "Aegean · Türkiye",
+    hero_meta_loc:  "İzmir · Türkiye",
     hero_lbl_date:  "Tarih",
     hero_lbl_day:   "Gün",
     hero_val_day:   "Cumartesi",
@@ -37,17 +37,17 @@ const i18n = {
     cd_minutes: "Dakika",
     cd_seconds: "Saniye",
 
-    tl_ceremony_title: "Nikah Töreni",
-    tl_ceremony_desc:  "Tören Aegean güneşi altında açılış konuşması ile başlar. Tören mekanı ve detayları yakında paylaşılacaktır.",
+    tl_ceremony_title: "Varış &amp; Grup Fotoğrafları",
+    tl_ceremony_desc:  "Lütfen saat 17:00'de mekanda olun. Törenden önce tüm misafirlerimizle birlikte grup fotoğrafı çekeceğiz.",
 
-    tl_cocktail_title: "Kokteyl Saati",
-    tl_cocktail_desc:  "Misafirlere karşılama içecekleri, kanepe ve canlı akustik müzik eşlik eder. Bahçede biraz dolaşmak için ideal.",
+    tl_cocktail_title: "Nikah Töreni &amp; Kokteyl",
+    tl_cocktail_desc:  "Saat 19:00'da sembolik nikah törenimiz başlıyor. Törenin ardından kokteyl saati ile kutlamalar başlıyor.",
 
     tl_dinner_title: "Akşam Yemeği",
-    tl_dinner_desc:  "Ege mutfağından üç çeşit yemek, mevsim sebzeleri ve özel hazırlanmış pasta. Yer kartları masada bulunur.",
+    tl_dinner_desc:  "Yemek servisi 20:00–20:30 saatleri arasında gerçekleşir. İzmir mutfağından özel hazırlanmış lezzetler sizi bekliyor.",
 
-    tl_party_title: "Dans &amp; Kutlama",
-    tl_party_desc:  "DJ seti, sürprizler ve sabaha kadar süren parti. Rahat ayakkabılarınızı getirmenizi öneririz.",
+    tl_party_title: "Sonrası Parti",
+    tl_party_desc:  "İlk dansımızla gerçek parti başlıyor — sabah 03:00'a kadar müzik, dans ve unutulmaz anlar.",
 
     gt_label: "02 · Yol",
     gt_title: "Nasıl <em>Gelinir</em>",
@@ -56,8 +56,8 @@ const i18n = {
     gt_car_title: "Araçla",
     gt_car_text:  "İzmir merkezden Güzelbahçe'ye yaklaşık 30 dk. Çevre yolundan Güzelbahçe çıkışını alın, ardından Sahil Caddesi'ne yönelin. Mekanda ücretsiz vale hizmeti mevcuttur.",
 
-    gt_transit_title: "Toplu Taşıma",
-    gt_transit_text:  "İZBAN ile Cumaovası durağına gelin, ardından 810 numaralı ESHOT otobüsüne binin. Düğün öncesi/sonrası özel shuttle servisi için bizimle iletişime geçin.",
+    gt_transit_title: "Taksi",
+    gt_transit_text:  "Mekana ulaşmak için sarı taksiler, Yandex Go veya Uber kullanabilirsiniz. Gece dönüşü için önceden rezervasyon yapmanızı tavsiye ederiz.",
 
     gt_map_btn: "Google Haritalar'da Aç",
 
@@ -85,7 +85,7 @@ const i18n = {
 
     hotel_book_btn: "Rezervasyon",
 
-    reg_label: "04 · Hediye",
+    reg_label: "03 · Hediye",
     reg_title: "Bir Küçük <em>Not</em>",
     reg_sub:   "Sevginiz bizim için en güzel armağan.",
     reg_band_left:  "Hediye · Bilet N°&nbsp;2026",
@@ -96,7 +96,7 @@ const i18n = {
     reg_copy_btn:    "IBAN'ı Kopyala",
     reg_copied:      "Kopyalandı ✓",
 
-    mem_label:       "05 · Anılar",
+    mem_label:       "04 · Anılar",
     mem_title:       "Anılarımıza <em>Eklenin</em>",
     mem_sub:         "Çektiğiniz her kare bizim için çok değerli. QR kodu okutup gönderin — biz teşekkür ederiz.",
     mem_lead:        "Kameranızı doğrultun, fotoğrafları <em>birlikte yazalım.</em>",
@@ -105,16 +105,16 @@ const i18n = {
     mem_print_btn:   "Yazdırılabilir Kart",
     mem_arrow:       "buraya bakın!",
 
-    ct_label: "06 · İletişim",
-    ct_title: "İletişim &amp; <em>RSVP</em>",
-    ct_sub:   "Sorularınız için bize ulaşın ve katılımınızı 1 Mayıs 2026'ya kadar onaylayın.",
+    ct_label: "05 · İletişim",
+    ct_title: "İletişim",
+    ct_sub:   "Sorularınız için bize ulaşın.",
 
     ct_info_heading: "Bize <em>Ulaşın</em>",
     ct_bride_label:  "Gelin",
     ct_groom_label:  "Damat",
     ct_email_label:  "E-posta",
     ct_venue_label:  "Mekan",
-    ct_venue_value:  "Mekan Adı, Güzelbahçe / İzmir",
+    ct_venue_value:  "Piena Case de Event, Güzelbahçe / İzmir",
 
     rsvp_title: "Katılımınızı <em>Onaylayın</em>",
     rsvp_sub:   "Son tarih: 1 Mayıs 2026",
@@ -145,7 +145,7 @@ const i18n = {
     nav_contact:       "Contact",
 
     hero_eyebrow:   "Celebrate With Us",
-    hero_meta_loc:  "Aegean · Türkiye",
+    hero_meta_loc:  "İzmir · Türkiye",
     hero_lbl_date:  "Date",
     hero_lbl_day:   "Day",
     hero_val_day:   "Saturday",
@@ -164,17 +164,17 @@ const i18n = {
     cd_minutes: "Minutes",
     cd_seconds: "Seconds",
 
-    tl_ceremony_title: "Wedding Ceremony",
-    tl_ceremony_desc:  "The ceremony begins under the Aegean sun with welcome words. Venue and exact details will be shared soon.",
+    tl_ceremony_title: "Arrival &amp; Group Photos",
+    tl_ceremony_desc:  "Please arrive at the venue by 17:00. We'll take a big group photo with everyone before the celebrations begin.",
 
-    tl_cocktail_title: "Cocktail Hour",
-    tl_cocktail_desc:  "Welcome drinks, canapés and live acoustic music. The perfect time to wander the garden and catch up.",
+    tl_cocktail_title: "Wedding Ceremony &amp; Cocktail",
+    tl_cocktail_desc:  "Our symbolic wedding ceremony begins at 19:00. Cocktails and celebrations follow immediately after.",
 
     tl_dinner_title: "Dinner",
-    tl_dinner_desc:  "A three-course Aegean menu with seasonal vegetables and a custom-made cake. Find your name on the table chart.",
+    tl_dinner_desc:  "Dinner service runs from 20:00 to 20:30. İzmir-inspired dishes specially prepared for the occasion.",
 
-    tl_party_title: "Dance &amp; Celebrate",
-    tl_party_desc:  "DJ set, a few surprises, and dancing until sunrise. Comfortable shoes strongly recommended.",
+    tl_party_title: "After Party",
+    tl_party_desc:  "The real party begins with our first dance — music, dancing, and unforgettable memories until 3:00 AM.",
 
     gt_label: "02 · Travel",
     gt_title: "Getting <em>There</em>",
@@ -183,8 +183,8 @@ const i18n = {
     gt_car_title: "By Car",
     gt_car_text:  "About 30 min from central İzmir. Take the Güzelbahçe exit from the ring road and follow signs to Sahil Caddesi. Free valet parking on site.",
 
-    gt_transit_title: "Public Transit",
-    gt_transit_text:  "İZBAN train to Cumaovası, then ESHOT bus #810. We're arranging a shuttle service before and after the wedding — get in touch.",
+    gt_transit_title: "Taxi",
+    gt_transit_text:  "Yellow taxis, Yandex Go, or Uber are all available to reach the venue. We recommend booking in advance for the return journey.",
 
     gt_map_btn: "Open in Google Maps",
 
@@ -212,7 +212,7 @@ const i18n = {
 
     hotel_book_btn: "Book",
 
-    reg_label: "04 · Gift",
+    reg_label: "03 · Gift",
     reg_title: "A Little <em>Note</em>",
     reg_sub:   "Your love is the loveliest gift.",
     reg_band_left:  "Gift · Ticket N°&nbsp;2026",
@@ -223,7 +223,7 @@ const i18n = {
     reg_copy_btn:    "Copy IBAN",
     reg_copied:      "Copied ✓",
 
-    mem_label:       "05 · Memories",
+    mem_label:       "04 · Memories",
     mem_title:       "Add to our <em>Memories</em>",
     mem_sub:         "Every shot you take is precious to us. Scan the QR and send them our way — thank you.",
     mem_lead:        "Point your camera, and <em>let's write the album</em> together.",
@@ -232,16 +232,16 @@ const i18n = {
     mem_print_btn:   "Printable Card",
     mem_arrow:       "scan me!",
 
-    ct_label: "06 · Contact",
-    ct_title: "Contact &amp; <em>RSVP</em>",
-    ct_sub:   "Reach out with any questions and confirm your attendance by May 1, 2026.",
+    ct_label: "05 · Contact",
+    ct_title: "Contact",
+    ct_sub:   "Reach out with any questions.",
 
     ct_info_heading: "Get in <em>Touch</em>",
     ct_bride_label:  "Bride",
     ct_groom_label:  "Groom",
     ct_email_label:  "Email",
     ct_venue_label:  "Venue",
-    ct_venue_value:  "Venue Name, Güzelbahçe / İzmir",
+    ct_venue_value:  "Piena Case de Event, Güzelbahçe / İzmir",
 
     rsvp_title: "Confirm Your <em>Attendance</em>",
     rsvp_sub:   "Deadline: May 1, 2026",
@@ -315,7 +315,7 @@ const heroItems = [
   {text:'20 · 06 · 2026'}, {dot:1},
   {text:'Güzelbahçe · İzmir'}, {dot:1},
   {text:'Save the Date'}, {dot:1},
-  {text:'Aegean Wedding'}, {dot:1},
+  {text:'İzmir Wedding'}, {dot:1},
 ];
 
 /* ============================================================
