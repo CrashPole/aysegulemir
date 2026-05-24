@@ -240,6 +240,58 @@
 
 
   <!-- ============================================================
+       WEATHER BULLETIN — interstitial strip
+       ============================================================ -->
+  <div class="wb-wrap">
+    <div class="wb-card container reveal">
+
+      <div class="wb-left">
+        <div class="wb-sun-box" aria-hidden="true">
+          <svg class="wb-sun" viewBox="0 0 60 60">
+            <g class="wb-rays" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+              <line x1="30" y1="3"  x2="30" y2="12"/>
+              <line x1="30" y1="48" x2="30" y2="57"/>
+              <line x1="3"  y1="30" x2="12" y2="30"/>
+              <line x1="48" y1="30" x2="57" y2="30"/>
+              <line x1="10.5" y1="10.5" x2="17"   y2="17"/>
+              <line x1="43"   y1="43"   x2="49.5" y2="49.5"/>
+              <line x1="49.5" y1="10.5" x2="43"   y2="17"/>
+              <line x1="17"   y1="43"   x2="10.5" y2="49.5"/>
+            </g>
+            <circle cx="30" cy="30" r="12" stroke="currentColor" stroke-width="2.2" fill="currentColor" fill-opacity="0.18"/>
+          </svg>
+        </div>
+        <div class="wb-temp">35<sup class="wb-deg">°C</sup></div>
+        <div class="wb-scroll-hint" aria-hidden="true">
+          <span>SCROLL</span>
+          <svg viewBox="0 0 32 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="0" y1="6" x2="26" y2="6"/>
+            <polyline points="21,1 26,6 21,11"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="wb-divider" aria-hidden="true"></div>
+
+      <div class="wb-right">
+        <div class="wb-header-row">
+          <span class="wb-pulse" aria-hidden="true"></span>
+          <span class="wb-headline">WEATHER BULLETIN &nbsp;·&nbsp; 20.06.2026 &nbsp;·&nbsp; GÜZELBAHÇE</span>
+        </div>
+        <p class="wb-body" data-i18n="wb_text"></p>
+      </div>
+
+      <div class="wb-arc" aria-hidden="true">
+        <svg viewBox="0 0 130 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="130" cy="130" r="100" stroke="rgba(244,239,226,0.13)" stroke-width="1" stroke-dasharray="5 7"/>
+        </svg>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ============================================================
        WEDDING DAY — countdown + timeline
        ============================================================ -->
   <section id="wedding-day" class="section-pad alt-bg-cream" data-screen-label="wedding day">

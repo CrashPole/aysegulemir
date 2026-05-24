@@ -589,6 +589,177 @@ section.section-pad { padding: 130px 0; }
 .flora-bl { bottom: 30px; left: -20px; width: 160px; height: 160px; transform: rotate(180deg); }
 
 /* ============================================================
+   WEATHER BULLETIN
+   ============================================================ */
+.wb-wrap {
+  padding: 0 0 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.wb-card {
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(244, 239, 226, 0.28);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--navy-deep);
+  position: relative;
+  min-height: 110px;
+  box-shadow: 0 0 0 1px rgba(212, 175, 108, 0.12) inset;
+}
+
+.wb-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 1.8rem 2.4rem 1.8rem 2rem;
+  flex-shrink: 0;
+}
+
+.wb-sun {
+  width: 40px;
+  height: 40px;
+  color: var(--gold);
+  display: block;
+}
+
+.wb-rays {
+  transform-origin: 30px 30px;
+  animation: wb-spin 18s linear infinite;
+}
+
+@keyframes wb-spin {
+  to { transform: rotate(360deg); }
+}
+
+.wb-temp {
+  font-family: var(--serif);
+  font-size: 2.4rem;
+  font-weight: 400;
+  color: var(--cream);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.wb-deg {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  vertical-align: super;
+  color: var(--gold);
+  font-style: normal;
+}
+
+.wb-scroll-hint {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--mono);
+  font-size: 0.56rem;
+  letter-spacing: 0.24em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.wb-scroll-hint svg {
+  width: 22px;
+  height: 9px;
+  color: var(--muted);
+}
+
+.wb-divider {
+  width: 1px;
+  background: var(--hairline);
+  align-self: stretch;
+  flex-shrink: 0;
+}
+
+.wb-right {
+  flex: 1;
+  padding: 1.8rem 3rem 1.8rem 2.4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.wb-header-row {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 0.6rem;
+}
+
+.wb-pulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+  animation: wb-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes wb-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.35; }
+}
+
+.wb-headline {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--cream);
+}
+
+.wb-body {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1rem, 1.35vw, 1.2rem);
+  color: var(--ink-soft);
+  line-height: 1.55;
+  max-width: 580px;
+}
+
+.wb-body em {
+  color: var(--gold-soft);
+  font-style: italic;
+}
+
+.wb-arc {
+  position: absolute;
+  right: -24px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 130px;
+  height: 260px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@media (max-width: 700px) {
+  .wb-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .wb-left {
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 1.4rem 1.5rem 1rem;
+    gap: 1rem;
+  }
+  .wb-divider {
+    width: 100%;
+    height: 1px;
+    align-self: auto;
+  }
+  .wb-right {
+    padding: 1.2rem 1.5rem 1.6rem;
+  }
+  .wb-arc { display: none; }
+}
+
+/* ============================================================
    WEDDING DAY — countdown + timeline
    ============================================================ */
 .countdown {

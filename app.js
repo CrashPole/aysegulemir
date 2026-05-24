@@ -27,6 +27,8 @@ const i18n = {
     hero_val_dress: "Şık · Yazlık",
     scroll_cue:     "Aşağı Kaydır",
 
+    wb_text: "Bir meteorologla görüştük — <em>güzel haber:</em> güneşli ve sıcak bir öğleden sonra, <em>yağmur beklenmiyor.</em>",
+
     wd_label: "01 · Program",
     wd_title: "Düğün <em>Günü</em>",
     wd_sub:   "Bu özel günü sizinle birlikte kutlamak için sabırsızlanıyoruz. İşte günün akışı.",
@@ -156,6 +158,8 @@ const i18n = {
     hero_lbl_dress: "Attire",
     hero_val_dress: "Elegant · Summer",
     scroll_cue:     "Scroll",
+
+    wb_text: "We asked a meteorologist – <em>good news:</em> a clear 35° afternoon, with <em>no rain expected.</em>",
 
     wd_label: "01 · Schedule",
     wd_title: "Wedding <em>Day</em>",
